@@ -3,75 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claude Code Onboarding — Wireframe Sketch</title>
+<title>Claude Code Onboarding — Learn by Shipping</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  /* Intentionally rough — system fonts, thin borders, sketch aesthetic */
+  /* Warm Wireframe — intentional sketch aesthetic with warm palette */
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: system-ui, -apple-system, sans-serif; color: #333; background: #fafafa; }
+  body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #1c1917; background: #faf9f6; }
   .page { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
 
   /* Hero */
-  .hero { text-align: center; padding: 60px 20px; border: 1px dashed #ccc; border-radius: 8px; margin-bottom: 40px; background: #fff; }
+  .hero { text-align: center; padding: 60px 20px; border: 1px dashed #d6d3cd; border-radius: 0; margin-bottom: 40px; background: #fff; }
   .hero h1 { font-size: 32px; font-weight: 700; margin-bottom: 12px; }
-  .hero .subtitle { font-size: 18px; color: #666; margin-bottom: 8px; }
-  .hero .subtitle-cn { font-size: 16px; color: #999; margin-bottom: 24px; }
-  .hero .cta { display: inline-block; padding: 14px 32px; border: 2px solid #333; border-radius: 6px; font-size: 16px; font-weight: 600; text-decoration: none; color: #333; margin: 8px; }
-  .hero .cta.primary { background: #333; color: #fff; }
+  .hero .subtitle { font-size: 18px; color: #78716c; margin-bottom: 24px; }
+  .hero .cta { display: inline-block; padding: 14px 32px; border: 2px solid #d6d3cd; border-radius: 6px; font-size: 16px; font-weight: 600; text-decoration: none; color: #1c1917; margin: 8px; font-family: inherit; }
+  .hero .cta.primary { background: #b45309; color: #fff; border-color: #b45309; }
 
-  /* Why section */
+  /* Sections */
   .section { margin-bottom: 40px; }
-  .section h2 { font-size: 22px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+  .section h2 { font-size: 22px; font-weight: 600; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #d6d3cd; }
 
   /* Comparison table */
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-  .compare-card { border: 1px solid #ddd; border-radius: 6px; padding: 20px; background: #fff; }
-  .compare-card h3 { font-size: 16px; margin-bottom: 8px; }
-  .compare-card .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 12px; }
-  .compare-card ul { font-size: 14px; line-height: 1.8; color: #555; padding-left: 18px; }
-  .compare-card.highlight { border-color: #333; }
-  .compare-card.highlight .tag { background: #333; color: #fff; border-color: #333; }
+  .compare-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #d6d3cd; border-radius: 6px; overflow: hidden; margin-bottom: 8px; }
+  .compare-table th, .compare-table td { padding: 10px 14px; text-align: left; font-size: 13px; border-bottom: 1px solid #d6d3cd; }
+  .compare-table th { font-weight: 700; font-size: 14px; background: #fff; }
+  .compare-table th:first-child, .compare-table td:first-child { color: #78716c; font-size: 12px; font-weight: 500; width: 26%; }
+  .compare-table th:last-child { color: #b45309; }
+  .compare-table td:last-child { font-weight: 500; }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table .check { color: #16a34a; font-weight: 600; }
+  .compare-table .cross { color: #78716c; opacity: 0.6; }
+  .compare-table .warn { color: #bb4444; font-weight: 500; }
 
   /* Recipes */
   .recipes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
-  .recipe { border: 1px solid #ddd; border-radius: 6px; padding: 16px; background: #fff; }
+  .recipe { border: 1px solid #d6d3cd; border-radius: 6px; padding: 16px; background: #fff; }
   .recipe .icon { font-size: 28px; margin-bottom: 8px; }
-  .recipe h4 { font-size: 14px; margin-bottom: 6px; }
-  .recipe p { font-size: 12px; color: #777; line-height: 1.5; }
-  .recipe .difficulty { font-size: 11px; color: #999; margin-top: 8px; }
+  .recipe h4 { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+  .recipe p { font-size: 12px; color: #78716c; line-height: 1.5; }
+  .recipe .difficulty { font-size: 11px; color: #a8a29e; margin-top: 8px; }
 
   /* Flow diagram */
-  .flow { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 30px; border: 1px dashed #ccc; border-radius: 8px; background: #fff; margin-bottom: 24px; }
-  .flow-step { text-align: center; padding: 16px; border: 1px solid #ddd; border-radius: 6px; min-width: 160px; }
-  .flow-step .num { font-size: 24px; font-weight: 700; color: #999; }
+  .flow { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 30px; border: 1px dashed #d6d3cd; background: #fff; margin-bottom: 24px; }
+  .flow-step { text-align: center; padding: 16px; border: 1px solid #d6d3cd; border-radius: 6px; min-width: 160px; }
+  .flow-step .num { font-size: 24px; font-weight: 700; color: #a8a29e; }
   .flow-step .label { font-size: 13px; margin-top: 4px; }
-  .flow-step .detail { font-size: 11px; color: #888; margin-top: 4px; }
-  .flow-arrow { font-size: 20px; color: #ccc; }
-
-  /* Language toggle */
-  .lang-toggle { text-align: right; margin-bottom: 20px; font-size: 13px; color: #999; }
-  .lang-toggle a { color: #333; text-decoration: underline; cursor: pointer; }
+  .flow-step .detail { font-size: 11px; color: #a8a29e; margin-top: 4px; }
+  .flow-arrow { font-size: 20px; color: #d6d3cd; }
 
   /* Footer */
-  .footer { text-align: center; padding: 40px 20px; color: #999; font-size: 13px; border-top: 1px solid #eee; margin-top: 40px; }
+  .footer { text-align: center; padding: 40px 20px; color: #a8a29e; font-size: 13px; border-top: 1px solid #d6d3cd; margin-top: 40px; }
 
   /* Annotation style */
-  .annotation { font-size: 11px; color: #b44; font-style: italic; margin-top: 8px; }
+  .annotation { font-size: 11px; color: #bb4444; font-style: italic; margin-top: 8px; }
+
+  /* Code */
+  .code-block { background: #f0eeea; padding: 12px 20px; border-radius: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; display: inline-block; margin: 12px 0; }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- Language toggle -->
-  <div class="lang-toggle">EN | <a>CN</a></div>
-
   <!-- HERO -->
   <div class="hero">
     <h1>Claude Code for Everyone</h1>
-    <div class="subtitle">You don't need to be a developer. You just need an idea.</div>
-    <div class="subtitle-cn">你不需要是程序员，你只需要一个想法。</div>
+    <div class="subtitle">Master Claude Code to automate your work and start building in 20 mins.</div>
     <a class="cta primary" href="#">Start Learning (5 min)</a>
     <a class="cta" href="#">Watch Demo</a>
-    <p class="annotation"><!-- design note: hero copy speaks to fear directly --></p>
   </div>
 
   <!-- USER FLOW -->
@@ -93,42 +92,69 @@
       <div class="flow-step">
         <div class="num">3</div>
         <div class="label">Run /learn</div>
-        <div class="detail">Interactive skill teaches you</div>
+        <div class="detail">Personalized onboarding starts</div>
       </div>
       <div class="flow-arrow">&rarr;</div>
       <div class="flow-step">
         <div class="num">4</div>
-        <div class="label">Build something real</div>
-        <div class="detail">Your first project in 30 min</div>
+        <div class="label">Build your first real thing</div>
+        <div class="detail">Your first project in 20 min</div>
       </div>
     </div>
   </div>
 
   <!-- WHY CLAUDE CODE -->
   <div class="section">
-    <h2>Why Claude Code instead of ChatGPT / OpenClaw?</h2>
-    <div class="compare">
-      <div class="compare-card">
-        <h3>Browser-based AI (ChatGPT, OpenClaw)</h3>
-        <span class="tag">what you're used to</span>
-        <ul>
-          <li>Copy-paste code back and forth</li>
-          <li>Can't touch your real files</li>
-          <li>Loses context between chats</li>
-          <li>You are the middleman</li>
-        </ul>
-      </div>
-      <div class="compare-card highlight">
-        <h3>Claude Code</h3>
-        <span class="tag">what you'll learn here</span>
-        <ul>
-          <li>Reads and writes your files directly</li>
-          <li>Runs commands for you</li>
-          <li>Sees your whole project at once</li>
-          <li>You describe, it builds</li>
-        </ul>
-      </div>
-    </div>
+    <h2>Why Claude Code?</h2>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>ChatGPT</th>
+          <th>OpenClaw</th>
+          <th>Claude Code</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Where it runs</td>
+          <td>Browser</td>
+          <td>Your computer</td>
+          <td>Your computer</td>
+        </tr>
+        <tr>
+          <td>Reads your files</td>
+          <td><span class="cross">&#10005; No</span></td>
+          <td>Surface-level</td>
+          <td><span class="check">&#10003; Entire project</span></td>
+        </tr>
+        <tr>
+          <td>Builds things for you</td>
+          <td><span class="cross">&#10005; No</span></td>
+          <td>Basic automation</td>
+          <td><span class="check">&#10003; Full projects</span></td>
+        </tr>
+        <tr>
+          <td>Security</td>
+          <td>Sandboxed (browser)</td>
+          <td><span class="warn">&#9888; 512 CVEs, 135K exposed</span></td>
+          <td><span class="check">&#10003; Sandboxed, no ports</span></td>
+        </tr>
+        <tr>
+          <td>Skill ecosystem</td>
+          <td><span class="cross">&mdash;</span></td>
+          <td><span class="warn">&#9888; 820+ malicious skills</span></td>
+          <td><span class="check">&#10003; Controlled, project-scoped</span></td>
+        </tr>
+        <tr>
+          <td>Best for</td>
+          <td>Quick questions</td>
+          <td>Daily tasks (if you accept the risk)</td>
+          <td><strong>Deep work on your files, securely</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="annotation">OpenClaw: Kaspersky found 512 vulnerabilities. SecurityScorecard found 135K+ instances exposed to the public internet. Microsoft recommends against running it on standard workstations.</p>
   </div>
 
   <!-- RECIPES / SAMPLE PROJECTS -->
@@ -136,52 +162,50 @@
     <h2>What can non-technical people build?</h2>
     <div class="recipes">
       <div class="recipe">
-        <div class="icon">&#127760;</div>
-        <h4>Personal Website</h4>
-        <p>Tell Claude what you want. Get a live website in 15 minutes.</p>
-        <div class="difficulty">Beginner &bull; 15 min</div>
+        <div class="icon">&#128221;</div>
+        <h4>Turn messy notes into a clean report</h4>
+        <p>Paste in rough meeting notes. Get a structured, formatted report back.</p>
+        <div class="difficulty">Beginner &bull; 10 min</div>
+      </div>
+      <div class="recipe">
+        <div class="icon">&#128193;</div>
+        <h4>Summarize a folder of documents</h4>
+        <p>Point Claude at a folder. It reads everything and gives you a summary.</p>
+        <div class="difficulty">Beginner &bull; 10 min</div>
+      </div>
+      <div class="recipe">
+        <div class="icon">&#9993;</div>
+        <h4>Write emails in your tone, from bullet points</h4>
+        <p>Give Claude 3 bullet points. Get a polished email in your voice.</p>
+        <div class="difficulty">Beginner &bull; 5 min</div>
       </div>
       <div class="recipe">
         <div class="icon">&#128202;</div>
-        <h4>Data Dashboard</h4>
-        <p>Turn a spreadsheet into an interactive chart page.</p>
+        <h4>Analyze a spreadsheet without Excel formulas</h4>
+        <p>Drop in a CSV. Ask questions in plain English. Get real insights.</p>
+        <div class="difficulty">Beginner &bull; 15 min</div>
+      </div>
+      <div class="recipe">
+        <div class="icon">&#127760;</div>
+        <h4>Build a simple personal website</h4>
+        <p>Tell Claude what you want. Get a live website in 20 minutes.</p>
         <div class="difficulty">Beginner &bull; 20 min</div>
       </div>
       <div class="recipe">
         <div class="icon">&#9889;</div>
-        <h4>Automate Repetitive Work</h4>
-        <p>Rename 500 files, clean up CSVs, generate reports.</p>
+        <h4>Automate a repetitive file task</h4>
+        <p>Rename 500 files, clean up CSVs, batch-generate reports.</p>
         <div class="difficulty">Beginner &bull; 10 min</div>
-      </div>
-      <div class="recipe">
-        <div class="icon">&#128172;</div>
-        <h4>Custom Chatbot</h4>
-        <p>Build a chatbot trained on your own documents.</p>
-        <div class="difficulty">Intermediate &bull; 30 min</div>
-      </div>
-      <div class="recipe">
-        <div class="icon">&#128736;</div>
-        <h4>Internal Tool</h4>
-        <p>An inventory tracker, a booking form, a CRM — describe it, get it.</p>
-        <div class="difficulty">Intermediate &bull; 45 min</div>
-      </div>
-      <div class="recipe">
-        <div class="icon">&#128640;</div>
-        <h4>Your Idea Here</h4>
-        <p>The skill teaches you how to turn any idea into a working project.</p>
-        <div class="difficulty">Any level &bull; ???</div>
       </div>
     </div>
   </div>
 
   <!-- CTA bottom -->
-  <div class="hero" style="border-style: solid;">
+  <div class="hero" style="border-style: solid; border-color: #d6d3cd;">
     <h1 style="font-size: 24px;">Ready to try?</h1>
-    <div class="subtitle">Open your Terminal and paste this:</div>
-    <div style="background: #f0f0f0; padding: 12px 20px; border-radius: 6px; font-family: monospace; font-size: 14px; display: inline-block; margin: 12px 0;">
-      npx claude-code-onboarding
-    </div>
-    <div class="subtitle-cn" style="margin-top: 12px;">或者先看看 <a href="#" style="color: #333;">中文教程 &rarr;</a></div>
+    <div class="subtitle" style="margin-bottom: 0;">Open your Terminal and paste this:</div>
+    <div class="code-block">curl -fsSL https://fuy25.github.io/claude-code-onboarding/start.sh | sh</div>
+    <p class="annotation">This downloads your learning materials and opens your first lesson.</p>
   </div>
 
   <div class="footer">
