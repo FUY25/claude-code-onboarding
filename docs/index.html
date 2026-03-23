@@ -60,6 +60,37 @@
 
   /* Code */
   .code-block { background: #f0eeea; padding: 12px 20px; border-radius: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; display: inline-block; margin: 12px 0; }
+
+  /* Hover states */
+  .hero .cta:hover { opacity: 0.85; }
+  .hero .cta.primary:hover { background: #92400e; border-color: #92400e; }
+
+  /* Responsive — tablet */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 28px; }
+    .hero .subtitle { font-size: 16px; }
+    .flow { flex-wrap: wrap; gap: 8px; padding: 20px; }
+    .flow-step { min-width: 120px; flex: 1 1 40%; padding: 12px; }
+    .flow-arrow { display: none; }
+    .recipes { grid-template-columns: 1fr 1fr; }
+    .compare-table th, .compare-table td { padding: 8px 10px; font-size: 12px; }
+    .compare-table th:first-child, .compare-table td:first-child { font-size: 11px; }
+    .code-block { font-size: 12px; padding: 10px 14px; word-break: break-all; }
+  }
+
+  /* Responsive — mobile */
+  @media (max-width: 480px) {
+    .page { padding: 20px 16px; }
+    .hero { padding: 40px 16px; }
+    .hero h1 { font-size: 24px; }
+    .hero .subtitle { font-size: 15px; }
+    .hero .cta { display: block; margin: 6px 0; }
+    .flow-step { flex: 1 1 100%; min-width: unset; }
+    .recipes { grid-template-columns: 1fr; }
+    .compare-table th, .compare-table td { padding: 6px 8px; font-size: 11px; }
+    .section h2 { font-size: 20px; }
+    .code-block { display: block; font-size: 11px; overflow-x: auto; white-space: nowrap; }
+  }
 </style>
 </head>
 <body>
