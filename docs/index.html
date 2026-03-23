@@ -81,26 +81,26 @@
 <!-- HOW IT WORKS -->
 <section class="section section-alt" id="how">
   <div class="section-inner">
-    <h2 id="steps-title">How it works</h2>
+    <div class="section-head">
+      <h2 id="steps-title">How it works</h2>
+      <p class="section-lead" id="steps-lead">Read once, paste once, then let the lesson guide you into your first useful project.</p>
+    </div>
     <div class="flow">
       <div class="flow-step">
         <div class="flow-num">1</div>
         <div class="flow-label" id="step1-title">Read this page</div>
         <div class="flow-detail" id="step1-desc">2 min, right here</div>
       </div>
-      <div class="flow-arrow" aria-hidden="true">→</div>
       <div class="flow-step">
         <div class="flow-num">2</div>
         <div class="flow-label" id="step2-title">Install Claude Code</div>
         <div class="flow-detail" id="step2-desc">Copy-paste 1 command</div>
       </div>
-      <div class="flow-arrow" aria-hidden="true">→</div>
       <div class="flow-step">
         <div class="flow-num">3</div>
         <div class="flow-label" id="step3-title">Run /learn</div>
         <div class="flow-detail" id="step3-desc">Interactive skill teaches you</div>
       </div>
-      <div class="flow-arrow" aria-hidden="true">→</div>
       <div class="flow-step">
         <div class="flow-num">4</div>
         <div class="flow-label" id="step4-title">Build something real</div>
@@ -113,7 +113,10 @@
 <!-- WHY SECTION -->
 <section class="section">
   <div class="section-inner">
-    <h2 id="why-title">Why Claude Code instead of ChatGPT?</h2>
+    <div class="section-head">
+      <h2 id="why-title">Why Claude Code instead of ChatGPT?</h2>
+      <p class="section-lead" id="why-lead">The upgrade is not just better answers. It is getting useful work saved on your machine instead of trapped in a browser tab.</p>
+    </div>
 
     <div class="compare">
       <div class="compare-card">
@@ -144,9 +147,12 @@
 <!-- RECIPES -->
 <section class="section section-alt">
   <div class="section-inner">
-    <h2 id="recipes-title">What can non-technical people build?</h2>
+    <div class="section-head">
+      <h2 id="recipes-title">What can non-technical people build?</h2>
+      <p class="section-lead" id="recipes-lead">Start with work that already matters to you: operations cleanup, writing, analysis, or a simple public-facing page.</p>
+    </div>
     <div class="recipes">
-      <div class="recipe">
+      <div class="recipe recipe-wide">
         <div class="recipe-icon">&#128196;</div>
         <h4>Report from Notes</h4>
         <p>Turn messy meeting notes into a clean, formatted report.</p>
@@ -176,7 +182,7 @@
         <p>Rename 500 files, clean up CSVs, batch-process anything tedious.</p>
         <div class="difficulty">Beginner &bull; 10 min</div>
       </div>
-      <div class="recipe">
+      <div class="recipe recipe-wide">
         <div class="recipe-icon">&#128161;</div>
         <h4>Your Idea Here</h4>
         <p>The skill teaches you how to turn any idea into a working project.</p>
@@ -222,11 +228,14 @@
     tagOld: 'what you\'re used to',
     tagNew: 'what you\'ll learn here',
     stepsTitle: 'How it works',
+    stepsLead: 'Read once, paste once, then let the lesson guide you into your first useful project.',
     step1: ['Read this page', '2 min, right here'],
     step2: ['Install Claude Code', 'Copy-paste 1 command'],
     step3: ['Run /learn', 'Interactive skill teaches you'],
     step4: ['Build something real', 'Your first project in 20 min'],
+    whyLead: 'The upgrade is not just better answers. It is getting useful work saved on your machine instead of trapped in a browser tab.',
     recipesTitle: 'What can non-technical people build?',
+    recipesLead: 'Start with work that already matters to you: operations cleanup, writing, analysis, or a simple public-facing page.',
     ctaBottomTitle: 'Ready to try?',
     ctaBottomSub: 'Open your Terminal and paste this:',
     ctaBottomCn: '或者先看看 <a href="#">中文教程 →</a>',
@@ -245,11 +254,14 @@
     tagOld: '你习惯的方式',
     tagNew: '你将在这里学到的',
     stepsTitle: '怎么用',
+    stepsLead: '先读一遍，再复制一条命令，之后教程会一步步带你做出第一个有用项目。',
     step1: ['阅读这个页面', '2 分钟，就在这里'],
     step2: ['安装 Claude Code', '复制粘贴一条命令'],
     step3: ['输入 /learn', '交互式技能教你'],
     step4: ['做出真实的东西', '20 分钟完成第一个项目'],
+    whyLead: '真正的升级不只是回答更好，而是把可用成果直接保存到你的电脑上，而不是留在浏览器聊天框里。',
     recipesTitle: '非技术人员能做出什么？',
+    recipesLead: '从你已经在做的真实工作开始：流程清理、写作、分析，或者一个简单的公开页面。',
     ctaBottomTitle: '准备好了吗？',
     ctaBottomSub: '打开终端，粘贴这条命令：',
     ctaBottomCn: 'Or read the <a href="#">English version →</a>',
@@ -271,6 +283,7 @@
     document.getElementById('tag-old').textContent = t.tagOld;
     document.getElementById('tag-new').textContent = t.tagNew;
     document.getElementById('steps-title').textContent = t.stepsTitle;
+    document.getElementById('steps-lead').textContent = t.stepsLead;
     document.getElementById('step1-title').textContent = t.step1[0];
     document.getElementById('step1-desc').textContent = t.step1[1];
     document.getElementById('step2-title').textContent = t.step2[0];
@@ -279,7 +292,9 @@
     document.getElementById('step3-desc').textContent = t.step3[1];
     document.getElementById('step4-title').textContent = t.step4[0];
     document.getElementById('step4-desc').textContent = t.step4[1];
+    document.getElementById('why-lead').textContent = t.whyLead;
     document.getElementById('recipes-title').textContent = t.recipesTitle;
+    document.getElementById('recipes-lead').textContent = t.recipesLead;
     document.getElementById('cta-bottom-title').textContent = t.ctaBottomTitle;
     document.getElementById('cta-bottom-sub').textContent = t.ctaBottomSub;
     document.getElementById('cta-bottom-cn').innerHTML = t.ctaBottomCn;

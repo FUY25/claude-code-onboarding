@@ -344,6 +344,10 @@ nav {
   max-width: var(--max-w);
   margin: 0 auto;
 }
+.section-head {
+  max-width: 44rem;
+  margin-bottom: 1.8rem;
+}
 .section h2 {
   font-family: 'Fraunces', Georgia, serif;
   font-size: clamp(2rem, 3vw, 2.45rem);
@@ -352,44 +356,60 @@ nav {
   letter-spacing: -0.03em;
   text-wrap: balance;
 }
+.section-lead {
+  font-size: 1rem;
+  color: var(--muted-strong);
+  max-width: 40rem;
+}
 
 /* FLOW DIAGRAM (horizontal steps with arrows) */
 .flow {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 12px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.flow::before {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(161, 88, 27, 0.15), rgba(161, 88, 27, 0.5), rgba(161, 88, 27, 0.15));
 }
 .flow-step {
-  text-align: center;
-  padding: 20px 16px;
+  position: relative;
+  text-align: left;
+  padding: 20px 18px 18px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
-  flex: 1;
   min-width: 0;
   box-shadow: 0 12px 30px rgba(22, 23, 33, 0.04);
 }
 .flow-num {
-  font-size: 1.5rem;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--accent);
-  margin-bottom: 4px;
+  background: #fff8f0;
+  border: 1px solid rgba(161, 88, 27, 0.2);
+  margin-bottom: 0.9rem;
 }
 .flow-label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 2px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
 }
 .flow-detail {
-  font-size: 0.78rem;
+  font-size: 0.84rem;
   color: var(--muted);
-}
-.flow-arrow {
-  font-size: 1.25rem;
-  color: var(--muted);
-  padding-top: 20px;
-  flex-shrink: 0;
 }
 
 /* COMPARE CARDS (2 column) */
@@ -430,7 +450,7 @@ nav {
 /* RECIPES */
 .recipes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 .recipe {
@@ -439,6 +459,9 @@ nav {
   padding: 20px;
   background: var(--surface);
   box-shadow: 0 12px 28px rgba(22, 23, 33, 0.04);
+}
+.recipe-wide {
+  grid-column: span 2;
 }
 .recipe-icon { font-size: 1.75rem; margin-bottom: 10px; }
 .recipe h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
@@ -482,20 +505,31 @@ footer a:hover { color: var(--ink); }
   .compare { grid-template-columns: 1fr; }
   .recipes { grid-template-columns: 1fr 1fr; }
   .flow {
-    flex-direction: column;
-    align-items: stretch;
+    grid-template-columns: 1fr;
   }
-  .flow-arrow {
-    text-align: center;
-    padding-top: 0;
-    transform: rotate(90deg);
+  .flow::before {
+    left: 18px;
+    right: auto;
+    top: 54px;
+    bottom: 54px;
+    width: 1px;
+    height: auto;
+    background: linear-gradient(180deg, rgba(161, 88, 27, 0.15), rgba(161, 88, 27, 0.5), rgba(161, 88, 27, 0.15));
   }
   .flow-step {
-    flex: none;
+    padding-left: 4rem;
+  }
+  .flow-num {
+    position: absolute;
+    left: 18px;
+    top: 18px;
   }
 }
 @media (max-width: 480px) {
   .recipes { grid-template-columns: 1fr; }
+  .recipe-wide {
+    grid-column: auto;
+  }
   .cta-block { padding: 0.95rem 1rem; }
   .hero-actions { flex-direction: column; align-items: center; }
   .btn { width: 100%; max-width: 320px; text-align: center; }
