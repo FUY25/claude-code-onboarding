@@ -53,10 +53,10 @@ That's it. The script installs the `/learn` skill and opens your onboarding sess
 ```
 claude-code-onboarding/
   docs/              ← landing page (GitHub Pages)
+  planning/          ← curriculum spec + design system
+  reference/         ← official Claude Code docs (32 files)
   .claude/skills/    ← /learn skill + lessons
-  samples/           ← realistic practice files
-  prompts/           ← reusable prompt library
-  test.sh            ← smoke test
+  samples/           ← profession-adapted practice files
 ```
 
 ---

@@ -17,16 +17,16 @@ An interactive onboarding course for Claude Code, delivered as a `/learn` skill 
 - The curriculum is adaptive: profile + in-flow choices determine what each user sees. Framing adapts by `ai_experience` and `profession` across ALL tiers and applications, not just Tier 1.
 - All learning happens inside the skill and the pre-prepared repo.
 
-**Reference documentation:** Official Anthropic Claude Code docs are stored in `docs/reference/` (32 files, ~14,600 lines). These serve as:
+**Reference documentation:** Official Anthropic Claude Code docs are stored in `reference/` (32 files, ~14,600 lines). These serve as:
 - Source of truth for feature accuracy when writing lesson content
 - Reference material the skill can point users to for deeper reading on any feature
 - Cross-reference for keeping curriculum up-to-date as Claude Code evolves
 
-When a user asks about a feature during the course, the skill should check `docs/reference/` and provide accurate, up-to-date information rather than relying on stale lesson content.
+When a user asks about a feature during the course, the skill should check `reference/` and provide accurate, up-to-date information rather than relying on stale lesson content.
 
 **Created by:** Yuming Fu
 
-**Repo check:** Before the welcome message, the skill silently verifies the course repo is present (checks for `samples/`, `CLAUDE.md`, `docs/reference/`). If missing, it downloads the repo automatically. All teaching samples and materials must be in the repo before any lesson begins.
+**Repo check:** Before the welcome message, the skill silently verifies the course repo is present (checks for `samples/`, `CLAUDE.md`, `reference/`). If missing, it downloads the repo automatically. All teaching samples and materials must be in the repo before any lesson begins.
 
 ---
 
@@ -485,12 +485,12 @@ Each application follows the same 3-step structure:
 - Knowhow: What HTML is, what localhost means, how to open the file in a browser. Claude writes code that runs entirely on your computer — no server, no deployment, no account needed. The file IS the app.
 
 **A5: Financial Statement Analysis**
-- Sample: `TSLA-Q4-2025-Update.pdf` (Tesla Q4 & FY2025 earnings report — real document)
+- Sample: `samples/papers/TSLA-Q4-2025-Update.pdf` (Tesla Q4 & FY2025 earnings report — real document)
 - Try: "Read this earnings report. Give me: (1) overall revenue and margin performance vs. last year, (2) which business segment grew fastest and which shrank, (3) any anomalies or red flags worth digging into — unusual expense jumps, margin compression, cash flow vs. net income gaps. Summarize as if you're briefing a portfolio manager."
 - Knowhow: How to structure financial analysis prompts like an analyst — be specific about what to compare, what thresholds matter, and who the audience is. Claude reads PDFs directly. Always cross-check the numbers Claude cites against the source document.
 
 **A6: Academic Paper Reading**
-- Sample: `NIPS-2017-attention-is-all-you-need-Paper.pdf` ("Attention Is All You Need" — the Transformer paper)
+- Sample: `samples/papers/NIPS-2017-attention-is-all-you-need-Paper.pdf` ("Attention Is All You Need" — the Transformer paper)
 - Try: "Read this paper. Explain the key findings as if I'm a beginner with no CS background. What problem does it solve, why does it matter, and what are the limitations the authors admit?"
 - Knowhow: How to use Claude as a research translator — break down jargon, ask for analogies, request different levels of explanation. Follow-up with "now explain just the methodology" or "what would a critic say about this paper?"
 
@@ -654,8 +654,8 @@ After Tier 1, the user can:
 | A2 | CSV Analysis + Viz | `samples/data/sales.csv` | EXISTS |
 | A3 | HTML Slides | `samples/creative/presentation-outline.txt` | NEEDED |
 | A4 | Interactive Dashboard | `samples/data/dashboard-data.json` | NEEDED |
-| A5 | Financial Statement | `TSLA-Q4-2025-Update.pdf` | EXISTS |
-| A6 | Academic Paper | `NIPS-2017-attention-is-all-you-need-Paper.pdf` | EXISTS |
+| A5 | Financial Statement | `samples/papers/TSLA-Q4-2025-Update.pdf` | EXISTS |
+| A6 | Academic Paper | `samples/papers/NIPS-2017-attention-is-all-you-need-Paper.pdf` | EXISTS |
 | A7 | PRD Writing | `samples/pm/ceo-meeting-notes.txt`, `customer-feedback-call.txt`, `team-brainstorm.txt` | NEEDED |
 | A8 | Design Doc | `samples/tech/sample-prd.md` | NEEDED |
 | A9 | Develop Demo | `samples/creative/website-brief.txt` | EXISTS |
