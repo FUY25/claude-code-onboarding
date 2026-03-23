@@ -30,7 +30,8 @@
   .compare-table th { font-weight: 700; font-size: 14px; background: #fff; }
   .compare-table th:first-child, .compare-table td:first-child { color: #78716c; font-size: 12px; font-weight: 500; width: 26%; }
   .compare-table th:last-child { color: #b45309; }
-  .compare-table td:last-child { font-weight: 500; }
+  .compare-table td:last-child { font-weight: 500; color: #b45309; }
+  .compare-table td:last-child .check { color: #b45309; }
   .compare-table tr:last-child td { border-bottom: none; }
   .compare-table .check { color: #16a34a; font-weight: 600; }
   .compare-table .cross { color: #78716c; opacity: 0.6; }
@@ -55,11 +56,27 @@
   /* Footer */
   .footer { text-align: center; padding: 40px 20px; color: #a8a29e; font-size: 13px; border-top: 1px solid #d6d3cd; margin-top: 40px; }
 
-  /* Annotation style */
-  .annotation { font-size: 11px; color: #bb4444; font-style: italic; margin-top: 8px; }
-
   /* Code */
   .code-block { background: #f0eeea; padding: 12px 20px; border-radius: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; display: inline-block; margin: 12px 0; }
+
+  /* Language switch */
+  .lang-switch { text-align: right; margin-bottom: 8px; font-size: 13px; }
+  .lang-switch a { color: #78716c; text-decoration: none; font-weight: 500; }
+  .lang-switch a:hover { color: #1c1917; }
+  .lang-switch .active { color: #1c1917; font-weight: 600; }
+  .lang-switch .sep { color: #d6d3cd; margin: 0 6px; }
+
+  /* Tab switcher */
+  .install-switcher { margin-top: 28px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .install-tabs { display: flex; justify-content: center; gap: 0; margin-bottom: 0; }
+  .install-tab { padding: 10px 24px; font-size: 13px; font-weight: 500; color: #78716c; background: transparent; border: 1px solid #d6d3cd; border-bottom: none; border-radius: 6px 6px 0 0; cursor: pointer; font-family: inherit; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+  .install-tab:first-child { margin-right: -1px; }
+  .install-tab.active { background: #b45309; color: #fff; font-weight: 600; border-color: #b45309; }
+  .install-tab:not(.active):hover { color: #1c1917; background: #f5f4f1; }
+  .install-panel { display: none; background: #faf9f6; border: 1px solid #d6d3cd; border-left: 3px solid #b45309; border-radius: 0 0 6px 6px; padding: 16px 20px; text-align: left; }
+  .install-panel.active { display: block; }
+  .install-panel .code-copy { font-family: 'IBM Plex Mono', monospace; font-size: 13px; word-break: break-all; cursor: pointer; line-height: 1.6; padding: 4px 0; }
+  .install-panel .code-copy:hover { color: #b45309; }
 
   /* Hover states */
   .hero .cta:hover { opacity: 0.85; }
@@ -76,6 +93,8 @@
     .compare-table th, .compare-table td { padding: 8px 10px; font-size: 12px; }
     .compare-table th:first-child, .compare-table td:first-child { font-size: 11px; }
     .code-block { font-size: 12px; padding: 10px 14px; word-break: break-all; }
+    .install-panel .code-copy { font-size: 12px; }
+    .install-tab { padding: 8px 16px; font-size: 12px; }
   }
 
   /* Responsive — mobile */
@@ -85,6 +104,8 @@
     .hero h1 { font-size: 24px; }
     .hero .subtitle { font-size: 15px; }
     .hero .cta { display: block; margin: 6px 0; }
+    .install-panel .code-copy { font-size: 11px; }
+    .install-tab { padding: 8px 12px; font-size: 11px; }
     .flow-step { flex: 1 1 100%; min-width: unset; }
     .recipes { grid-template-columns: 1fr; }
     .compare-table th, .compare-table td { padding: 6px 8px; font-size: 11px; }
@@ -96,12 +117,27 @@
 <body>
 <div class="page">
 
+  <!-- LANGUAGE SWITCH -->
+  <div class="lang-switch">
+    <span class="active">EN</span><span class="sep">|</span><a href="#">中文</a>
+  </div>
+
   <!-- HERO -->
   <div class="hero">
     <h1>Claude Code for Everyone</h1>
     <div class="subtitle">Master Claude Code to automate your work and start building in 20 mins.</div>
-    <a class="cta primary" href="#">Start Learning (5 min)</a>
-    <a class="cta" href="#">Watch Demo</a>
+    <div class="install-switcher">
+      <div class="install-tabs">
+        <button class="install-tab active" onclick="switchTab(this, 'new')">Don't have Claude Code</button>
+        <button class="install-tab" onclick="switchTab(this, 'existing')">Already have it</button>
+      </div>
+      <div class="install-panel active" id="panel-new">
+        <div class="code-copy" onclick="copyCmd(this)">curl -fsSL https://fuy25.github.io/claude-code-onboarding/start.sh | sh</div>
+      </div>
+      <div class="install-panel" id="panel-existing">
+        <div class="code-copy" onclick="copyCmd(this)">git clone https://github.com/FUY25/claude-code-onboarding.git && cd claude-code-onboarding && claude</div>
+      </div>
+    </div>
   </div>
 
   <!-- USER FLOW -->
@@ -185,7 +221,6 @@
         </tr>
       </tbody>
     </table>
-    <p class="annotation">OpenClaw: Kaspersky found 512 vulnerabilities. SecurityScorecard found 135K+ instances exposed to the public internet. Microsoft recommends against running it on standard workstations.</p>
   </div>
 
   <!-- RECIPES / SAMPLE PROJECTS -->
@@ -235,8 +270,18 @@
   <div class="hero" style="border-style: solid; border-color: #d6d3cd;">
     <h1 style="font-size: 24px;">Ready to try?</h1>
     <div class="subtitle" style="margin-bottom: 0;">Open your Terminal and paste this:</div>
-    <div class="code-block">curl -fsSL https://fuy25.github.io/claude-code-onboarding/start.sh | sh</div>
-    <p class="annotation">This downloads your learning materials and opens your first lesson.</p>
+    <div class="install-switcher">
+      <div class="install-tabs">
+        <button class="install-tab active" onclick="switchTab(this, 'new2')">Don't have Claude Code</button>
+        <button class="install-tab" onclick="switchTab(this, 'existing2')">Already have it</button>
+      </div>
+      <div class="install-panel active" id="panel-new2">
+        <div class="code-copy" onclick="copyCmd(this)">curl -fsSL https://fuy25.github.io/claude-code-onboarding/start.sh | sh</div>
+      </div>
+      <div class="install-panel" id="panel-existing2">
+        <div class="code-copy" onclick="copyCmd(this)">git clone https://github.com/FUY25/claude-code-onboarding.git && cd claude-code-onboarding && claude</div>
+      </div>
+    </div>
   </div>
 
   <div class="footer">
@@ -245,5 +290,24 @@
   </div>
 
 </div>
+<script>
+function switchTab(btn, panelId) {
+  var tabs = btn.parentElement;
+  var switcher = tabs.parentElement;
+  var btns = tabs.querySelectorAll('.install-tab');
+  var panels = switcher.querySelectorAll('.install-panel');
+  for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
+  for (var i = 0; i < panels.length; i++) panels[i].classList.remove('active');
+  btn.classList.add('active');
+  document.getElementById('panel-' + panelId).classList.add('active');
+}
+function copyCmd(el) {
+  navigator.clipboard.writeText(el.textContent);
+  var orig = el.textContent;
+  el.textContent = 'Copied!';
+  el.style.color = '#16a34a';
+  setTimeout(function() { el.textContent = orig; el.style.color = ''; }, 1500);
+}
+</script>
 </body>
 </html>
