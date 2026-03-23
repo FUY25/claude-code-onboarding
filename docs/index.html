@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Claude Code Onboarding — From Zero to Building Real Things</title>
   <meta name="description" content="Interactive onboarding for Claude Code. No coding experience required. Go from zero to building real things in 20 minutes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,13 +19,62 @@
 
 <!-- HERO -->
 <section class="hero">
-  <h1 id="hero-h1">Claude Code for Everyone</h1>
-  <p class="subtitle" id="hero-sub">You don't need to be a developer. You just need an idea.</p>
-  <p class="subtitle-cn" id="hero-cn">你不需要是程序员，你只需要一个想法。</p>
+  <div class="hero-shell">
+    <div class="hero-copy">
+      <p class="hero-kicker" id="hero-kicker">One command. Real output. No coding background required.</p>
+      <h1 id="hero-h1">Claude Code turns plain-English ideas into working projects.</h1>
+      <p class="subtitle" id="hero-sub">Ask for a report, a website, or a workflow. Claude Code handles the files, commands, and edits. This page gets you to a first useful result in 20 minutes.</p>
+      <p class="subtitle-cn" id="hero-cn">想法用自然语言说出来就行。Claude Code 会处理文件、命令和修改。这个页面会带你在 20 分钟内做出第一个有用成果。</p>
 
-  <div class="hero-actions">
-    <a class="btn btn-primary" href="#install" id="hero-cta">Start Learning (5 min)</a>
-    <a class="btn btn-secondary" href="#how" id="hero-cta2">See How It Works</a>
+      <div class="hero-meta">
+        <div class="hero-stat">
+          <span class="hero-stat-value">20 min</span>
+          <span class="hero-stat-label">to first useful result</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-value">1 command</span>
+          <span class="hero-stat-label">to start the lesson</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-value">0 coding</span>
+          <span class="hero-stat-label">required up front</span>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#install" id="hero-cta">Start Learning (5 min)</a>
+        <a class="btn btn-secondary" href="#how" id="hero-cta2">See How It Works</a>
+      </div>
+    </div>
+
+    <aside class="hero-proof" aria-label="Example Claude Code session">
+      <div class="proof-window">
+        <div class="proof-chrome" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <p class="proof-label">A typical first win</p>
+        <p class="proof-request">“Turn my meeting notes into a clean client update.”</p>
+        <div class="proof-flow">
+          <div class="proof-step">
+            <span class="proof-step-name">Input</span>
+            <span class="proof-step-value">messy notes.md</span>
+          </div>
+          <div class="proof-step">
+            <span class="proof-step-name">Claude Code</span>
+            <span class="proof-step-value">rewrites, formats, saves</span>
+          </div>
+          <div class="proof-step">
+            <span class="proof-step-name">Output</span>
+            <span class="proof-step-value">client-update.md</span>
+          </div>
+        </div>
+        <ul class="proof-list">
+          <li>Writes the file directly</li>
+          <li>Keeps your tone consistent</li>
+          <li>Leaves you with something usable, not a chat transcript</li>
+        </ul>
+      </div>
+    </aside>
   </div>
 </section>
 
@@ -158,9 +210,10 @@
   let lang = 'en';
 
   const EN = {
-    heroH1: 'Claude Code for Everyone',
-    heroSub: 'You don\'t need to be a developer. You just need an idea.',
-    heroCn: '你不需要是程序员，你只需要一个想法。',
+    heroKicker: 'One command. Real output. No coding background required.',
+    heroH1: 'Claude Code turns plain-English ideas into working projects.',
+    heroSub: 'Ask for a report, a website, or a workflow. Claude Code handles the files, commands, and edits. This page gets you to a first useful result in 20 minutes.',
+    heroCn: '想法用自然语言说出来就行。Claude Code 会处理文件、命令和修改。这个页面会带你在 20 分钟内做出第一个有用成果。',
     heroCta: 'Start Learning (5 min)',
     heroCta2: 'See How It Works',
     ctaLabel: 'Terminal',
@@ -180,9 +233,10 @@
   };
 
   const CN = {
-    heroH1: 'Claude Code，人人可用',
-    heroSub: '你不需要是程序员，你只需要一个想法。',
-    heroCn: 'You don\'t need to be a developer. You just need an idea.',
+    heroKicker: '一条命令，拿到真实成果，不需要编程背景。',
+    heroH1: 'Claude Code 能把自然语言想法变成真正可用的项目。',
+    heroSub: '无论是报告、网站还是自动化流程，你只要说需求。Claude Code 会处理文件、命令和修改，带你在 20 分钟内拿到第一个成果。',
+    heroCn: 'You can describe the work in plain language. Claude Code handles the files, commands, and edits for you.',
     heroCta: '开始学习（5 分钟）',
     heroCta2: '看看怎么用',
     ctaLabel: '终端',
@@ -205,6 +259,7 @@
     lang = lang === 'en' ? 'cn' : 'en';
     const t = lang === 'en' ? EN : CN;
     document.querySelector('.nav-lang').textContent = lang === 'en' ? '中文' : 'English';
+    document.getElementById('hero-kicker').textContent = t.heroKicker;
     document.getElementById('hero-h1').textContent = t.heroH1;
     document.getElementById('hero-sub').textContent = t.heroSub;
     document.getElementById('hero-cn').textContent = t.heroCn;
