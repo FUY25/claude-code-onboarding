@@ -1,0 +1,26 @@
+Website Brief — Personal Portfolio
+For: Alex Chen, freelance UX designer
+
+Purpose
+Show potential clients my work and make it easy to contact me. I want it to feel clean and professional, not flashy.
+
+Sections I need
+1. Header with my name and a one-liner about what I do
+   ("UX Designer who makes complex things simple")
+2. About me — 2-3 sentences, casual tone
+   I've been doing UX for 7 years. Previously at Dropbox and a couple of startups. Now freelance, focused on fintech and productivity apps.
+3. Selected work — 3 projects (just titles and one-line descriptions for now)
+   - Dropbox Mobile Redesign: simplified the file browsing experience for 50M+ users
+   - Finstack Onboarding: reduced signup drop-off by 40% through progressive disclosure
+   - Notion Mobile: contributed to the mobile navigation overhaul in 2023
+4. Contact section
+   Email: alex@alexchenux.com
+   LinkedIn: linkedin.com/in/alexchenux
+   Available for new projects starting September 2026
+
+Style
+- Clean, minimal
+- White background, dark text
+- One accent colour: a muted blue (#4A7FA5)
+- No animations, no parallax, nothing that could slow it down
+- Should look good on mobile too

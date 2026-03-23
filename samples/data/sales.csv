@@ -1,0 +1,19 @@
+month,product,units_sold,revenue,returns
+Jan,Widget A,142,4260,8
+Jan,Widget B,89,3560,3
+Jan,Widget C,201,6030,12
+Feb,Widget A,156,4680,5
+Feb,Widget B,94,3760,4
+Feb,Widget C,188,5640,9
+Mar,Widget A,178,5340,6
+Mar,Widget B,102,4080,2
+Mar,Widget C,195,5850,11
+Apr,Widget A,193,5790,7
+Apr,Widget B,115,4600,3
+Apr,Widget C,210,6300,14
+May,Widget A,201,6030,9
+May,Widget B,121,4840,5
+May,Widget C,198,5940,10
+Jun,Widget A,187,5610,8
+Jun,Widget B,118,4720,4
+Jun,Widget C,223,6690,13
