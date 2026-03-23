@@ -4,7 +4,7 @@ set -euo pipefail
 # Claude Code Onboarding — Bootstrap Script
 # Usage: curl -fsSL https://anthropics.github.io/claude-code-onboarding/start.sh | sh
 
-REPO_URL="https://github.com/anthropics/claude-code-onboarding"
+REPO_URL="https://github.com/FUY25/claude-code-onboarding"
 ZIP_URL="${REPO_URL}/archive/refs/heads/main.zip"
 INSTALL_DIR="${HOME}/claude-code-onboarding"
 

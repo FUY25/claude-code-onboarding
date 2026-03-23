@@ -21,7 +21,7 @@
 ## Quick Start / 快速开始
 
 ```sh
-curl -fsSL https://anthropics.github.io/claude-code-onboarding/start.sh | sh
+curl -fsSL https://fuy25.github.io/claude-code-onboarding/start.sh | sh
 ```
 
 That's it. The script installs the `/learn` skill and opens your onboarding session.
