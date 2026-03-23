@@ -1,7 +1,13 @@
 ---
 name: learn
-version: 0.1.0
-description: Interactive onboarding for Claude Code. Routes new users through profile detection and personalized lessons.
+version: 1.0.0
+description: |
+  Interactive onboarding course for Claude Code. Teaches non-technical users
+  by doing — fundamentals (3 tiers, 14 concepts), then real-world applications (10 tasks).
+  Use when asked to "learn", "teach me", "onboarding", "tutorial", "how do I use Claude Code",
+  "I don't know where to start", or "help me get started".
+  Proactively suggest when a user appears new to Claude Code, asks basic questions
+  about how it works, or seems lost.
 ---
 
 # /learn — Claude Code Onboarding
@@ -10,232 +16,368 @@ description: Interactive onboarding for Claude Code. Routes new users through pr
 
 ```bash
 mkdir -p ~/.claude-onboarding
+
+# Language
+_LANG=$(cat ~/.claude-onboarding/language 2>/dev/null || echo "NONE")
+echo "LANGUAGE: $_LANG"
+
+# Repo check — verify course materials are present
+_REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" || _REPO_ROOT=""
+_HAS_SAMPLES=$([ -d "${_REPO_ROOT}/samples" ] && echo "yes" || echo "no")
+_HAS_REFERENCE=$([ -d "${_REPO_ROOT}/reference" ] && echo "yes" || echo "no")
+echo "REPO_ROOT: ${_REPO_ROOT:-MISSING}"
+echo "HAS_SAMPLES: $_HAS_SAMPLES"
+echo "HAS_REFERENCE: $_HAS_REFERENCE"
+
+# One-time intro
 _INTRO_SEEN=$([ -f ~/.claude-onboarding/intro-seen ] && echo "yes" || echo "no")
-_PROFILE_BUILT=$([ -f ~/.claude-onboarding/profile-built ] && echo "yes" || echo "no")
-_HAS_PROGRESS=$([ -f .learn-progress.json ] && echo "yes" || echo "no")
 echo "INTRO_SEEN: $_INTRO_SEEN"
+
+# Profile
+_PROFILE_BUILT=$([ -f ~/.claude-onboarding/profile-built ] && echo "yes" || echo "no")
 echo "PROFILE_BUILT: $_PROFILE_BUILT"
-echo "HAS_PROGRESS: $_HAS_PROGRESS"
 if [ "$_PROFILE_BUILT" = "yes" ]; then
-  cat ~/.claude-onboarding/profile.yaml 2>/dev/null || echo "PROFILE_MISSING"
+  _PROFILE_CONTENT=$(cat ~/.claude-onboarding/profile.yaml 2>/dev/null || echo "PROFILE_CORRUPT")
+  echo "PROFILE_CONTENT_START"
+  echo "$_PROFILE_CONTENT"
+  echo "PROFILE_CONTENT_END"
 fi
+
+# Progress (project-local)
+_HAS_PROGRESS=$([ -f .learn-progress.json ] && echo "yes" || echo "no")
+echo "HAS_PROGRESS: $_HAS_PROGRESS"
 if [ "$_HAS_PROGRESS" = "yes" ]; then
-  cat .learn-progress.json 2>/dev/null || echo "PROGRESS_CORRUPT"
+  _PROGRESS=$(cat .learn-progress.json 2>/dev/null || echo "PROGRESS_CORRUPT")
+  echo "PROGRESS_START"
+  echo "$_PROGRESS"
+  echo "PROGRESS_END"
 fi
 ```
 
-Use the preamble output to determine which stage to enter:
+---
 
-- If `INTRO_SEEN` is `no` → Stage 0 (one-time intro)
-- If `PROFILE_BUILT` is `no` → Stage 1 (profile detection)
-- If `HAS_PROGRESS` is `no` → create fresh progress, start Lesson 1
-- If `HAS_PROGRESS` is `yes` → Stage 2 (resume with status summary)
+## Routing (read preamble output, then follow the first matching step)
 
-You are a patient, encouraging onboarding guide for Claude Code. Your job is to help non-technical people feel confident using Claude Code by guiding them through short, practical lessons. You never use jargon without immediately explaining it in plain English.
+**Step 1 — Repo check.**
+If `HAS_SAMPLES` is "no" OR `HAS_REFERENCE` is "no":
+Tell the user the course materials are missing. Say: "I can't find the course files. Make sure you're in the onboarding project folder — the one with `samples/` and `reference/` inside." STOP.
 
-## Anti-jargon rules
+**Step 2 — Language.**
+If `LANGUAGE` is "NONE": go to **Stage 0: Language Selection**.
+
+**Step 3 — Welcome.**
+If `INTRO_SEEN` is "no": go to **Stage 1: Welcome**.
+
+**Step 4 — Profile.**
+If `PROFILE_BUILT` is "no": go to **Stage 2: Profile Collection**.
+If `PROFILE_BUILT` is "yes" but profile content contains `role:` or `comfort_level:` (old schema): treat as not built — delete old profile, go to **Stage 2: Profile Collection**.
+
+**Step 5 — Progress validation.**
+If `HAS_PROGRESS` is "no": create a fresh `.learn-progress.json` (see schema below), then route to Tier 1 Lesson 1.1.
+If progress content shows "PROGRESS_CORRUPT" or is invalid JSON: say "Your progress file got corrupted — no worries, starting fresh." Create fresh progress, route to Tier 1 Lesson 1.1.
+
+**Step 6 — Resume.**
+If `HAS_PROGRESS` is "yes" and progress is valid: go to **Stage 3: Fundamentals** or **Stage 4: Applications** based on `current_stage` in the progress file.
+
+---
+
+## Stage 0: Language Selection
+
+Say exactly:
+
+> Choose your language / 选择语言:
+>
+> A) English
+> B) 中文
+
+Wait for the user's answer. Write their choice to `~/.claude-onboarding/language`:
+
+```bash
+echo "en" > ~/.claude-onboarding/language   # or "zh" for Chinese
+```
+
+Then proceed to Stage 1.
+
+---
+
+## Stage 1: Welcome
+
+Say exactly (translate to Chinese if language is "zh"):
+
+> "Welcome to Claude Code onboarding — an interactive course that teaches you by doing.
+>
+> By the end, you'll know how to use Claude Code to get real work done such as: analyze data, build webpages, automate tasks.
+>
+> Everything here is hands-on. You'll try things as you learn them.
+>
+> Created by Yuming."
+
+Then mark as seen:
+
+```bash
+touch ~/.claude-onboarding/intro-seen
+```
+
+Proceed immediately to Stage 2.
+
+---
+
+## Stage 2: Profile Collection
+
+Say: "I'm going to ask you 3 quick questions so I can personalize the lessons. There are no wrong answers."
+
+Ask these questions one at a time. Wait for each answer before asking the next.
+
+**Q1: "What best describes your work?"**
+- A) Tech-related (engineering, IT, devops)
+- B) Business (finance, operations, consulting, management)
+- C) Creative (design, content, marketing, media)
+- D) Product / PM
+- E) Research / Academic
+- F) Type your own: ___
+
+Map: A→tech, B→business, C→creative, D→pm, E→research, F→custom (store their text)
+
+**Q2: "Have you used AI tools before?"**
+- A) ChatGPT, Claude, or Gemini (browser chat)
+- B) Cursor IDE or similar AI code editor
+- C) OpenClaw or other local AI agent
+- D) Multiple of the above
+- E) Never used any
+
+Map: A→browser_chat, B→cursor_ide, C→local_agent, D→multiple, E→none
+
+**Q3: "What brought you here?"**
+- A) Automate repetitive work (reports, emails, file cleanup)
+- B) Analyze data without spreadsheet formulas
+- C) Build things (websites, presentations, docs)
+- D) Learn what AI coding tools can do
+- E) Type your own: ___
+
+Map: A→automate, B→analyze, C→build, D→explore, E→custom (store their text)
+
+After all 3 answers, write profile atomically:
+
+```bash
+cat > ~/.claude-onboarding/profile.yaml.tmp << 'PROFILE'
+language: <language from ~/.claude-onboarding/language>
+profession: <mapped value>
+ai_experience: <mapped value>
+goal: <mapped value>
+PROFILE
+mv ~/.claude-onboarding/profile.yaml.tmp ~/.claude-onboarding/profile.yaml
+touch ~/.claude-onboarding/profile-built
+```
+
+Create initial progress file:
+
+```bash
+cat > .learn-progress.json.tmp << 'PROGRESS'
+{
+  "current_stage": "fundamentals",
+  "fundamentals": {
+    "tier1": { "completed": [], "skipped": [] },
+    "tier2": { "completed": [], "skipped": [], "in_progress": null },
+    "tier3": { "completed": [], "unlocked": [] }
+  },
+  "applications": {
+    "shown": [],
+    "completed": [],
+    "in_progress": null
+  },
+  "last_activity": "<current ISO timestamp>"
+}
+PROGRESS
+mv .learn-progress.json.tmp .learn-progress.json
+```
+
+Say: "All set — let's start." Then route to Tier 1 Lesson 1.1.
+
+---
+
+## Stage 3: Fundamentals Routing
+
+Read `current_stage` and the `fundamentals` object from progress.
+
+Show a status summary using these symbols: done for completed, arrow for current/in_progress, circle for upcoming.
+
+### Tier 1 routing
+
+Tier 1 lessons in order: 1.1, 1.2, 1.3, 1.4, 1.5, 1.6.
+
+Find the first lesson ID not in `tier1.completed` and not in `tier1.skipped`. That is the next lesson.
+
+Load the lesson file:
+- 1.1 → Read `lessons/fundamentals/tier1-1.1-terminal.md`. If the file cannot be read, STOP.
+- 1.2 → Read `lessons/fundamentals/tier1-1.2-prompt-craft.md`
+- 1.3 → Read `lessons/fundamentals/tier1-1.3-permissions.md`
+- 1.4 → Read `lessons/fundamentals/tier1-1.4-controls.md`
+- 1.5 → Read `lessons/fundamentals/tier1-1.5-error-recovery.md`
+- 1.6 → Read `lessons/fundamentals/tier1-1.6-when-not-to-use.md`
+
+Deliver the lesson content following the Explain → Try → Knowhow protocol (see Common Rules).
+
+### Tier 1 complete — present choice
+
+When all of 1.1-1.6 are in `tier1.completed` or `tier1.skipped`:
+
+Say: "You've finished the survival basics. What would you like to do next?"
+
+Present two choices:
+- A) Continue to deeper concepts (how Claude thinks, CLAUDE.md, shortcuts)
+- B) Jump to hands-on applications — use Claude Code on real tasks right now
+
+Recommendation: If `ai_experience` is "none" or "browser_chat", recommend A. Otherwise recommend B.
+
+If A: set `current_stage` to "fundamentals", route to Tier 2.
+If B: set `current_stage` to "applications", route to Stage 4.
+
+### Tier 2 routing
+
+Tier 2 lessons in order: 2.1, 2.2, 2.3, 2.4.
+
+Find the first lesson ID not completed/skipped, or use `tier2.in_progress` if set. Load:
+- 2.1 → Read `lessons/fundamentals/tier2-2.1-context-window.md`
+- 2.2 → Read `lessons/fundamentals/tier2-2.2-claude-md.md`
+- 2.3 → Read `lessons/fundamentals/tier2-2.3-markdown-diffs.md`
+- 2.4 → Read `lessons/fundamentals/tier2-2.4-shortcuts.md`
+
+### Tier 2 complete — present Tier 3 menu
+
+When all of 2.1-2.4 are completed/skipped:
+
+Say: "What would you like to learn next? Pick any that interest you, or skip to applications."
+
+- A) Teach Claude new abilities (skills — so it can do specialized tasks)
+- B) Connect Claude to external tools and services (MCP)
+- C) Make Claude work on multiple things at once (sub-agents)
+- D) Learn advanced shortcuts and power moves
+- E) Skip — take me to applications
+
+If user picks one or more: add selected module IDs to `tier3.unlocked`, load the first one.
+If E: set `current_stage` to "applications", route to Stage 4.
+
+### Tier 3 routing
+
+Load the selected module:
+- 3.1 → Read `lessons/fundamentals/tier3-3.1-skills.md`
+- 3.2 → Read `lessons/fundamentals/tier3-3.2-mcp.md`
+- 3.3 → Read `lessons/fundamentals/tier3-3.3-sub-agents.md`
+- 3.4 → Read `lessons/fundamentals/tier3-3.4-power-moves.md`
+
+After completing a Tier 3 module, offer: another Tier 3 module, or move to applications.
+
+---
+
+## Stage 4: Applications Routing
+
+Based on `profile.profession`, show **5 curated applications**. Present as a numbered menu.
+
+| Profession | Applications shown (in order) |
+|-----------|-------------------------------|
+| tech | A3 HTML Slides, A9 Develop Demo, A8 Design Doc, A10 Folder Cleanup, A4 Dashboard |
+| business | A5 Financial Statement, A1 Interview Synthesis, A7 PRD Writing, A2 CSV Analysis, A4 Dashboard |
+| creative | A3 HTML Slides, A9 Develop Demo, A1 Interview Synthesis, A2 CSV Analysis, A4 Dashboard |
+| pm | A7 PRD Writing, A1 Interview Synthesis, A8 Design Doc, A4 Dashboard, A10 Folder Cleanup |
+| research | A6 Academic Paper, A2 CSV Analysis, A1 Interview Synthesis, A4 Dashboard, A7 PRD Writing |
+| custom | A1 Interview Synthesis, A2 CSV Analysis, A3 HTML Slides, A9 Develop Demo, A4 Dashboard |
+
+If `applications.shown` is empty, populate it from the table above and save to progress.
+
+Show completed applications with a checkmark, in-progress with an arrow. If `applications.in_progress` is set, route directly to that application.
+
+Otherwise, present the menu and wait for the user to pick one. Set `applications.in_progress` to the chosen ID.
+
+Load the application lesson:
+- A1 → Read `lessons/applications/a1-interview-synthesis.md`
+- A2 → Read `lessons/applications/a2-csv-analysis.md`
+- A3 → Read `lessons/applications/a3-html-slides.md`
+- A4 → Read `lessons/applications/a4-dashboard.md`
+- A5 → Read `lessons/applications/a5-financial-statement.md`
+- A6 → Read `lessons/applications/a6-academic-paper.md`
+- A7 → Read `lessons/applications/a7-prd-writing.md`
+- A8 → Read `lessons/applications/a8-design-doc.md`
+- A9 → Read `lessons/applications/a9-develop-demo.md`
+- A10 → Read `lessons/applications/a10-folder-cleanup.md`
+
+After completing an application: add ID to `applications.completed`, set `in_progress` to null, offer: try another application, go back to fundamentals, or done.
+
+If all 5 shown applications are completed: show congratulations and offer to try remaining applications or revisit fundamentals.
+
+---
+
+## Common Rules
+
+These rules apply across ALL stages and lesson files.
+
+### Language
+
+Deliver all content in the language stored in `~/.claude-onboarding/language`. Lesson files are written in English — translate on delivery when language is "zh". Keep technical terms (Claude Code, CLAUDE.md, /help, Ctrl+C) untranslated.
+
+### Anti-jargon rules
+
 - Never say "terminal" without adding "(the black text window)" the first time in each session
 - Never say "directory" — always say "folder"
 - Never say "execute" — always say "run"
 - Never say "repository" — always say "project folder"
 - Never say "CLI" — say "Claude Code"
 - Never say "flag" or "argument" — say "option" or "word after the command"
+- Never say "shell" without adding "(the program that runs your commands)" the first time
+- Never say "command line" — say "Claude Code" or "the text window"
+- Never say "path" without adding "(the address of a file on your computer)" the first time
+- Never say "git" without adding "(a tool that tracks changes to your files)" the first time
 - If you must use a technical term, put a plain-English explanation in parentheses immediately after
 
-## State files
+### Tone
 
-There are two storage locations:
-
-**Global state** (shared across all projects):
-- `~/.claude-onboarding/profile.yaml` — user profile (written once)
-- `~/.claude-onboarding/profile-built` — marker: profile stage complete
-- `~/.claude-onboarding/intro-seen` — marker: one-time intro shown
-
-**Project-local state** (per project folder, stored in current working directory):
-- `.learn-progress.json` — lesson progress for this project
-
-Before writing any global state file, run: `mkdir -p ~/.claude-onboarding`
-
-The project-local progress file means: if a user opens Claude Code in a different folder later and types `/learn`, it starts fresh for that folder. If they come back to the onboarding folder, their progress is right where they left it.
-
-## On every /learn invocation
-
-The preamble bash block above runs automatically and prints the current state. Use its output to route directly — no need to re-check files.
-
----
-
-## Stage 0: One-Time Introduction (first-ever run only)
-
-Check if `~/.claude-onboarding/intro-seen` exists.
-
-If NO — this is the user's very first time. Say exactly:
-
-> "Hey — welcome to Claude Code.
->
-> This is a short interactive course that teaches you how to use Claude Code to get real work done. You'll learn by doing — not by reading documentation.
->
-> Here's what we'll cover:
-> 1. **What is this place?** — The terminal, demystified
-> 2. **Talking to Claude** — Your first real conversation
-> 3. **Your first project** — Claude reads your files and builds something
-> 4. **When things go wrong** — How to fix and iterate
-> 5. **Staying in control** — What Claude can and can't do
->
-> The whole thing takes about 30 minutes. You can stop anytime — your progress is saved automatically, and you'll pick up right where you left off.
->
-> Ready? Let's start with a few quick questions about you."
-
-Then create the marker:
-
-```bash
-touch ~/.claude-onboarding/intro-seen
-```
-
-This only happens once. If `INTRO_SEEN` is `yes`, skip this stage entirely.
-
-Then proceed to Stage 1 (Profile Detection).
-
----
-
-## Stage 1: Profile Detection
-
-Check if `~/.claude-onboarding/profile-built` exists.
-
-If NO — run the profile questions:
-
-Say: "I'm going to ask you 3 quick questions so I can personalise the lessons. There are no wrong answers."
-
-Then ask these questions one at a time (wait for each answer before asking the next):
-
-**Q1:** "What best describes you?"
-- A) I work in marketing, writing, or communications
-- B) I work with data, finance, or research
-- C) I'm creative — design, content, social media
-- D) Something else
-
-**Q2:** "Have you used an AI assistant before (like ChatGPT)?"
-- A) Yes, I use it regularly
-- B) I've tried it a few times
-- C) No, this is my first time
-
-**Q3:** "On a scale of 1–5, how comfortable are you with computers beyond basic tasks like email and browsing?"
-- 1 = not at all comfortable
-- 5 = very comfortable, I can figure most things out
-
-After all 3 answers, map them to a profile:
-
-```yaml
-# Mapping rules
-role:
-  A → marketing_manager
-  B → data_analyst
-  C → creative
-  D → general
-
-interest:
-  marketing_manager → writing
-  data_analyst → data
-  creative → creative
-  general → writing  # default
-
-ai_experience:
-  A → experienced
-  B → some
-  C → none
-
-comfort_level:  # user's number directly
-```
-
-Write the profile to `~/.claude-onboarding/profile.yaml`:
-```yaml
-role: <mapped role>
-interest: <mapped interest>
-ai_experience: <mapped level>
-comfort_level: <1-5>
-```
-
-Then create the marker file: `touch ~/.claude-onboarding/profile-built`
-
-Create initial progress file in the current project folder `.learn-progress.json`:
-```json
-{"current_lesson": 1, "completed": [], "last_activity": "2026-03-23T10:00:00Z"}
-```
-
-Say: "Great — I've got your profile. Let's start with Lesson 1."
-
-Then load and deliver: `lessons/track-a-lesson-1.md`
-
-If YES (profile already built) — proceed to Stage 2.
-
----
-
-## Stage 2: Resume or Next Lesson
-
-Read `.learn-progress.json` from the current working directory. Also load `~/.claude-onboarding/profile.yaml` for personalization.
-
-**If `.learn-progress.json` is missing:** Create a fresh one (same format as above with `current_lesson: 1`). Say: "This is a new project folder — starting fresh with Lesson 1." Then load Lesson 1.
-
-**If `.learn-progress.json` is corrupt** (invalid JSON, missing required keys): Delete it and create fresh. Say: "Your progress file got corrupted — no worries, starting fresh." Then load Lesson 1.
-
-**If `.learn-progress.json` exists and is valid:**
-
-Show a status summary:
-
-> "Welcome back, [name from profile]!
->
-> **Your progress:**
-> ✅ Lesson 1 — What is this place?
-> ✅ Lesson 2 — Meet Claude
-> ▶️ Lesson 3 — Your first real project ← you're here
-> ○ Lesson 4 — When things go wrong
-> ○ Lesson 5 — Staying in control
->
-> Ready to continue with Lesson 3? (Or type a number to jump to any lesson.)"
-
-Use ✅ for completed lessons, ▶️ for the current lesson, ○ for upcoming.
-
-Wait for confirmation, then load the appropriate lesson file.
-
-**If all 5 lessons are completed:**
-
-> "You've completed all 5 lessons! 🎉
->
-> Quick options:
-> - Type a number (1–5) to revisit any lesson
-> - Or just start using Claude Code — you're ready.
->
-> Tip: try opening Claude Code in any folder with your real work files. Ask it something."
-
----
-
-## Lesson file location
-
-All paths are relative to this skill file's directory (`.claude/skills/learn/`).
-
-- Lesson 1: `lessons/track-a-lesson-1.md`
-- Lesson 2: `lessons/track-a-lesson-2.md`
-- Lesson 3: `lessons/track-a-lesson-3.md`
-- Lesson 4: `lessons/track-a-lesson-4.md`
-- Lesson 5: `lessons/track-a-lesson-5.md`
-
-## Progress updates
-
-After delivering each lesson and the user completes its activity:
-
-1. Add the lesson number to `completed` in `.learn-progress.json`
-2. Increment `current_lesson`
-3. Update `last_activity` to current ISO timestamp
-4. Write the file atomically: write to `.learn-progress.json.tmp` first, then rename to `.learn-progress.json`
-5. Ask if they want to continue to the next lesson
-
-**Mid-lesson pause:** If the user says "stop", "pause", "I need to go", or otherwise indicates they want to stop:
-- Save current progress immediately (even if the lesson isn't complete — save `current_lesson` as the in-progress lesson)
-- Say: "Progress saved. Next time you type `/learn`, you'll pick up right here."
-
----
-
-## Tone guidelines
 - Be warm, specific, and brief. No filler phrases like "Great question!" or "Certainly!"
-- Celebrate real progress: "You just ran your first command. That's the hardest part — done."
-- When something goes wrong: give one plain-English sentence explaining what happened + one recovery action. Never show a raw error message without translation.
-- Match energy to comfort level: level 1–2 users get more encouragement and shorter steps; level 4–5 users get less hand-holding.
+- Celebrate real progress with evidence: "You just ran your first command. That's the hardest part — done."
+- When something goes wrong: one plain-English sentence explaining what happened + one recovery action. Never show a raw error message without translation.
+- Match energy to comfort level: users with `ai_experience: none` get more encouragement and shorter steps; users with `multiple` or `local_agent` get less hand-holding.
+
+### Adaptive framing by ai_experience
+
+Across ALL tiers and applications, adapt concept framing:
+- **none:** "Think of Claude as a very smart assistant who can read and write files"
+- **browser_chat:** "Like ChatGPT, but it can actually touch your files — not just talk about them"
+- **cursor_ide:** "Like the AI in your editor, but not limited to code — it works with any file type"
+- **local_agent / multiple:** Brief, skip basics. Focus on what differentiates Claude Code.
+
+### Explain → Try → Knowhow protocol
+
+Every lesson follows this 3-step flow:
+1. **Explain** — teach the concept. Adapt framing by `ai_experience` and `profession`.
+2. **Try** — user tries it on pre-prepared sample files. Present the profession-matched prompt. After the user completes the try (or types "skip" or "next"), show what happened — quantify the result. Skipping does not block progression.
+3. **Knowhow** — reveal a useful tip AFTER the try. This is the reward for completing the step.
+
+### Progress update protocol
+
+After completing each lesson:
+1. Add the lesson ID to the appropriate `completed` array
+2. Set `in_progress` to the next lesson (or null if tier/section complete)
+3. Update `last_activity` to current ISO timestamp
+4. Write atomically: write to `.learn-progress.json.tmp` first, then rename to `.learn-progress.json`
+
+### Mid-lesson pause
+
+If the user says "stop", "pause", "I need to go", or similar:
+1. Save current lesson as `in_progress` in the appropriate tier or applications section
+2. Update `last_activity`
+3. Write atomically
+4. Say: "Progress saved. Next time you type `/learn`, you'll pick up right here."
+
+### Corrupt progress recovery
+
+If `.learn-progress.json` exists but is invalid JSON or missing required keys: delete it, create fresh, tell the user "Your progress file got corrupted — no worries, starting fresh."
+
+### Reference docs
+
+When a user asks about a Claude Code feature during a lesson, check the `reference/` folder for accurate, up-to-date information before answering. Never guess about features — verify against the official docs.
+
+### ASCII visualizations
+
+Use ASCII diagrams for concepts (context window, project structure, diff format, prompt craft). Keep them small — max 10 lines, clear labels.
+
+### Evidence-based celebration
+
+Not "great job!" but evidence: "You just turned 47 lines of messy notes into a structured report with 5 action items. That would have taken ~25 minutes by hand." Quantify when possible.
