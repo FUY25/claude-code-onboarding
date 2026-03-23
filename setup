@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Claude Code Onboarding — Setup
+# Copies the /learn skill into ~/.claude/skills/ so it's available globally.
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+SKILL_SRC="${SCRIPT_DIR}/.claude/skills/learn"
+SKILL_DST="${HOME}/.claude/skills/learn"
+
+green() { printf '\033[1;32m%s\033[0m\n' "$1"; }
+
+if [ ! -d "${SKILL_SRC}" ]; then
+  echo "Error: skill source not found at ${SKILL_SRC}"
+  exit 1
+fi
+
+if [ -d "${SKILL_DST}" ]; then
+  rm -rf "${SKILL_DST}"
+fi
+
+mkdir -p "${HOME}/.claude/skills"
+cp -r "${SKILL_SRC}" "${SKILL_DST}"
+
+green "Installed /learn skill."

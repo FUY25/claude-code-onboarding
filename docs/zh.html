@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claude Code Onboarding — Learn by Shipping</title>
+<title>Claude Code 新手入门 — 边做边学</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -127,64 +127,64 @@
 
   <!-- LANGUAGE SWITCH -->
   <div class="lang-switch">
-    <span class="active">EN</span><span class="sep">|</span><a href="zh.html">中文</a>
+    <a href="index.html">EN</a><span class="sep">|</span><span class="active">中文</span>
   </div>
 
   <!-- HERO -->
   <div class="hero">
-    <h1>You Don't Need to Code. You Need Claude Code.</h1>
-    <div class="subtitle">A hands-on course that meets you where you are — PM, researcher, consultant, or creative.</div>
+    <h1>你不需要会写代码，你需要 Claude Code。</h1>
+    <div class="subtitle">为你量身定制的实战课程 — 无论你是产品经理、研究员、咨询顾问还是创意人。</div>
     <div class="install-switcher">
       <div class="install-tabs">
-        <button class="install-tab active" onclick="switchTab(this, 'existing')">Already have Claude Code</button>
-        <button class="install-tab" onclick="switchTab(this, 'new')">Don't have it yet</button>
+        <button class="install-tab active" onclick="switchTab(this, 'existing')">已安装 Claude Code</button>
+        <button class="install-tab" onclick="switchTab(this, 'new')">还没有安装</button>
       </div>
       <div class="install-panel active" id="panel-existing">
-        <div class="prompt-label">Open Claude Code anywhere and paste this prompt: <span class="copy-badge">click to copy</span></div>
+        <div class="prompt-label">打开 Claude Code，粘贴这段话：<span class="copy-badge">点击复制</span></div>
         <div class="prompt-copy" onclick="copyCmd(this)">Install the Claude Code onboarding course: run git clone https://github.com/FUY25/claude-code-onboarding.git ~/claude-code-onboarding && cp -r ~/claude-code-onboarding/.claude/skills/learn ~/.claude/skills/learn then cd into ~/claude-code-onboarding and start the course with /learn</div>
-        <div class="prompt-hint">That's it. Claude downloads the course, installs it, and starts teaching you.</div>
+        <div class="prompt-hint">就这样。Claude 自动下载课程、完成配置，然后开始教你。</div>
       </div>
       <div class="install-panel" id="panel-new">
-        <div style="font-size:13px;color:#78716c;margin-bottom:10px;">First, install Claude Code — it takes about 5 minutes.</div>
-        <a href="https://docs.anthropic.com/en/docs/claude-code/setup" target="_blank" rel="noopener" style="display:inline-block;padding:10px 20px;background:#b45309;color:#fff;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;font-family:inherit;">Install Claude Code &rarr;</a>
-        <div style="font-size:11px;color:#a8a29e;margin-top:10px;">Once installed, come back and use the "Already have Claude Code" tab.</div>
+        <div style="font-size:13px;color:#78716c;margin-bottom:10px;">先安装 Claude Code，大约需要 5 分钟。</div>
+        <a href="https://docs.anthropic.com/en/docs/claude-code/setup" target="_blank" rel="noopener" style="display:inline-block;padding:10px 20px;background:#b45309;color:#fff;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;font-family:inherit;">安装 Claude Code &rarr;</a>
+        <div style="font-size:11px;color:#a8a29e;margin-top:10px;">安装完成后回来，选择「已安装 Claude Code」即可。</div>
       </div>
     </div>
   </div>
 
   <!-- USER FLOW -->
   <div class="section">
-    <h2>How it works</h2>
+    <h2>使用流程</h2>
     <div class="flow">
       <div class="flow-step">
         <div class="num">1</div>
-        <div class="label">Read this page</div>
-        <div class="detail">2 min, in your browser</div>
+        <div class="label">阅读此页</div>
+        <div class="detail">2 分钟，在浏览器中</div>
       </div>
       <div class="flow-arrow">&rarr;</div>
       <div class="flow-step">
         <div class="num">2</div>
-        <div class="label">Paste one prompt</div>
-        <div class="detail">Claude sets everything up</div>
+        <div class="label">粘贴一段话</div>
+        <div class="detail">Claude 自动完成所有配置</div>
       </div>
       <div class="flow-arrow">&rarr;</div>
       <div class="flow-step">
         <div class="num">3</div>
-        <div class="label">Course starts automatically</div>
-        <div class="detail">Personalized to your role</div>
+        <div class="label">课程自动开始</div>
+        <div class="detail">根据你的职业个性化定制</div>
       </div>
       <div class="flow-arrow">&rarr;</div>
       <div class="flow-step">
         <div class="num">4</div>
-        <div class="label">Build your first real thing</div>
-        <div class="detail">Your first project in 20 min</div>
+        <div class="label">做出第一个真实成果</div>
+        <div class="detail">20 分钟完成第一个项目</div>
       </div>
     </div>
   </div>
 
   <!-- WHY CLAUDE CODE -->
   <div class="section">
-    <h2>Why Claude Code?</h2>
+    <h2>为什么选 Claude Code？</h2>
     <table class="compare-table">
       <thead>
         <tr>
@@ -196,40 +196,40 @@
       </thead>
       <tbody>
         <tr>
-          <td>Where it runs</td>
-          <td>Browser</td>
-          <td>Your computer</td>
-          <td>Your computer</td>
+          <td>运行位置</td>
+          <td>浏览器</td>
+          <td>本地电脑</td>
+          <td>本地电脑</td>
         </tr>
         <tr>
-          <td>Reads your files</td>
-          <td><span class="cross">&#10005; No</span></td>
-          <td>Surface-level</td>
-          <td><span class="check">&#10003; Entire project</span></td>
+          <td>读取你的文件</td>
+          <td><span class="cross">&#10005; 不支持</span></td>
+          <td>仅表层读取</td>
+          <td><span class="check">&#10003; 读取整个项目</span></td>
         </tr>
         <tr>
-          <td>Builds things for you</td>
-          <td><span class="cross">&#10005; No</span></td>
-          <td>Basic automation</td>
-          <td><span class="check">&#10003; Full projects</span></td>
+          <td>帮你创建内容</td>
+          <td><span class="cross">&#10005; 不支持</span></td>
+          <td>基础自动化</td>
+          <td><span class="check">&#10003; 完整项目</span></td>
         </tr>
         <tr>
-          <td>Security</td>
-          <td>Sandboxed (browser)</td>
-          <td><span class="warn">&#9888; 512 CVEs, 135K exposed</span></td>
-          <td><span class="check">&#10003; Sandboxed, no ports</span></td>
+          <td>安全性</td>
+          <td>沙盒隔离（浏览器）</td>
+          <td><span class="warn">&#9888; 512 个漏洞，13.5 万台设备受影响</span></td>
+          <td><span class="check">&#10003; 沙盒隔离，无开放端口</span></td>
         </tr>
         <tr>
-          <td>Skill ecosystem</td>
+          <td>技能生态</td>
           <td><span class="cross">&mdash;</span></td>
-          <td><span class="warn">&#9888; 820+ malicious skills</span></td>
-          <td><span class="check">&#10003; Controlled, project-scoped</span></td>
+          <td><span class="warn">&#9888; 820+ 个恶意技能</span></td>
+          <td><span class="check">&#10003; 受控，项目范围内隔离</span></td>
         </tr>
         <tr>
-          <td>Best for</td>
-          <td>Quick questions</td>
-          <td>Daily tasks (if you accept the risk)</td>
-          <td><strong>Deep work on your files, securely</strong></td>
+          <td>最适合</td>
+          <td>快速问答</td>
+          <td>日常任务（如能接受风险）</td>
+          <td><strong>安全地深度处理你的文件</strong></td>
         </tr>
       </tbody>
     </table>
@@ -237,72 +237,72 @@
 
   <!-- RECIPES / SAMPLE PROJECTS -->
   <div class="section">
-    <h2>What can non-technical people build?</h2>
+    <h2>非技术人员能做什么？</h2>
     <div class="recipes">
       <div class="recipe">
         <div class="icon">&#128221;</div>
-        <h3>Turn messy notes into a clean report</h3>
-        <p>Paste in rough meeting notes. Get a structured, formatted report back.</p>
-        <div class="difficulty">Beginner &bull; 10 min</div>
+        <h3>把杂乱笔记变成结构化报告</h3>
+        <p>粘贴会议草记，得到格式整洁的结构化报告。</p>
+        <div class="difficulty">新手 &bull; 10 分钟</div>
       </div>
       <div class="recipe">
         <div class="icon">&#128202;</div>
-        <h3>Analyze a spreadsheet — with charts</h3>
-        <p>Drop in a CSV. Get insights in plain English plus a shareable HTML chart page.</p>
-        <div class="difficulty">Beginner &bull; 15 min</div>
+        <h3>分析表格数据，直接生成图表</h3>
+        <p>导入 CSV，获得文字洞察，同时生成可分享的 HTML 图表页面。</p>
+        <div class="difficulty">新手 &bull; 15 分钟</div>
       </div>
       <div class="recipe">
         <div class="icon">&#127760;</div>
-        <h3>Build a working prototype from a brief</h3>
-        <p>Describe what you want. Get a clickable HTML prototype in under a minute.</p>
-        <div class="difficulty">Beginner &bull; 20 min</div>
+        <h3>从描述到可点击的原型</h3>
+        <p>说出你想要什么，不到一分钟得到一个 HTML 可交互原型。</p>
+        <div class="difficulty">新手 &bull; 20 分钟</div>
       </div>
       <div class="recipe">
         <div class="icon">&#128240;</div>
-        <h3>Read a PDF and brief a decision-maker</h3>
-        <p>Hand Claude an earnings report or research paper. Get a sharp executive summary.</p>
-        <div class="difficulty">Beginner &bull; 10 min</div>
+        <h3>读懂 PDF，给决策者写简报</h3>
+        <p>丢给 Claude 一份财报或研究论文，得到一份精准的高管摘要。</p>
+        <div class="difficulty">新手 &bull; 10 分钟</div>
       </div>
       <div class="recipe">
         <div class="icon">&#128313;</div>
-        <h3>Synthesize user interviews into themes</h3>
-        <p>Feed in raw transcripts. Get a research report with themes, quotes, and next steps.</p>
-        <div class="difficulty">Beginner &bull; 10 min</div>
+        <h3>整合用户访谈，提炼关键洞察</h3>
+        <p>输入原始访谈记录，得到含主题、关键引用和后续建议的研究报告。</p>
+        <div class="difficulty">新手 &bull; 10 分钟</div>
       </div>
       <div class="recipe">
         <div class="icon">&#9889;</div>
-        <h3>Tidy up a messy folder</h3>
-        <p>Claude reads what's there, proposes a structure, and reorganizes it with your approval.</p>
-        <div class="difficulty">Beginner &bull; 10 min</div>
+        <h3>整理混乱的文件夹</h3>
+        <p>Claude 扫描文件夹内容，提出整理方案，经你确认后执行。</p>
+        <div class="difficulty">新手 &bull; 10 分钟</div>
       </div>
     </div>
-    <p style="font-size:12px;color:#a8a29e;margin-top:16px;text-align:center;">The course picks 5 applications matched to your profession — PM, business, research, creative, or tech.</p>
+    <p style="font-size:12px;color:#a8a29e;margin-top:16px;text-align:center;">课程会根据你的职业（产品、商业、研究、创意、技术）推荐 5 个最适合你的应用场景。</p>
   </div>
 
   <!-- CTA bottom -->
   <div class="hero" style="border-style: solid; border-color: #d6d3cd;">
-    <h1 style="font-size: 24px;">Ready to try?</h1>
-    <div class="subtitle" style="margin-bottom: 0;">Open Claude Code and paste this:</div>
+    <h1 style="font-size: 24px;">准备好了吗？</h1>
+    <div class="subtitle" style="margin-bottom: 0;">打开 Claude Code，粘贴这段话：</div>
     <div class="install-switcher">
       <div class="install-tabs">
-        <button class="install-tab active" onclick="switchTab(this, 'existing2')">Already have Claude Code</button>
-        <button class="install-tab" onclick="switchTab(this, 'new2')">Don't have it yet</button>
+        <button class="install-tab active" onclick="switchTab(this, 'existing2')">已安装 Claude Code</button>
+        <button class="install-tab" onclick="switchTab(this, 'new2')">还没有安装</button>
       </div>
       <div class="install-panel active" id="panel-existing2">
-        <div class="prompt-label">Paste this prompt into Claude Code: <span class="copy-badge">click to copy</span></div>
+        <div class="prompt-label">将这段话粘贴到 Claude Code 中：<span class="copy-badge">点击复制</span></div>
         <div class="prompt-copy" onclick="copyCmd(this)">Install the Claude Code onboarding course: run git clone https://github.com/FUY25/claude-code-onboarding.git ~/claude-code-onboarding && cp -r ~/claude-code-onboarding/.claude/skills/learn ~/.claude/skills/learn then cd into ~/claude-code-onboarding and start the course with /learn</div>
-        <div class="prompt-hint">Claude does the rest. The course starts in seconds.</div>
+        <div class="prompt-hint">剩下的交给 Claude，课程几秒内开始。</div>
       </div>
       <div class="install-panel" id="panel-new2">
-        <div style="font-size:13px;color:#78716c;margin-bottom:10px;">First, install Claude Code — it takes about 5 minutes.</div>
-        <a href="https://docs.anthropic.com/en/docs/claude-code/setup" target="_blank" rel="noopener" style="display:inline-block;padding:10px 20px;background:#b45309;color:#fff;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;font-family:inherit;">Install Claude Code &rarr;</a>
-        <div style="font-size:11px;color:#a8a29e;margin-top:10px;">Once installed, come back and use the "Already have Claude Code" tab.</div>
+        <div style="font-size:13px;color:#78716c;margin-bottom:10px;">先安装 Claude Code，大约需要 5 分钟。</div>
+        <a href="https://docs.anthropic.com/en/docs/claude-code/setup" target="_blank" rel="noopener" style="display:inline-block;padding:10px 20px;background:#b45309;color:#fff;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;font-family:inherit;">安装 Claude Code &rarr;</a>
+        <div style="font-size:11px;color:#a8a29e;margin-top:10px;">安装完成后回来，选择「已安装 Claude Code」即可。</div>
       </div>
     </div>
   </div>
 
   <div class="footer">
-    Made for people who think Terminal is scary. It's not. We promise.<br>
+    专为觉得终端很可怕的人而做。其实没那么可怕，相信我们。<br>
     &copy; 2026 Claude Code Onboarding
   </div>
 
@@ -321,7 +321,7 @@ function switchTab(btn, panelId) {
 function copyCmd(el) {
   navigator.clipboard.writeText(el.textContent);
   var orig = el.textContent;
-  el.textContent = 'Copied!';
+  el.textContent = '已复制！';
   el.style.color = '#16a34a';
   setTimeout(function() { el.textContent = orig; el.style.color = ''; }, 1500);
 }
