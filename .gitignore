@@ -1,3 +1,4 @@
 .DS_Store
 .learn-progress.json
 node_modules/
+.gstack/

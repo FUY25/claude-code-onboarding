@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Claude Code Onboarding — From Zero to Building Real Things</title>
-  <meta name="description" content="Interactive onboarding for Claude Code. No coding experience required. Go from zero to building real things in 30 minutes.">
+  <meta name="description" content="Interactive onboarding for Claude Code. No coding experience required. Go from zero to building real things in 20 minutes.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,136 +16,116 @@
 
 <!-- HERO -->
 <section class="hero">
-  <h1 id="hero-h1">Build real things with AI.<br><span>Starting today.</span></h1>
-  <p class="subtitle" id="hero-sub">Claude Code is the most capable AI coding assistant available. This gets you from "I don't know what a terminal is" to completing your first real project — in 30 minutes.</p>
-  <p class="subtitle-cn" id="hero-cn">Claude Code 是目前最强大的 AI 编程助手。这套教程带你从「不知道什么是终端」到完成第一个真实项目——只需 30 分钟。</p>
+  <h1 id="hero-h1">Claude Code for Everyone</h1>
+  <p class="subtitle" id="hero-sub">You don't need to be a developer. You just need an idea.</p>
+  <p class="subtitle-cn" id="hero-cn">你不需要是程序员，你只需要一个想法。</p>
 
-  <div class="cta-block">
-    <div class="cta-label" id="cta-label">Open Terminal and paste this:</div>
-    <div class="cta-cmd">
-      <code id="install-cmd">curl -fsSL https://fuy25.github.io/claude-code-onboarding/start.sh | sh</code>
-      <button class="cta-copy" onclick="copyCmd()">Copy</button>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="#install" id="hero-cta">Start Learning (5 min)</a>
+    <a class="btn btn-secondary" href="#how" id="hero-cta2">See How It Works</a>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-alt" id="how">
+  <div class="section-inner">
+    <h2 id="steps-title">How it works</h2>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div class="flow-label" id="step1-title">Read this page</div>
+        <div class="flow-detail" id="step1-desc">2 min, right here</div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div class="flow-label" id="step2-title">Install Claude Code</div>
+        <div class="flow-detail" id="step2-desc">Copy-paste 1 command</div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div class="flow-label" id="step3-title">Run /learn</div>
+        <div class="flow-detail" id="step3-desc">Interactive skill teaches you</div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <div class="flow-label" id="step4-title">Build something real</div>
+        <div class="flow-detail" id="step4-desc">Your first project in 20 min</div>
+      </div>
     </div>
-    <p class="cta-hint" id="cta-hint"><strong>curl</strong> downloads the script &nbsp;·&nbsp; <strong>sh</strong> runs it &nbsp;·&nbsp; it installs nothing without asking you first</p>
   </div>
 </section>
 
 <!-- WHY SECTION -->
 <section class="section">
   <div class="section-inner">
-    <h2 id="why-title">Why Claude Code?</h2>
+    <h2 id="why-title">Why Claude Code instead of ChatGPT?</h2>
 
     <div class="compare">
       <div class="compare-card">
-        <h3>ChatGPT</h3>
-        <span class="tag">Browser</span>
+        <h3>Browser-based AI</h3>
+        <span class="tag" id="tag-old">what you're used to</span>
         <ul>
-          <li>Quick questions and answers</li>
-          <li>Sandboxed — can't touch your files</li>
-          <li>Doesn't understand your project</li>
-          <li>Can't build things for you</li>
-        </ul>
-      </div>
-
-      <div class="compare-card danger">
-        <h3>OpenClaw</h3>
-        <span class="tag tag-danger">⚠ 512 CVEs</span>
-        <ul>
-          <li>Runs via Telegram / WhatsApp</li>
-          <li>Binds to 0.0.0.0 — exposed to internet</li>
-          <li>135K+ instances publicly exposed</li>
-          <li>820+ malicious skills on ClawHub</li>
+          <li>Copy-paste code back and forth</li>
+          <li>Can't touch your real files</li>
+          <li>Loses context between chats</li>
+          <li>You are the middleman</li>
         </ul>
       </div>
 
       <div class="compare-card highlight">
         <h3>Claude Code</h3>
-        <span class="tag tag-good">Recommended</span>
+        <span class="tag tag-good" id="tag-new">what you'll learn here</span>
         <ul>
-          <li>Runs in your terminal — private by default</li>
-          <li>Localhost only, no exposed ports</li>
-          <li>Reads your entire project — deep context</li>
-          <li>Builds full projects for you</li>
+          <li>Reads and writes your files directly</li>
+          <li>Runs commands for you</li>
+          <li>Sees your whole project at once</li>
+          <li>You describe, it builds</li>
         </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="section section-alt">
-  <div class="section-inner">
-    <h2 id="steps-title">How it works</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div>
-          <h3 id="step1-title">Open Terminal</h3>
-          <p id="step1-desc">Press <strong>⌘ Space</strong>, type <em>Terminal</em>, press Enter. That's it.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div>
-          <h3 id="step2-title">Run one command</h3>
-          <p id="step2-desc">Paste the command above. It downloads the lessons and installs Claude Code if needed.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div>
-          <h3 id="step3-title">Type <code>/learn</code></h3>
-          <p id="step3-desc">Answer 3 quick questions. Claude adapts the lessons to your role and experience level.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div>
-          <h3 id="step4-title">Build something real</h3>
-          <p id="step4-desc">By Lesson 3, you'll have an actual output — a report, an email, or a website.</p>
-        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- RECIPES -->
-<section class="section">
+<section class="section section-alt">
   <div class="section-inner">
-    <h2 id="recipes-title">What you'll build</h2>
+    <h2 id="recipes-title">What can non-technical people build?</h2>
     <div class="recipes">
       <div class="recipe">
-        <div class="icon">📄</div>
+        <div class="recipe-icon">&#128196;</div>
         <h4>Report from Notes</h4>
         <p>Turn messy meeting notes into a clean, formatted report.</p>
-        <div class="difficulty">Beginner &bull; 30 min</div>
+        <div class="difficulty">Beginner &bull; 10 min</div>
       </div>
       <div class="recipe">
-        <div class="icon">✉️</div>
+        <div class="recipe-icon">&#9993;</div>
         <h4>Email from Bullets</h4>
         <p>Give Claude bullet points. Get a professional email in your tone.</p>
-        <div class="difficulty">Beginner &bull; 30 min</div>
+        <div class="difficulty">Beginner &bull; 5 min</div>
       </div>
       <div class="recipe">
-        <div class="icon">📊</div>
-        <h4>Data Summary</h4>
-        <p>Upload a CSV. Ask plain-English questions. Get answers — no formulas.</p>
-        <div class="difficulty">Beginner &bull; 30 min</div>
+        <div class="recipe-icon">&#128202;</div>
+        <h4>Analyze a Spreadsheet</h4>
+        <p>Ask plain-English questions about your data. No formulas needed.</p>
+        <div class="difficulty">Beginner &bull; 10 min</div>
       </div>
       <div class="recipe">
-        <div class="icon">🌐</div>
+        <div class="recipe-icon">&#127760;</div>
         <h4>Personal Website</h4>
         <p>Describe what you want. Get a working website you can publish.</p>
-        <div class="difficulty">Beginner &bull; 30 min</div>
+        <div class="difficulty">Beginner &bull; 20 min</div>
       </div>
       <div class="recipe">
-        <div class="icon">🤖</div>
-        <h4>Custom Chatbot</h4>
-        <p>A chatbot trained on your own documents.</p>
-        <div class="difficulty">Intermediate &bull; 45 min</div>
+        <div class="recipe-icon">&#9889;</div>
+        <h4>Automate Repetitive Work</h4>
+        <p>Rename 500 files, clean up CSVs, batch-process anything tedious.</p>
+        <div class="difficulty">Beginner &bull; 10 min</div>
       </div>
       <div class="recipe">
-        <div class="icon">🚀</div>
+        <div class="recipe-icon">&#128161;</div>
         <h4>Your Idea Here</h4>
         <p>The skill teaches you how to turn any idea into a working project.</p>
         <div class="difficulty">Any level &bull; ???</div>
@@ -154,58 +134,68 @@
   </div>
 </section>
 
-<!-- BOTTOM CTA -->
-<section class="hero hero-bottom">
+<!-- INSTALL CTA -->
+<section class="hero hero-bottom" id="install">
   <h2 id="cta-bottom-title">Ready to try?</h2>
   <p class="subtitle" id="cta-bottom-sub">Open your Terminal and paste this:</p>
   <div class="cta-block">
+    <div class="cta-label" id="cta-label">Terminal</div>
     <div class="cta-cmd">
-      <code id="install-cmd-2">curl -fsSL https://fuy25.github.io/claude-code-onboarding/start.sh | sh</code>
-      <button class="cta-copy" onclick="copyCmd2()">Copy</button>
+      <code id="install-cmd">curl -fsSL https://fuy25.github.io/claude-code-onboarding/start.sh | sh</code>
+      <button class="cta-copy" onclick="copyCmd()">Copy</button>
     </div>
+    <p class="cta-hint" id="cta-hint"><strong>curl</strong> downloads the script &nbsp;&middot;&nbsp; <strong>sh</strong> runs it &nbsp;&middot;&nbsp; it installs nothing without asking you first</p>
   </div>
   <p class="subtitle-cn" id="cta-bottom-cn">或者先看看 <a href="#">中文教程 →</a></p>
 </section>
 
 <footer>
   Made for people who think Terminal is scary. It's not. We promise.<br>
-  &copy; 2026 Claude Code Onboarding &nbsp;·&nbsp; <a href="https://github.com/FUY25/claude-code-onboarding">GitHub</a>
+  &copy; 2026 Claude Code Onboarding &nbsp;&middot;&nbsp; <a href="https://github.com/FUY25/claude-code-onboarding">GitHub</a>
 </footer>
 
 <script>
   let lang = 'en';
 
   const EN = {
-    heroH1: 'Build real things with AI.<br><span>Starting today.</span>',
-    heroSub: 'Claude Code is the most capable AI coding assistant available. This gets you from "I don\'t know what a terminal is" to completing your first real project — in 30 minutes.',
-    heroCn: 'Claude Code 是目前最强大的 AI 编程助手。这套教程带你从「不知道什么是终端」到完成第一个真实项目——只需 30 分钟。',
-    ctaLabel: 'Open Terminal and paste this:',
-    ctaHint: '<strong>curl</strong> downloads the script &nbsp;·&nbsp; <strong>sh</strong> runs it &nbsp;·&nbsp; it installs nothing without asking you first',
-    whyTitle: 'Why Claude Code?',
+    heroH1: 'Claude Code for Everyone',
+    heroSub: 'You don\'t need to be a developer. You just need an idea.',
+    heroCn: '你不需要是程序员，你只需要一个想法。',
+    heroCta: 'Start Learning (5 min)',
+    heroCta2: 'See How It Works',
+    ctaLabel: 'Terminal',
+    ctaHint: '<strong>curl</strong> downloads the script &nbsp;&middot;&nbsp; <strong>sh</strong> runs it &nbsp;&middot;&nbsp; it installs nothing without asking you first',
+    whyTitle: 'Why Claude Code instead of ChatGPT?',
+    tagOld: 'what you\'re used to',
+    tagNew: 'what you\'ll learn here',
     stepsTitle: 'How it works',
-    step1: ['Open Terminal', 'Press <strong>⌘ Space</strong>, type <em>Terminal</em>, press Enter. That\'s it.'],
-    step2: ['Run one command', 'Paste the command above. It downloads the lessons and installs Claude Code if needed.'],
-    step3: ['Type <code>/learn</code>', 'Answer 3 quick questions. Claude adapts the lessons to your role and experience level.'],
-    step4: ['Build something real', 'By Lesson 3, you\'ll have an actual output — a report, an email, or a website.'],
-    recipesTitle: 'What you\'ll build',
+    step1: ['Read this page', '2 min, right here'],
+    step2: ['Install Claude Code', 'Copy-paste 1 command'],
+    step3: ['Run /learn', 'Interactive skill teaches you'],
+    step4: ['Build something real', 'Your first project in 20 min'],
+    recipesTitle: 'What can non-technical people build?',
     ctaBottomTitle: 'Ready to try?',
     ctaBottomSub: 'Open your Terminal and paste this:',
     ctaBottomCn: '或者先看看 <a href="#">中文教程 →</a>',
   };
 
   const CN = {
-    heroH1: '用 AI 做出真实的东西。<br><span>从今天开始。</span>',
-    heroSub: 'Claude Code 是目前最强大的 AI 编程助手。这套教程带你从「不知道什么是终端」到完成第一个真实项目——只需 30 分钟。',
-    heroCn: 'Claude Code is the most capable AI coding assistant available. This gets you from "I don\'t know what a terminal is" to your first real project — in 30 minutes.',
-    ctaLabel: '打开终端，粘贴这条命令：',
-    ctaHint: '<strong>curl</strong> 下载脚本 &nbsp;·&nbsp; <strong>sh</strong> 执行脚本 &nbsp;·&nbsp; 不经询问不会安装任何东西',
-    whyTitle: '为什么选 Claude Code？',
+    heroH1: 'Claude Code，人人可用',
+    heroSub: '你不需要是程序员，你只需要一个想法。',
+    heroCn: 'You don\'t need to be a developer. You just need an idea.',
+    heroCta: '开始学习（5 分钟）',
+    heroCta2: '看看怎么用',
+    ctaLabel: '终端',
+    ctaHint: '<strong>curl</strong> 下载脚本 &nbsp;&middot;&nbsp; <strong>sh</strong> 执行脚本 &nbsp;&middot;&nbsp; 不经询问不会安装任何东西',
+    whyTitle: '为什么选 Claude Code 而不是 ChatGPT？',
+    tagOld: '你习惯的方式',
+    tagNew: '你将在这里学到的',
     stepsTitle: '怎么用',
-    step1: ['打开终端', '按 <strong>⌘ 空格</strong>，输入 <em>Terminal</em>，按回车。就这样。'],
-    step2: ['运行一条命令', '粘贴上面的命令。它会下载教程并安装 Claude Code（如需要）。'],
-    step3: ['输入 <code>/learn</code>', '回答 3 个问题。Claude 会根据你的角色和经验调整课程。'],
-    step4: ['做出真实的东西', '第 3 课结束时，你会有一个真实的成果——报告、邮件或网站。'],
-    recipesTitle: '你会做出什么',
+    step1: ['阅读这个页面', '2 分钟，就在这里'],
+    step2: ['安装 Claude Code', '复制粘贴一条命令'],
+    step3: ['输入 /learn', '交互式技能教你'],
+    step4: ['做出真实的东西', '20 分钟完成第一个项目'],
+    recipesTitle: '非技术人员能做出什么？',
     ctaBottomTitle: '准备好了吗？',
     ctaBottomSub: '打开终端，粘贴这条命令：',
     ctaBottomCn: 'Or read the <a href="#">English version →</a>',
@@ -215,21 +205,25 @@
     lang = lang === 'en' ? 'cn' : 'en';
     const t = lang === 'en' ? EN : CN;
     document.querySelector('.nav-lang').textContent = lang === 'en' ? '中文' : 'English';
-    document.getElementById('hero-h1').innerHTML = t.heroH1;
+    document.getElementById('hero-h1').textContent = t.heroH1;
     document.getElementById('hero-sub').textContent = t.heroSub;
     document.getElementById('hero-cn').textContent = t.heroCn;
+    document.getElementById('hero-cta').textContent = t.heroCta;
+    document.getElementById('hero-cta2').textContent = t.heroCta2;
     document.getElementById('cta-label').textContent = t.ctaLabel;
     document.getElementById('cta-hint').innerHTML = t.ctaHint;
     document.getElementById('why-title').textContent = t.whyTitle;
+    document.getElementById('tag-old').textContent = t.tagOld;
+    document.getElementById('tag-new').textContent = t.tagNew;
     document.getElementById('steps-title').textContent = t.stepsTitle;
     document.getElementById('step1-title').textContent = t.step1[0];
-    document.getElementById('step1-desc').innerHTML = t.step1[1];
+    document.getElementById('step1-desc').textContent = t.step1[1];
     document.getElementById('step2-title').textContent = t.step2[0];
-    document.getElementById('step2-desc').innerHTML = t.step2[1];
+    document.getElementById('step2-desc').textContent = t.step2[1];
     document.getElementById('step3-title').textContent = t.step3[0];
-    document.getElementById('step3-desc').innerHTML = t.step3[1];
+    document.getElementById('step3-desc').textContent = t.step3[1];
     document.getElementById('step4-title').textContent = t.step4[0];
-    document.getElementById('step4-desc').innerHTML = t.step4[1];
+    document.getElementById('step4-desc').textContent = t.step4[1];
     document.getElementById('recipes-title').textContent = t.recipesTitle;
     document.getElementById('cta-bottom-title').textContent = t.ctaBottomTitle;
     document.getElementById('cta-bottom-sub').textContent = t.ctaBottomSub;
@@ -239,16 +233,7 @@
   function copyCmd() {
     const cmd = document.getElementById('install-cmd').textContent;
     navigator.clipboard.writeText(cmd).then(() => {
-      const btn = document.querySelectorAll('.cta-copy')[0];
-      btn.textContent = 'Copied!';
-      setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
-    });
-  }
-
-  function copyCmd2() {
-    const cmd = document.getElementById('install-cmd-2').textContent;
-    navigator.clipboard.writeText(cmd).then(() => {
-      const btn = document.querySelectorAll('.cta-copy')[1];
+      const btn = document.querySelector('.cta-copy');
       btn.textContent = 'Copied!';
       setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
     });

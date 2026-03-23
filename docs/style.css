@@ -8,13 +8,8 @@
   --gray-200: #e5e5e5;
   --gray-500: #737373;
   --gray-700: #404040;
-  --danger: #dc2626;
-  --danger-bg: #fff5f5;
-  --danger-border: #fca5a5;
-  --good-bg: #f0fdf4;
-  --good-border: #86efac;
   --radius: 8px;
-  --max-w: 960px;
+  --max-w: 900px;
 }
 
 body {
@@ -37,23 +32,30 @@ nav {
   z-index: 10;
 }
 .nav-logo { font-weight: 700; font-size: 1rem; text-decoration: none; color: var(--black); }
-.nav-lang { font-size: 0.85rem; color: var(--gray-500); cursor: pointer; border: 1px solid var(--gray-200); padding: 0.25rem 0.75rem; border-radius: 999px; background: none; }
+.nav-lang {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  cursor: pointer;
+  border: 1px solid var(--gray-200);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: none;
+}
 .nav-lang:hover { border-color: var(--black); color: var(--black); }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 72px 2rem 56px;
+  padding: 80px 2rem 64px;
   border-bottom: 1px solid var(--gray-200);
 }
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2rem, 5vw, 2.75rem);
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
-.hero h1 span { color: var(--gray-500); }
 .hero h2 {
   font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-weight: 700;
@@ -65,19 +67,55 @@ nav {
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--gray-700);
-  max-width: 600px;
+  max-width: 520px;
   margin: 0 auto 0.5rem;
 }
 .subtitle-cn {
   font-size: 0.95rem;
   color: var(--gray-500);
-  max-width: 600px;
-  margin: 0 auto 1.5rem;
+  max-width: 520px;
+  margin: 0 auto 0rem;
 }
 .subtitle-cn a { color: var(--gray-500); }
 .subtitle-cn a:hover { color: var(--black); }
+
+/* HERO BUTTONS */
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.btn-primary {
+  background: var(--black);
+  color: var(--white);
+  border: 2px solid var(--black);
+}
+.btn-primary:hover {
+  background: var(--gray-700);
+  border-color: var(--gray-700);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--black);
+  border: 2px solid var(--gray-200);
+}
+.btn-secondary:hover {
+  border-color: var(--black);
+}
 
 /* CTA BLOCK */
 .cta-block {
@@ -142,37 +180,66 @@ nav {
   margin-bottom: 1.5rem;
 }
 
-/* COMPARE CARDS */
+/* FLOW DIAGRAM (horizontal steps with arrows) */
+.flow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+}
+.flow-step {
+  text-align: center;
+  padding: 20px 16px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  background: var(--white);
+  flex: 1;
+  min-width: 0;
+}
+.flow-num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-500);
+  margin-bottom: 4px;
+}
+.flow-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.flow-detail {
+  font-size: 0.78rem;
+  color: var(--gray-500);
+}
+.flow-arrow {
+  font-size: 1.25rem;
+  color: var(--gray-500);
+  padding-top: 20px;
+  flex-shrink: 0;
+}
+
+/* COMPARE CARDS (2 column) */
 .compare {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
 .compare-card {
   border: 1px solid var(--gray-200);
   border-radius: var(--radius);
-  padding: 20px;
+  padding: 24px;
   background: var(--white);
 }
-.compare-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
-.compare-card ul { font-size: 0.88rem; line-height: 1.9; color: var(--gray-700); padding-left: 18px; }
+.compare-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+.compare-card ul { font-size: 0.9rem; line-height: 1.9; color: var(--gray-700); padding-left: 18px; }
 .tag {
   display: inline-block;
   font-size: 0.72rem;
   padding: 2px 9px;
   border: 1px solid var(--gray-200);
   border-radius: 999px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   color: var(--gray-500);
-}
-.compare-card.danger {
-  border-color: var(--danger-border);
-  background: var(--danger-bg);
-}
-.tag-danger {
-  background: var(--danger);
-  color: #fff;
-  border-color: var(--danger);
 }
 .compare-card.highlight {
   border-color: var(--black);
@@ -184,35 +251,6 @@ nav {
   border-color: var(--black);
 }
 
-/* STEPS */
-.steps {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-.step {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-.step-num {
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--black);
-  color: var(--white);
-  font-size: 0.85rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2px;
-}
-.step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 2px; }
-.step p { font-size: 0.9rem; color: var(--gray-700); }
-.step code { font-family: monospace; background: var(--gray-200); padding: 1px 5px; border-radius: 3px; }
-
 /* RECIPES */
 .recipes {
   display: grid;
@@ -222,10 +260,10 @@ nav {
 .recipe {
   border: 1px solid var(--gray-200);
   border-radius: var(--radius);
-  padding: 18px;
+  padding: 20px;
   background: var(--white);
 }
-.recipe .icon { font-size: 1.75rem; margin-bottom: 8px; }
+.recipe-icon { font-size: 1.75rem; margin-bottom: 10px; }
 .recipe h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
 .recipe p { font-size: 0.85rem; color: var(--gray-700); line-height: 1.5; margin-bottom: 10px; }
 .difficulty { font-size: 0.75rem; color: var(--gray-500); }
@@ -248,8 +286,22 @@ footer a:hover { color: var(--black); }
   .section { padding: 40px 1rem; }
   .compare { grid-template-columns: 1fr; }
   .recipes { grid-template-columns: 1fr 1fr; }
+  .flow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .flow-arrow {
+    text-align: center;
+    padding-top: 0;
+    transform: rotate(90deg);
+  }
+  .flow-step {
+    flex: none;
+  }
 }
 @media (max-width: 480px) {
   .recipes { grid-template-columns: 1fr; }
   .cta-block { padding: 0.85rem 1rem; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .btn { width: 100%; max-width: 280px; text-align: center; }
 }
