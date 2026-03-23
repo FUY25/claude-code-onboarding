@@ -1,0 +1,76 @@
+CAMPAIGN BRIEF — "Refresh Your Routine" Spring Launch
+for: GlowLab Skincare (the vitamin C serum + new SPF moisturizer)
+status: DRAFT v2, still need input from Megan on influencer list
+
+Campaign window: April 14 – May 26 (6 weeks)
+THIS IS TIGHT. creative needs to be locked by March 28.
+
+Target audience (from the Q4 segmentation study):
+Primary: Women 25-38, urban, income $65K+, "ingredient-conscious" beauty buyers
+  — they read the back of the label, they know what niacinamide is
+  — over-index on TikTok and Instagram Reels
+  — shop at Sephora/Ulta but also DTC brands
+Secondary: Men 28-40, skincare-curious, just getting into routines
+  — growing segment, up 34% YoY per our data
+  — respond better to "simple/effective" messaging vs ingredient deep-dives
+  — more likely to convert through YouTube than TikTok
+
+Brand voice reminders (from the brand book, pg 12):
+- confident but not preachy
+- science-backed without being clinical
+- "your smart friend who happens to know a lot about skincare"
+- NEVER use: "anti-aging" (ageist), "flawless" (unrealistic), "clean beauty" (meaningless)
+- color palette: sage green (#87A96B), warm white, terracotta accents
+
+Channels and budget (ROUGH — need finance to confirm total):
+Paid social (Meta + TikTok): $45K
+  - 60% prospecting, 40% retargeting
+  - need new creative — the winter assets tested poorly (CTR was 0.8%, need >1.5%)
+Influencer: $30K
+  - 3 macro (100K+): $8K each = $24K — Megan has a shortlist
+  - 10 micro (10K-50K): $600 product seeding + fee = ~$6K total
+  - want at least 2 dermatologists or estheticians for credibility
+Email: $5K (design + copy for 4-email sequence)
+  - welcome flow for new subs from campaign
+  - existing customer "first look" exclusive
+PR: $8K?? (is this enough for a press mailer? ask Danielle)
+Sampling at Erewhon and Whole Foods (LA + NYC): $12K — is this even worth it?
+
+TOTAL: ~$100K (we had $85K approved... need to cut somewhere or ask for more)
+
+Tagline options (from brainstorm with creative on 3/12):
+1. "Glow smarter, not harder"  <-- Jen loves this, I think its too generic
+2. "Your skin called. It wants better."  <-- funny but maybe too snarky?
+3. "Ingredients that actually work. Imagine that."  <-- strong but long
+4. "Meet your new morning ritual"  <-- safe. boring? but tested well
+5. "Lab-tested. Life-approved."  <-- my fav actually. bridges the science + lifestyle angle
+
+Key messages:
+- 15% vitamin C (most competitors use 10% or less)
+- new SPF 40 moisturizer is reef-safe AND doesn't leave white cast
+- dermatologist-developed (Dr. Anika Patel, our advisory board)
+- 30-day visible results guarantee
+
+Content ideas (need to flesh these out):
+- before/after series (UGC, real customers, no filters — get legal to review disclosure)
+- "what's actually in your moisturizer" breakdown comparison vs competitors
+  BE CAREFUL not to name competitors directly, legal flagged this last time
+- "morning routine in 2 products" for the male audience
+- Dr. Patel doing a myth-busting series on SPF (3 parts, IG Reels + TikTok)
+- unboxing/first impressions with the macro influencers
+
+OPEN QUESTIONS:
+- do we bundle the serum + moisturizer for a launch price? what's the margin impact?
+  Serum is $42 retail, moisturizer is $38. Bundle at $68? $65?
+- landing page — are we doing a dedicated LP or just updating the PDP?
+  Dev team is slammed, need to check with Ryan on capacity
+- photography — the product shots from January look yellowish on mobile
+  need reshoot or at least color correction
+- are we doing a launch event? Megan mentioned a popup in Soho but that's $$$
+
+success metrics (rough):
+- ROAS target: 4.0x (we hit 3.2x on the winter campaign, need to improve)
+- email list growth: +8,000 new subscribers
+- social engagement rate: >4% on campaign content
+- sell-through: 5,000 units of SPF moisturizer in first 3 weeks
+- earned media: 10+ press mentions in beauty publications

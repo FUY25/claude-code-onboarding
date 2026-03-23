@@ -1,0 +1,9 @@
+{
+  "appName": "WidgetTracker",
+  "version": "1.8.3",
+  "port": 8080,
+  "database": {
+    "host": "localhost",
+    "name": "widgets_dev"
+  }
+}

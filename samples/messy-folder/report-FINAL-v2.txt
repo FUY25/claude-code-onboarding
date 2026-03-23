@@ -1,0 +1,12 @@
+Q3 Performance Report - FINAL v2
+
+Revenue grew 12% quarter-over-quarter, driven primarily by
+expansion in the APAC region. Customer churn decreased to 4.1%
+from 5.8% in Q2. (Updated churn figure per Lisa's correction.)
+
+Key highlights:
+- New enterprise contracts: 15 (was 14, added Meridian deal)
+- Monthly active users: 28,400
+- Support ticket volume: down 20%
+
+Approved by: Finance team, Oct 28

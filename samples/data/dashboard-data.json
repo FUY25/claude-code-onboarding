@@ -1,0 +1,650 @@
+[
+  {
+    "month": "2025-01",
+    "region": "North America",
+    "product_category": "Electronics",
+    "revenue": 256294,
+    "units_sold": 1287,
+    "returns": 38,
+    "customer_satisfaction_score": 3.5
+  },
+  {
+    "month": "2025-01",
+    "region": "North America",
+    "product_category": "Sports & Outdoors",
+    "revenue": 114820,
+    "units_sold": 1413,
+    "returns": 87,
+    "customer_satisfaction_score": 3.4
+  },
+  {
+    "month": "2025-01",
+    "region": "Europe",
+    "product_category": "Electronics",
+    "revenue": 171025,
+    "units_sold": 923,
+    "returns": 55,
+    "customer_satisfaction_score": 4.4
+  },
+  {
+    "month": "2025-01",
+    "region": "Europe",
+    "product_category": "Sports & Outdoors",
+    "revenue": 64052,
+    "units_sold": 769,
+    "returns": 40,
+    "customer_satisfaction_score": 3.8
+  },
+  {
+    "month": "2025-01",
+    "region": "Asia Pacific",
+    "product_category": "Electronics",
+    "revenue": 304524,
+    "units_sold": 1560,
+    "returns": 48,
+    "customer_satisfaction_score": 4.7
+  },
+  {
+    "month": "2025-01",
+    "region": "Asia Pacific",
+    "product_category": "Sports & Outdoors",
+    "revenue": 54957,
+    "units_sold": 616,
+    "returns": 16,
+    "customer_satisfaction_score": 4.6
+  },
+  {
+    "month": "2025-02",
+    "region": "North America",
+    "product_category": "Apparel",
+    "revenue": 177579,
+    "units_sold": 3312,
+    "returns": 292,
+    "customer_satisfaction_score": 3.9
+  },
+  {
+    "month": "2025-02",
+    "region": "North America",
+    "product_category": "Electronics",
+    "revenue": 230848,
+    "units_sold": 1302,
+    "returns": 82,
+    "customer_satisfaction_score": 4.6
+  },
+  {
+    "month": "2025-02",
+    "region": "Europe",
+    "product_category": "Home & Garden",
+    "revenue": 79357,
+    "units_sold": 1223,
+    "returns": 91,
+    "customer_satisfaction_score": 4.8
+  },
+  {
+    "month": "2025-02",
+    "region": "Europe",
+    "product_category": "Apparel",
+    "revenue": 213094,
+    "units_sold": 4235,
+    "returns": 197,
+    "customer_satisfaction_score": 4.0
+  },
+  {
+    "month": "2025-02",
+    "region": "Asia Pacific",
+    "product_category": "Apparel",
+    "revenue": 130939,
+    "units_sold": 2284,
+    "returns": 88,
+    "customer_satisfaction_score": 4.7
+  },
+  {
+    "month": "2025-02",
+    "region": "Asia Pacific",
+    "product_category": "Electronics",
+    "revenue": 283321,
+    "units_sold": 1532,
+    "returns": 49,
+    "customer_satisfaction_score": 4.4
+  },
+  {
+    "month": "2025-03",
+    "region": "North America",
+    "product_category": "Home & Garden",
+    "revenue": 137892,
+    "units_sold": 2260,
+    "returns": 146,
+    "customer_satisfaction_score": 4.2
+  },
+  {
+    "month": "2025-03",
+    "region": "North America",
+    "product_category": "Sports & Outdoors",
+    "revenue": 156959,
+    "units_sold": 2045,
+    "returns": 152,
+    "customer_satisfaction_score": 3.7
+  },
+  {
+    "month": "2025-03",
+    "region": "Europe",
+    "product_category": "Electronics",
+    "revenue": 188910,
+    "units_sold": 913,
+    "returns": 77,
+    "customer_satisfaction_score": 4.2
+  },
+  {
+    "month": "2025-03",
+    "region": "Europe",
+    "product_category": "Home & Garden",
+    "revenue": 124171,
+    "units_sold": 1747,
+    "returns": 96,
+    "customer_satisfaction_score": 4.6
+  },
+  {
+    "month": "2025-03",
+    "region": "Asia Pacific",
+    "product_category": "Sports & Outdoors",
+    "revenue": 74731,
+    "units_sold": 865,
+    "returns": 51,
+    "customer_satisfaction_score": 3.8
+  },
+  {
+    "month": "2025-03",
+    "region": "Asia Pacific",
+    "product_category": "Electronics",
+    "revenue": 314049,
+    "units_sold": 1794,
+    "returns": 86,
+    "customer_satisfaction_score": 3.7
+  },
+  {
+    "month": "2025-04",
+    "region": "North America",
+    "product_category": "Home & Garden",
+    "revenue": 170135,
+    "units_sold": 2669,
+    "returns": 214,
+    "customer_satisfaction_score": 3.6
+  },
+  {
+    "month": "2025-04",
+    "region": "North America",
+    "product_category": "Apparel",
+    "revenue": 200027,
+    "units_sold": 3838,
+    "returns": 237,
+    "customer_satisfaction_score": 3.9
+  },
+  {
+    "month": "2025-04",
+    "region": "Europe",
+    "product_category": "Sports & Outdoors",
+    "revenue": 97231,
+    "units_sold": 1198,
+    "returns": 103,
+    "customer_satisfaction_score": 4.4
+  },
+  {
+    "month": "2025-04",
+    "region": "Europe",
+    "product_category": "Apparel",
+    "revenue": 230594,
+    "units_sold": 4599,
+    "returns": 334,
+    "customer_satisfaction_score": 4.5
+  },
+  {
+    "month": "2025-04",
+    "region": "Asia Pacific",
+    "product_category": "Apparel",
+    "revenue": 166232,
+    "units_sold": 2868,
+    "returns": 58,
+    "customer_satisfaction_score": 4.4
+  },
+  {
+    "month": "2025-04",
+    "region": "Asia Pacific",
+    "product_category": "Electronics",
+    "revenue": 342030,
+    "units_sold": 1980,
+    "returns": 145,
+    "customer_satisfaction_score": 4.1
+  },
+  {
+    "month": "2025-05",
+    "region": "North America",
+    "product_category": "Electronics",
+    "revenue": 271214,
+    "units_sold": 1475,
+    "returns": 92,
+    "customer_satisfaction_score": 3.6
+  },
+  {
+    "month": "2025-05",
+    "region": "North America",
+    "product_category": "Apparel",
+    "revenue": 220998,
+    "units_sold": 4125,
+    "returns": 307,
+    "customer_satisfaction_score": 4.1
+  },
+  {
+    "month": "2025-05",
+    "region": "Europe",
+    "product_category": "Electronics",
+    "revenue": 205926,
+    "units_sold": 985,
+    "returns": 84,
+    "customer_satisfaction_score": 4.6
+  },
+  {
+    "month": "2025-05",
+    "region": "Europe",
+    "product_category": "Apparel",
+    "revenue": 261857,
+    "units_sold": 4663,
+    "returns": 112,
+    "customer_satisfaction_score": 4.6
+  },
+  {
+    "month": "2025-05",
+    "region": "Asia Pacific",
+    "product_category": "Electronics",
+    "revenue": 361035,
+    "units_sold": 2031,
+    "returns": 180,
+    "customer_satisfaction_score": 4.1
+  },
+  {
+    "month": "2025-05",
+    "region": "Asia Pacific",
+    "product_category": "Sports & Outdoors",
+    "revenue": 104125,
+    "units_sold": 1310,
+    "returns": 113,
+    "customer_satisfaction_score": 3.6
+  },
+  {
+    "month": "2025-06",
+    "region": "North America",
+    "product_category": "Sports & Outdoors",
+    "revenue": 257867,
+    "units_sold": 3305,
+    "returns": 226,
+    "customer_satisfaction_score": 4.4
+  },
+  {
+    "month": "2025-06",
+    "region": "North America",
+    "product_category": "Electronics",
+    "revenue": 291996,
+    "units_sold": 1598,
+    "returns": 74,
+    "customer_satisfaction_score": 4.7
+  },
+  {
+    "month": "2025-06",
+    "region": "Europe",
+    "product_category": "Sports & Outdoors",
+    "revenue": 123638,
+    "units_sold": 1376,
+    "returns": 30,
+    "customer_satisfaction_score": 4.2
+  },
+  {
+    "month": "2025-06",
+    "region": "Europe",
+    "product_category": "Electronics",
+    "revenue": 230542,
+    "units_sold": 1100,
+    "returns": 77,
+    "customer_satisfaction_score": 3.5
+  },
+  {
+    "month": "2025-06",
+    "region": "Asia Pacific",
+    "product_category": "Electronics",
+    "revenue": 390095,
+    "units_sold": 1887,
+    "returns": 69,
+    "customer_satisfaction_score": 4.3
+  },
+  {
+    "month": "2025-06",
+    "region": "Asia Pacific",
+    "product_category": "Sports & Outdoors",
+    "revenue": 114751,
+    "units_sold": 1296,
+    "returns": 111,
+    "customer_satisfaction_score": 4.2
+  },
+  {
+    "month": "2025-07",
+    "region": "North America",
+    "product_category": "Sports & Outdoors",
+    "revenue": 240850,
+    "units_sold": 3118,
+    "returns": 104,
+    "customer_satisfaction_score": 3.5
+  },
+  {
+    "month": "2025-07",
+    "region": "North America",
+    "product_category": "Electronics",
+    "revenue": 280284,
+    "units_sold": 1460,
+    "returns": 77,
+    "customer_satisfaction_score": 4.4
+  },
+  {
+    "month": "2025-07",
+    "region": "Europe",
+    "product_category": "Electronics",
+    "revenue": 209975,
+    "units_sold": 1075,
+    "returns": 86,
+    "customer_satisfaction_score": 3.7
+  },
+  {
+    "month": "2025-07",
+    "region": "Europe",
+    "product_category": "Sports & Outdoors",
+    "revenue": 117465,
+    "units_sold": 1418,
+    "returns": 70,
+    "customer_satisfaction_score": 3.8
+  },
+  {
+    "month": "2025-07",
+    "region": "Asia Pacific",
+    "product_category": "Home & Garden",
+    "revenue": 93703,
+    "units_sold": 1500,
+    "returns": 88,
+    "customer_satisfaction_score": 3.5
+  },
+  {
+    "month": "2025-07",
+    "region": "Asia Pacific",
+    "product_category": "Electronics",
+    "revenue": 382981,
+    "units_sold": 2163,
+    "returns": 190,
+    "customer_satisfaction_score": 4.7
+  },
+  {
+    "month": "2025-08",
+    "region": "North America",
+    "product_category": "Home & Garden",
+    "revenue": 159632,
+    "units_sold": 2374,
+    "returns": 191,
+    "customer_satisfaction_score": 4.7
+  },
+  {
+    "month": "2025-08",
+    "region": "North America",
+    "product_category": "Electronics",
+    "revenue": 275164,
+    "units_sold": 1311,
+    "returns": 62,
+    "customer_satisfaction_score": 4.7
+  },
+  {
+    "month": "2025-08",
+    "region": "Europe",
+    "product_category": "Sports & Outdoors",
+    "revenue": 115329,
+    "units_sold": 1535,
+    "returns": 138,
+    "customer_satisfaction_score": 4.2
+  },
+  {
+    "month": "2025-08",
+    "region": "Europe",
+    "product_category": "Home & Garden",
+    "revenue": 142813,
+    "units_sold": 1984,
+    "returns": 81,
+    "customer_satisfaction_score": 4.8
+  },
+  {
+    "month": "2025-08",
+    "region": "Asia Pacific",
+    "product_category": "Electronics",
+    "revenue": 343036,
+    "units_sold": 1652,
+    "returns": 88,
+    "customer_satisfaction_score": 4.7
+  },
+  {
+    "month": "2025-08",
+    "region": "Asia Pacific",
+    "product_category": "Apparel",
+    "revenue": 160188,
+    "units_sold": 2704,
+    "returns": 150,
+    "customer_satisfaction_score": 4.6
+  },
+  {
+    "month": "2025-09",
+    "region": "North America",
+    "product_category": "Electronics",
+    "revenue": 280993,
+    "units_sold": 1594,
+    "returns": 77,
+    "customer_satisfaction_score": 4.7
+  },
+  {
+    "month": "2025-09",
+    "region": "North America",
+    "product_category": "Apparel",
+    "revenue": 231508,
+    "units_sold": 4355,
+    "returns": 99,
+    "customer_satisfaction_score": 3.5
+  },
+  {
+    "month": "2025-09",
+    "region": "Europe",
+    "product_category": "Apparel",
+    "revenue": 246795,
+    "units_sold": 4768,
+    "returns": 175,
+    "customer_satisfaction_score": 4.0
+  },
+  {
+    "month": "2025-09",
+    "region": "Europe",
+    "product_category": "Home & Garden",
+    "revenue": 122862,
+    "units_sold": 1760,
+    "returns": 74,
+    "customer_satisfaction_score": 4.5
+  },
+  {
+    "month": "2025-09",
+    "region": "Asia Pacific",
+    "product_category": "Electronics",
+    "revenue": 372434,
+    "units_sold": 2167,
+    "returns": 194,
+    "customer_satisfaction_score": 3.5
+  },
+  {
+    "month": "2025-09",
+    "region": "Asia Pacific",
+    "product_category": "Sports & Outdoors",
+    "revenue": 86039,
+    "units_sold": 1000,
+    "returns": 85,
+    "customer_satisfaction_score": 4.6
+  },
+  {
+    "month": "2025-10",
+    "region": "North America",
+    "product_category": "Home & Garden",
+    "revenue": 114472,
+    "units_sold": 1687,
+    "returns": 98,
+    "customer_satisfaction_score": 3.8
+  },
+  {
+    "month": "2025-10",
+    "region": "North America",
+    "product_category": "Sports & Outdoors",
+    "revenue": 158434,
+    "units_sold": 2051,
+    "returns": 117,
+    "customer_satisfaction_score": 4.3
+  },
+  {
+    "month": "2025-10",
+    "region": "Europe",
+    "product_category": "Apparel",
+    "revenue": 229925,
+    "units_sold": 4580,
+    "returns": 176,
+    "customer_satisfaction_score": 4.6
+  },
+  {
+    "month": "2025-10",
+    "region": "Europe",
+    "product_category": "Sports & Outdoors",
+    "revenue": 84549,
+    "units_sold": 960,
+    "returns": 38,
+    "customer_satisfaction_score": 3.7
+  },
+  {
+    "month": "2025-10",
+    "region": "Asia Pacific",
+    "product_category": "Apparel",
+    "revenue": 182770,
+    "units_sold": 3624,
+    "returns": 201,
+    "customer_satisfaction_score": 3.8
+  },
+  {
+    "month": "2025-10",
+    "region": "Asia Pacific",
+    "product_category": "Electronics",
+    "revenue": 394277,
+    "units_sold": 1899,
+    "returns": 122,
+    "customer_satisfaction_score": 4.6
+  },
+  {
+    "month": "2025-11",
+    "region": "North America",
+    "product_category": "Electronics",
+    "revenue": 342019,
+    "units_sold": 1676,
+    "returns": 148,
+    "customer_satisfaction_score": 3.6
+  },
+  {
+    "month": "2025-11",
+    "region": "North America",
+    "product_category": "Sports & Outdoors",
+    "revenue": 115268,
+    "units_sold": 1464,
+    "returns": 87,
+    "customer_satisfaction_score": 3.6
+  },
+  {
+    "month": "2025-11",
+    "region": "Europe",
+    "product_category": "Home & Garden",
+    "revenue": 78645,
+    "units_sold": 1143,
+    "returns": 67,
+    "customer_satisfaction_score": 4.0
+  },
+  {
+    "month": "2025-11",
+    "region": "Europe",
+    "product_category": "Apparel",
+    "revenue": 246719,
+    "units_sold": 4445,
+    "returns": 379,
+    "customer_satisfaction_score": 4.8
+  },
+  {
+    "month": "2025-11",
+    "region": "Asia Pacific",
+    "product_category": "Electronics",
+    "revenue": 397754,
+    "units_sold": 1999,
+    "returns": 54,
+    "customer_satisfaction_score": 4.5
+  },
+  {
+    "month": "2025-11",
+    "region": "Asia Pacific",
+    "product_category": "Home & Garden",
+    "revenue": 62255,
+    "units_sold": 912,
+    "returns": 58,
+    "customer_satisfaction_score": 3.6
+  },
+  {
+    "month": "2025-12",
+    "region": "North America",
+    "product_category": "Home & Garden",
+    "revenue": 110760,
+    "units_sold": 1756,
+    "returns": 143,
+    "customer_satisfaction_score": 3.4
+  },
+  {
+    "month": "2025-12",
+    "region": "North America",
+    "product_category": "Electronics",
+    "revenue": 436712,
+    "units_sold": 2233,
+    "returns": 190,
+    "customer_satisfaction_score": 4.5
+  },
+  {
+    "month": "2025-12",
+    "region": "Europe",
+    "product_category": "Home & Garden",
+    "revenue": 75844,
+    "units_sold": 1178,
+    "returns": 55,
+    "customer_satisfaction_score": 3.5
+  },
+  {
+    "month": "2025-12",
+    "region": "Europe",
+    "product_category": "Sports & Outdoors",
+    "revenue": 70004,
+    "units_sold": 802,
+    "returns": 68,
+    "customer_satisfaction_score": 3.9
+  },
+  {
+    "month": "2025-12",
+    "region": "Asia Pacific",
+    "product_category": "Home & Garden",
+    "revenue": 47118,
+    "units_sold": 660,
+    "returns": 28,
+    "customer_satisfaction_score": 4.6
+  },
+  {
+    "month": "2025-12",
+    "region": "Asia Pacific",
+    "product_category": "Electronics",
+    "revenue": 551467,
+    "units_sold": 2789,
+    "returns": 181,
+    "customer_satisfaction_score": 4.0
+  }
+]

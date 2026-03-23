@@ -1,0 +1,8 @@
+category,item,amount,approved
+Office,Standing desks (x4),2400,yes
+Software,Figma license,180,yes
+Travel,NYC client visit,1250,pending
+Hardware,MacBook Pro,2800,yes
+Office,Ergonomic chairs (x4),1600,yes
+Marketing,Trade show booth,3500,pending
+Software,AWS monthly,890,yes

@@ -1,0 +1,42 @@
+Customer Call — Rachel Torres, VP Operations at Meridian Health
+Date: Jan 12, 2026
+CollabHub Enterprise account, 340 seats, renewed last quarter
+
+Current scheduling pain points:
+- "We spend more time scheduling the meeting than having the meeting"
+- Her team of 28 PMs coordinates across 4 time zones (NYC, London, Singapore, Denver)
+- They use CollabHub for messaging but switch to Outlook for calendar
+- "Every time someone suggests a meeting time in a channel, it's a
+  20-message thread of 'that doesn't work for me'"
+
+What they do now (workarounds):
+- One PM manually checks calendars and proposes times — "it's basically
+  her full-time job on Wednesdays"
+- They built a shared spreadsheet of "preferred meeting hours" by timezone
+- Rachel personally blocks 8-10am as no-meeting time but people ignore it
+- Use Doodle polls for cross-team meetings, "which is embarrassing for
+  a company paying for CollabHub Enterprise"
+
+Feature wishes:
+- "I want to type 'schedule a 30-min sync with the APAC leads this week'
+   in a channel and have it just happen"
+- Needs to respect focus time, lunch blocks, existing commitments
+- Wants to see a team-level view: "show me when my whole team is free"
+- Recurring meeting optimization: "half our recurring meetings should be
+  async updates, can you help us figure out which ones?"
+- "Meeting prep is the other killer — can you pull relevant docs and
+  previous notes automatically?"
+
+Concerns:
+- "If the AI books meetings without asking, people will revolt"
+- Wants approval flow: suggest times, let people confirm
+- Privacy: "Managers shouldn't see what's on my personal calendar,
+  just that I'm busy"
+- "We tried Clockwise and people hated it because it moved their
+  meetings without warning"
+
+Would pay more?
+- "If this actually works, yes. We'd pay $35/seat easily."
+- "But it has to work with Google Calendar. Half our acquired teams
+  are on Google Workspace. Non-negotiable."
+- Said she'd be on a customer advisory board "in a heartbeat"

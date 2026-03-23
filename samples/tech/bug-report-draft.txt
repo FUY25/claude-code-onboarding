@@ -1,0 +1,69 @@
+checkout flow bug — notes 3/17
+
+okay so Sarah from CS forwarded three tickets this morning (JIRA-4892, JIRA-4901, JIRA-4903)
+all related to the same thing i think?? users getting stuck on payment step
+
+reproduction (sometimes works sometimes doesnt):
+1. add 2+ items to cart
+2. go to checkout
+3. enter shipping info
+4. click "Continue to Payment"
+5. page just... spins. sometimes for 10sec, sometimes indefinitely
+6. if you refresh you lose the shipping info which is REALLY bad
+
+from the logs I pulled around 2:47pm PST yesterday:
+
+ERROR 2026-03-16T22:47:03.841Z [PaymentService] Failed to initialize payment session
+  at StripeGateway.createIntent (src/services/payment/stripe.ts:142)
+  at CheckoutController.initiatePayment (src/controllers/checkout.ts:89)
+  at async Router.<anonymous> (src/routes/api/checkout.ts:34)
+TypeError: Cannot read properties of undefined (reading 'currency')
+
+also seeing this intermittently:
+WARN  [CartService] Cart total mismatch: expected 149.97, got NaN
+  cartId: "cart_8f2k4j1m" userId: "usr_29571"
+
+env info:
+- production (us-east-1)
+- node 18.17.0
+- stripe sdk 14.1.0 (we upgraded from 13.x two weeks ago... maybe related?)
+- postgres 15.2
+- redis 7.0.11 for session store
+
+Kevin thinks its the stripe upgrade but I checked the migration guide and we handled the
+breaking changes. although... we might have missed the part about multi-currency support?
+the old API defaulted to USD but the new one requires explicit currency
+
+user impact from Sarah's email:
+- ~340 users affected since March 14
+- conversion rate dropped 12% (!!!)
+- mainly hitting users with multiple items (single item checkout works fine apparently)
+- getting really angry tweets, marketing is not happy
+
+things I've tried:
+- rolled back stripe sdk locally, can't reproduce the bug with 13.x
+- added logging around the cart total calculation
+- the NaN thing happens when there's a mix of USD and CAD prices in cart
+    we never handled multi-currency in the cart aggregation??
+    see CartService.calculateTotal() line 67
+
+wait — just realized the cart_items table has a currency column we added in Q4 but
+calculateTotal() still assumes everything is USD. it just does:
+  items.reduce((sum, item) => sum + item.price * item.quantity, 0)
+without checking currency. and when stripe 14.x gets a cart with mixed currencies
+it returns undefined for the paymentIntent currency which causes the TypeError
+
+TODO:
+- [ ] fix calculateTotal to group by currency or convert
+- [ ] add currency validation at add-to-cart time
+- [ ] figure out if we need to support multi-currency checkout or just block it for now
+- [ ] check with PM (lisa) on whether multi-currency is even a feature we want
+- [ ] write a postmortem, this has been in prod for 3 days
+
+also Marcus mentioned the staging env has a different version of the cart service running??
+need to sync with devops on that. the CI pipeline might be deploying an old branch
+
+that explains why QA didn't catch this — staging literally has different code
+
+priority: P1 (should be P0 honestly given the revenue impact)
+assignee: me (David) + Kevin for the stripe stuff

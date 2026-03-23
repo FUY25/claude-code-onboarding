@@ -1,0 +1,38 @@
+Meeting with David Chen (CEO) — Jan 8, 2026
+Re: Smart Scheduling feature for CollabHub
+
+David opened with the competitive landscape. Clockwise just raised $45M and
+their AI scheduling is getting press. He's worried we're falling behind.
+"If we don't ship something by end of Q2 we lose the narrative."
+
+Revenue pressure:
+- Board wants 40% YoY growth, we're tracking at 31%
+- Smart scheduling could be the upsell hook for Pro tier ($29/mo vs $19/mo)
+- He threw out a number: $3.2M incremental ARR if we convert 15% of free users
+- "Scheduling is the wedge. Calendar is where people live."
+
+Timeline concerns:
+- Wants public beta by April 15, GA by June 1
+- I pushed back — said eng estimates are 16-20 weeks minimum
+- He said "find a way to cut scope, not timeline"
+- Suggested we skip the Google Calendar integration at first? Just Outlook?
+  I don't think that flies with our user base — 64% are on Google Workspace
+
+Competitive notes he mentioned:
+- Clockwise: AI-driven, but only does focus time blocking
+- Reclaim.ai: good at habits but clunky UX
+- Cal.com: open source angle, developer-focused
+- "None of them do team-level scheduling well. That's our gap."
+
+Product direction:
+- Wants smart scheduling tied into our existing channels/messaging
+- "Don't build a calendar app. Build scheduling intelligence inside CollabHub."
+- Mentioned the idea of "meeting cost calculator" — show teams how much
+  time they spend in meetings, then offer to optimize
+- AI should learn from user behavior, not just rules
+
+Other notes:
+- Doesn't want a settings-heavy experience, should "just work"
+- Asked about data privacy implications — GDPR, SOC2
+- Wants a customer advisory board for this feature, 8-10 accounts
+- Said he'd approve 3 additional headcount if we commit to April beta

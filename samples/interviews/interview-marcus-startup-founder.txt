@@ -1,0 +1,52 @@
+Marcus Rivera — Founder/CEO, NimbusAI (seed stage, 9 people)
+Feb 18 2026 — coffee chat, not formal interview
+Jamie's notes, pretty informal
+
+Context: Marcus is technical (ex-Google eng), started NimbusAI 8 months ago.
+Team is 5 eng, 1 designer, 1 PM (who is also doing marketing), himself, 1 ops person
+
+What they use now:
+- GitHub Issues + Projects (free lol)
+- Notion for everything else — docs, wiki, meeting notes, roadmap
+- Slack obv
+- Google Sheets for investor reporting
+- "We tried Linear for a month but honestly at our size it was overkill"
+
+His perspective is totally different from larger company ppl...
+
+"We don't need a project management tool. We need a 'don't let things fall through the cracks' tool."
+
+Pain points:
+- Context switching between tools kills productivity for small team
+- He wears many hats — needs to see eng work, fundraising tasks, hiring pipeline, customer issues ALL in one view
+- Notion is flexible but... too flexible? "We spent 2 days setting up our Notion workspace and it's already a mess"
+- No structure means things get lost. Someone mentioned a bug in standup 3 days ago, nobody wrote it down, customer complained again
+- Investor updates take him a full day every month to compile
+
+What he wants:
+- SIMPLE. Cannot stress this enough. "If it takes more than 10 minutes to set up I'm out"
+- One tool to replace GitHub Issues + Notion + Sheets
+- Pre-built templates for startup workflows (sprint planning, investor updates, hiring)
+- Good mobile app — he does a lot on his phone between meetings
+- Cheap or free tier for small teams... "we're pre-revenue, every dollar matters"
+
+On AI:
+- Very bullish. "Auto-generate my investor update from what we shipped this month? Take my money."
+- Wants AI to help prioritize backlog
+- Smart daily digest instead of checking 5 tools every morning
+
+Interesting tension: he says he wants simple but then listed like 15 features he needs
+I think what he really means is simple UX with a lot happening underneath...
+...which is basically what David said too now that I think about it
+
+Pricing:
+- Free tier is essential for him to even try it
+- Would pay $8-10/seat when they grow, but needs to be free or near-free at <10 people
+- "I'll switch to whatever tool my investors use if they make me" — interesting lock-in dynamic
+
+Competitors he mentioned: Linear, Shortcut, Plane (open source), Basecamp
+"Basecamp has the right philosophy but the product feels stuck in 2015"
+
+His biggest ask: "Build something that a 9-person startup and a 200-person company can both use without it feeling wrong for either"
+
+... that's basically our whole product challenge in one sentence lol

@@ -1,0 +1,55 @@
+Smart Scheduling Brainstorm — Jan 14, 2026
+Attendees: Liam (eng lead), Priya (design), Omar (backend), Jess (ML), Tony (PM)
+
+TECHNICAL FEASIBILITY
+
+Omar on calendar integration:
+- Google Calendar API is well-documented, OAuth flow straightforward
+- Outlook/Microsoft Graph API is messier, rate limits are aggressive
+- "We can do read-only calendar access in 3-4 weeks, write access adds
+  another 2-3 weeks of edge cases"
+- Bi-directional sync is the hard part — conflict resolution when events
+  change on both sides
+
+Jess on the ML side:
+- We can start with rule-based scheduling (time zone math, availability
+  intersection) and layer ML on top
+- For actual "smart" suggestions we need 4-6 weeks of usage data per user
+- Cold start problem: new users get dumb suggestions until we learn patterns
+- "Don't promise AI magic on day one. Promise convenience, deliver AI later."
+- Looked at meeting pattern analysis — need at least 8 weeks of calendar
+  history to detect which meetings are "movable"
+
+DESIGN IDEAS
+
+Priya's concepts:
+- Inline scheduling in chat: user types intent, bot suggests 3 time slots
+- "Schedule" button on any message — turns a discussion into a meeting
+- Team availability heat map: visual grid showing busy/free across team
+- Meeting health dashboard: time spent in meetings per week, trends
+- "The UX has to feel like a suggestion, not a command"
+
+SCOPE DEBATE
+
+Tony wants everything for April beta. Liam says no way.
+
+Liam's proposed phasing:
+  Phase 1 (April beta): Manual scheduling assistant — find times, suggest
+    slots, user confirms, event created. Google Calendar only.
+  Phase 2 (June GA): Add Outlook, recurring meeting optimization, team
+    availability view
+  Phase 3 (Q3): ML-powered suggestions, meeting cost analytics, auto-rescheduling
+
+Tony: "David wants the AI story for April"
+Liam: "Then David needs to give us 6 more engineers"
+Compromise: Phase 1 includes basic pattern matching (not ML) to rank
+  suggested times by historical preference
+
+DEPENDENCIES & RISKS
+- Need calendar permissions in our OAuth scope — requires security review
+- GDPR implications of storing calendar data — legal needs 2 weeks
+- Our notification system can't handle real-time calendar webhooks yet,
+  Omar estimates 3 weeks to upgrade
+- If we do Google-only first, 36% of enterprise accounts are Outlook-only
+- Design system doesn't have a date/time picker component, Priya needs
+  to build one from scratch (1.5 weeks)

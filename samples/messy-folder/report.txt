@@ -1,0 +1,12 @@
+Q3 Performance Report - DRAFT
+
+Revenue grew 12% quarter-over-quarter, driven primarily by
+expansion in the APAC region. Customer churn decreased to 4.2%
+from 5.8% in Q2.
+
+Key highlights:
+- New enterprise contracts: 14
+- Monthly active users: 28,400
+- Support ticket volume: down 20%
+
+TODO: add financial tables, get sign-off from finance

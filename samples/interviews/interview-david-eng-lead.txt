@@ -1,0 +1,42 @@
+Interview: David Kowalski — Eng Lead, Paystream (fintech startup, ~45 ppl)
+Date: Feb 14 2026
+Interviewer: Jamie
+Call was 35 min, he had to drop early for an incident
+
+Role: manages 12 engineers across 2 squads. Reports to CTO.
+
+Current stack: Linear, Notion, Slack, GitHub
+Previously used: Jira (at prev company — "never again"), Asana ("too PM-y")
+
+Likes about Linear:
+- Fast, keyboard shortcuts, doesn't feel bloated
+- Cycles concept works well for sprints
+- GitHub integration is solid
+
+Problems:
+- Notion and Linear don't talk to each other well... specs live in Notion, tasks in Linear, context is split
+- "My engineers shouldn't have to be in 4 different tools to understand what they're building"
+- Status updates — his words: "I do a standup, then I update Linear, then I post in Slack, then someone asks me in a meeting anyway. Same information 4 times."
+- Sprint planning takes too long, lots of manual grooming
+- Non-technical stakeholders can't use Linear, so he has to translate everything
+
+What he wants:
+- Tight docs + tasks integration, like... tasks that ARE docs? or docs embedded in tasks?
+- Minimal UI. "If it looks like Jira I'm not using it"
+- API-first design — wants to build custom integrations
+- Git-aware — auto-link PRs, show deployment status on tasks
+- "Give me power features but hide them. I want it simple until I need it complex."
+
+On AI features:
+- Skeptical but curious. "Don't auto-generate my tickets, but maybe summarize a thread into action items?"
+- Wants AI to draft release notes from merged PRs
+- Auto-triage bugs based on logs... he got excited about this one
+
+Pricing thoughts:
+- Current spend ~$800/mo on Linear + Notion combined
+- Would consolidate if one tool did both well, budget flexible for right solution
+
+Contradicts Sarah on complexity — he wants MORE power under the hood, she wants simplicity
+But they agree on: status update hell, too many tools, notification overload
+
+Note: very opinionated user, would be great for beta testing

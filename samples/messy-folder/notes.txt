@@ -1,0 +1,5 @@
+- fix login bug (urgent!!)
+- order new monitors for dev team
+- update API docs before friday
+- ask sarah about the Q3 timeline
+- dentist appointment tuesday 3pm

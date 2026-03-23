@@ -1,0 +1,60 @@
+Priya Sharma — Head of Operations, Canopy Health (healthtech, ~60 ppl)
+Feb 21 2026 — quick 25 min call, she was running between meetings
+
+Role: ops manager, basically keeps the whole company running. Not in eng/product but coordinates across all teams.
+
+Tools rn: Asana, Google Workspace, Slack, some custom Airtable bases
+Previously: Monday.com ("looked nice but felt like a toy"), Trello ("outgrew it in 3 months")
+
+She's interesting bc she's not a PM or eng — she's the connective tissue person
+
+Pain points:
+- "I can see what product is building in Asana but I have no idea what sales promised the customer last week. Those two things need to talk to each other."
+- Cross-functional coordination is her whole job and no tool helps with it
+- Recurring workflows (onboarding, quarterly planning, compliance reviews) are all manual checklists in Google Docs
+- Can't get executives to use any PM tool — they only look at decks and dashboards
+- Onboarding new employees to their tool stack takes a full week... "by the time they figure out where everything is, they've already missed context"
+
+Status updates:
+She called them "the tax everyone pays but nobody benefits from"
+Has the same complaint as LITERALLY everyone else
+"Every Monday I compile updates from 6 team leads into a deck for the CEO. It takes 3 hours. The CEO looks at it for 5 minutes."
+
+What she wants:
+- Dashboard that non-tool-users can consume (execs, board members)
+- Templates for repeating processes — not just tasks, like... full workflows that recur quarterly
+- Better search across everything — "where did we discuss the pricing change? Was it Slack? A doc? An Asana comment? I literally can't find it"
+- Calendar integration that actually works — show tasks + meetings + deadlines together
+- "I want to build an Airtable-like thing but without needing a PhD in databases"
+
+Her unique angle — operations perspective:
+- Needs to see company-wide, not just one team
+- Deals with non-engineering work too: hiring, events, compliance, vendor management
+- Current tools are all built for product/eng teams, ops is afterthought
+- She ends up building shadow systems in spreadsheets bc the PM tool doesn't flex enough
+
+On simplicity:
+"I'm not technical. If your tool requires reading documentation to set up, you've lost me."
+But then she showed me her Airtable setup and it's genuinely sophisticated...
+I think she underestimates her own technical ability tbh
+
+On AI:
+- Wants it for search — "just let me ask 'what did we decide about X' and get an answer"
+- Auto-reminders for recurring deadlines
+- Summarize long Slack threads into decisions + action items
+- Less interested in AI for planning, more for finding and organizing information
+
+Pricing:
+- Mid-range, $10-15/seat probably
+- Needs to work for non-technical users WITHOUT a separate training session
+- Free trial mandatory, "I'm not going to procurement with something I haven't tested myself"
+
+Quote: "The perfect PM tool wouldn't feel like a PM tool. It would just feel like... how work gets done."
+
+Overlapping themes w/ other interviews:
+- Status update fatigue (literally universal at this point)
+- Too many tools / context scattered everywhere
+- Want for AI summarization + search
+- Tension between simplicity and power (also universal)
+
+She asked if we're hiring ops people btw... said she'd love to work on this problem

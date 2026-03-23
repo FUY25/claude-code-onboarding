@@ -1,0 +1,48 @@
+Interview — Lisa Yamamoto, Lead Product Designer
+Company: BrightLoop (edtech, ~80 people)
+Date: Feb 15 2026
+Notes by Jamie — audio recording failed halfway thru so second half is rough
+
+Background: design lead, 4 designers on her team. 8 years experience, prev at Spotify.
+
+Tools: Figma (obv), Jira (hates it), Notion (docs), Slack, Loom for async feedback
+
+Opening quote that sets the tone:
+"Jira is where design work goes to die. I put my specs in there and no one reads them. The eng team just looks at the ticket title and starts building."
+
+Pain points — design specific:
+- Handoff is broken... she creates detailed specs in Figma, links them in Jira, engineers don't click the link
+- No good way to show design progress. "My work doesn't fit into To Do / In Progress / Done"
+- Design reviews get lost in Slack threads
+- Can't see how design tasks connect to eng tasks... feels like parallel tracks that occasionally crash into each other
+- Feedback is scattered — some in Figma comments, some in Slack, some in meetings, some in Jira comments
+
+What she wants in a PM tool:
+- Visual/spatial organization — kanban but also like... mood boards? she mentioned Miro
+- Design stages: research > explore > refine > handoff > QA — not just "in progress"
+- Embedded image previews — "don't make me click 3 links to see what we're building"
+- Better async feedback loops, threaded discussions ON the work
+- Cross-functional views showing design + eng + QA in one timeline
+
+Her ideal workflow:
+1. Brief comes in as a task with context
+2. She can sketch/attach explorations directly in the tool
+3. Feedback happens in-context not in Slack
+4. Handoff auto-generates eng tickets with design specs attached
+5. She can see eng progress without asking anyone
+
+On simplicity vs features:
+"I need it to be beautiful and intuitive. If it looks like a database I won't use it."
+...which is funny bc she also wants tons of customization for design workflows
+She acknowledged the contradiction when I pointed it out lol
+
+Status updates issue (again!):
+"My manager asks me every Monday what I'm working on. It's in the tool! Just look!"
+Same exact complaint as Sarah and David basically
+
+Would pay: didn't discuss pricing, she said "that's not my call" but would strongly advocate if the tool understood design workflows
+
+Random aside — she mentioned her team tried Height and liked the vibe but it was too limited
+Also mentioned she misses physical sticky notes... "there's something about moving a post-it that digital tools don't capture"
+
+TODO: send her the prototype concepts for feedback

@@ -1,0 +1,71 @@
+NovaBridge — business plan braindump
+last updated feb 28 but also some stuff from the march board call
+
+== the idea ==
+AI-powered contract review platform for mid-market legal teams (10-50 attorneys)
+think "Ironclad meets ChatGPT" — not original I know but the execution matters
+target ACV: $48K-$120K depending on seat count
+
+market size notes:
+- legal tech market ~$29B by 2027 (Grand View Research report, need to verify)
+- contract management specifically is $2.9B (2025) growing at 13.4% CAGR
+- mid-market is underserved — enterprise has Ironclad/Agiloft, SMB has PandaDoc
+  nobody is doing AI-native for the 10-50 attorney segment
+- TAM: ~12,000 firms in US alone in this segment, so $576M-$1.44B depending on pricing
+- but realistically SAM is more like $180M, need to refine this
+
+competitors and why we win:
+- Ironclad: too expensive, enterprise-focused, AI bolted on not native
+- Kira Systems (acquired by Litera): good ML but legacy architecture
+- LawGeex: pivoted to enterprise, left mid-market gap
+- Harvey: going after BigLaw, different buyer persona entirely
+- Robin AI: UK-focused, limited US presence
+- SpotDraft: closest competitor honestly. but their AI accuracy is ~78% on non-standard clauses
+  we're hitting 91% in our prototype (need to validate on larger dataset)
+
+revenue model:
+platform fee: $2K/mo base + $200/seat/mo
+usage: $0.50 per contract reviewed (first 500 included)
+enterprise add-on for API access: $1K/mo
+professional services for onboarding: $15K one-time
+
+so a 25-person firm would be: $2K + $5K + maybe $500 overage = $7.5K/mo = $90K ACV
+   not bad
+
+projection (aggressive but defensible?):
+Year 1: 15 customers, $960K ARR, burn $2.4M
+Year 2: 65 customers, $4.8M ARR, burn $3.1M (should be close to breakeven on unit economics)
+Year 3: 180 customers, $14.4M ARR, maybe cash flow positive??
+
+we need $3.5M seed round. Talking to:
+- Initialized Capital (warm intro through Derek)
+- Bessemer (they did LawGeex, know the space)
+- Sequoia scout program (long shot)
+- a]16z has a legal tech thesis apparently — need to find the right partner
+
+team right now:
+- me (CEO, ex-Ironclad PM, 4 years)
+- Priya Sharma (CTO, ex-Google, built doc AI systems for 6 years)
+- James Chen (ML lead, PhD NLP from Stanford, published 3 papers on contract understanding)
+- hiring: need 2 more engineers, 1 designer, 1 sales lead ASAP
+  the sales lead is critical — neither me nor Priya can sell full-time
+
+risks I need to address in the deck:
+1. AI accuracy — what if GPT-5 makes our fine-tuned models obsolete overnight
+2. data security — law firms are PARANOID about data. need SOC 2 by month 6
+3. long sales cycles — legal procurement is 3-6 months minimum
+4. regulatory — some states have rules about AI in legal practice
+
+from the board call — Tom said we should consider a PLG motion first?
+  like a free tier for solo practitioners to build word-of-mouth
+  I pushed back because our CAC would be insane at that price point
+  but he might be right about the awareness angle
+
+NOTE: need to redo the financial model with the updated pricing
+  the old model assumed $150/seat which is too low based on customer discovery
+  Rachel did 14 interviews and the willingness-to-pay clusters around $180-$220/seat
+
+go-to-market phasing:
+Phase 1: Bay Area law firms (proximity, early adopter mentality)
+Phase 2: NYC/Chicago (biggest legal markets)
+Phase 3: expand to corporate legal departments (different buyer, different motion)

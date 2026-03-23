@@ -1,0 +1,36 @@
+Interview: Sarah Chen, Senior PM @ Gridwork (Series B, ~120 ppl)
+Date: Feb 12 2026
+Conducted by: Jamie
+
+Background: 6 yrs product mgmt, prev at Atlassian. Manages team of 8 engineers + 2 designers.
+
+Current tools: Jira, Confluence, Slack, Figma, Google Sheets for roadmap tracking
+She mentioned "spreadsheet hell" multiple times lol
+
+Pain points:
+- Status updates take forever. "I spend Monday mornings just chasing people on Slack asking what they did last week... it's like pulling teeth"
+- Jira is too heavyweight. Engineers hate filling out tickets. "They just don't update the status, so the board is always wrong"
+- Roadmap lives in google sheets, gets out of sync constantly
+- No single source of truth — stakeholders ask her the same questions bc they can't find info themselves
+- Cross-team dependencies are a nightmare... she drew this whole diagram on the whiteboard showing how 3 teams block each other
+
+What she wants:
+- Automatic status updates somehow? She mentioned Linear does this better but hasn't tried it
+- Simple views for different audiences — eng needs detail, execs need high level
+- "I just want ONE place where everything lives. Not Jira for tickets, Confluence for docs, Sheets for roadmap..."
+- Timeline/gantt view that actually stays updated
+- Better async standups — "we tried Geekbot but it felt like homework"
+
+Interesting quote: "The best project management tool is the one people actually use. Everything we've tried, adoption drops off after 2 months."
+
+She got really animated about the notification problem — too many notifications from Jira/Slack, so people ignore them all, then miss important stuff
+
+Feature requests:
+- Smart notifications (only ping me when something actually needs my attention)
+- Auto-generate weekly status reports from activity
+- Dependencies visualization
+- Customizable views per role
+
+Would pay: "Easily $15-20/seat if it actually replaced Jira AND our spreadsheets"
+
+Follow-up: she wants to do a workflow walkthrough session, scheduling for next week

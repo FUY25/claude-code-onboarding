@@ -1,0 +1,9 @@
+Team Sync - Oct 14
+Attendees: Marcus, Priya, Jordan, Lisa
+
+- Sprint velocity down 15% from last month
+- Priya demoed new dashboard widgets, feedback was positive
+- Jordan flagged concerns about the migration timeline
+- Action item: Marcus to draft revised schedule by EOW
+- Lisa mentioned we need to hire 2 more backend devs
+- Next sync moved to Thursday due to holiday Monday

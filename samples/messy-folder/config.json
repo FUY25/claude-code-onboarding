@@ -1,0 +1,13 @@
+{
+  "appName": "WidgetTracker",
+  "version": "2.1.0",
+  "port": 3000,
+  "database": {
+    "host": "localhost",
+    "name": "widgets_prod"
+  },
+  "features": {
+    "darkMode": true,
+    "notifications": false
+  }
+}

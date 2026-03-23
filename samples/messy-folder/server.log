@@ -1,0 +1,8 @@
+[2024-10-14 09:12:03] INFO  Server started on port 3000
+[2024-10-14 09:12:04] INFO  Connected to database widgets_prod
+[2024-10-14 09:15:22] WARN  Slow query detected: GET /api/sales (2340ms)
+[2024-10-14 09:18:47] ERROR Failed to send email notification: SMTP timeout
+[2024-10-14 09:20:01] INFO  User marcus@company.com logged in
+[2024-10-14 09:25:33] WARN  Memory usage at 78%
+[2024-10-14 09:30:00] INFO  Scheduled backup started
+[2024-10-14 09:30:45] INFO  Backup completed successfully

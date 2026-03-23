@@ -1,0 +1,86 @@
+Research Notes — Remote Work Productivity Study
+PI: Dr. Kara Mitchell, Org Psych Dept
+Grant: NSF #2341872 (Year 2 of 3)
+Data collection: Jan 15 – Mar 8, 2026
+
+PARTICIPANTS
+N = 347 knowledge workers recruited via Prolific + LinkedIn outreach
+- 198 fully remote, 94 hybrid (2-3 days office), 55 fully in-office (control)
+- mean age: 34.2 (SD = 7.8), range 22-58
+- gender: 52% F, 44% M, 4% non-binary/other
+- industries: tech (41%), finance (22%), consulting (18%), healthcare (9%), other (10%)
+- excluded 23 participants for incomplete surveys (>30% missing data)
+  so effective N = 324 for most analyses
+  wait actually we excluded 4 more after the attention check analysis — N = 320
+
+MEASURES
+- Productivity: self-report (adapted from Palvalin et al., 2017, 12-item scale, alpha = .87)
+  AND objective: manager ratings on 5-point scale (inter-rater reliability kappa = .72)
+  theres a discrepancy between self-report and manager ratings that we need to address
+  self-report productivity is higher across all groups by ~0.6 SD
+- Work-life boundary management: Kossek boundary scale (2016), alpha = .81
+- Autonomy: Basic Psychological Needs Scale — autonomy subscale, alpha = .79
+- Loneliness: UCLA Loneliness Scale (short form, 8 items), alpha = .84
+- Burnout: MBI-GS exhaustion subscale, alpha = .89
+  note: we added 3 custom items about "Zoom fatigue" — need to report these separately
+  since they haven't been validated
+
+KEY FINDINGS (preliminary — DO NOT SHARE)
+
+1. Remote workers report 12% higher self-rated productivity vs in-office (p = .003, d = .41)
+   BUT manager ratings show no significant difference (p = .34, d = .11)
+   this is the big finding — the gap between perceived and actual productivity
+   runs counter to the Bloom et al. (2015) ctrip study which found objective gains
+
+2. Hybrid workers score HIGHEST on work-life boundary management
+   F(2, 317) = 8.94, p < .001, eta-squared = .053
+   post-hoc Tukey: hybrid > remote (p = .002), hybrid > in-office (p = .008)
+   remote vs in-office: not significant (p = .41)
+   -> having SOME structure seems to help more than all-or-nothing
+
+3. Loneliness findings:
+   remote workers: M = 42.3 (SD = 8.1)
+   hybrid: M = 36.7 (SD = 7.4)
+   in-office: M = 33.9 (SD = 9.2)
+   significant main effect, but moderated by team meeting frequency
+   workers with daily standups showed no loneliness difference across conditions!
+   interaction: F(4, 310) = 3.12, p = .015
+   this is interesting — frequency of synchronous contact matters more than location
+
+4. Burnout: no significant differences between groups (p = .22)
+   but the Zoom fatigue items DID differ — remote workers scored 1.2 points higher
+   on the 3-item custom scale (t = 3.87, p < .001)
+   need to be careful reporting this since the items aren't validated
+
+5. mediation analysis (PROCESS Model 4, Hayes):
+   autonomy mediates the relationship between remote work and self-rated productivity
+   indirect effect: b = 0.34, SE = .09, 95% CI [0.18, 0.53]
+   but does NOT mediate manager-rated productivity
+   so people FEEL more productive because they feel more autonomous
+   but that doesn't translate to actual performance gains? or managers can't see it?
+
+STUFF TO FIGURE OUT:
+- the self-report vs manager rating gap needs its own section in the paper
+  reviewer 2 is going to have a field day with this
+  maybe frame it as a perception-reality gap? cite Bailey & Kurland (2002)
+- should we control for job type? some roles are inherently more measurable
+  ran a quick check: job type doesn't moderate the main effect (p = .67)
+- Prolific sample skews young and tech-heavy — limits generalizability
+  need to acknowledge this prominently in limitations
+- one of the RAs (Jason) flagged potential order effects in the survey
+  the productivity items came right after the autonomy items
+  might have primed participants... ugh. too late to fix for this dataset.
+
+references to track down:
+- Bloom et al. (2015) — the original WFH study at Ctrip
+- Choudhury, Foroughi & Larson (2021) — geography of remote work, HBS
+- Gajendran & Harrison (2007) — meta-analysis on telecommuting
+- need the new Barrero, Bloom & Davis working paper (2024 update?)
+- Yang et al. (2022) — Microsoft study on collaboration networks
+
+next steps:
+1. clean up the mediation analysis — run with bootstrapping (10,000 samples)
+2. write up results section draft by March 30
+3. submit to Journal of Applied Psychology (deadline April 15??)
+4. present preliminary findings at SIOP conference in April
+   abstract already accepted, need to make the poster

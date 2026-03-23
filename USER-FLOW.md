@@ -374,21 +374,31 @@ Available modules:
 - How skills are project-scoped (safe by design)
 - Creating your own skill: just a markdown file with instructions in `.claude/skills/`
 
-**Try it now:** [Pre-designed task using a sample skill in the repo — TBD]
+**Try it now:** "This repo has a custom skill called `/sample-skill` — a Writing Reviewer. Try it: open the file `samples/writing/meeting-notes.txt`, then type `/sample-skill` and ask Claude to review those meeting notes for clarity, tone, and structure. Look at the feedback it gives you — that's a skill in action. Now open `.claude/skills/sample-skill/SKILL.md` and read it. It's just a markdown file with instructions. You could make your own skill for any repeatable task."
 
 #### 3.2 Connect Claude to External Tools (MCP)
 - What MCP (Model Context Protocol) is: a way for Claude to talk to other services
 - When you'd use it (databases, APIs, external tools)
 - How to set one up (brief overview, link to docs)
 
-**Try it now:** [Pre-designed task using a sample MCP setup in the repo — TBD]
+**Try it now:** "MCP lets Claude talk to external tools and services. Let's try the simplest one: a Fetch server that lets Claude grab content from any URL. Run this one command in your terminal:
+
+```
+claude mcp add fetch -s user -- npx -y @anthropic/mcp-fetch
+```
+
+That's it — Claude can now read web pages. Try it: ask Claude 'Fetch https://news.ycombinator.com and tell me the top 3 stories right now.' Claude will use the Fetch MCP to grab the page and summarize it. You just gave Claude a new superpower with one line."
 
 #### 3.3 Make Claude Work in Parallel (Sub-agents and Teams)
 - What sub-agents are (Claude spawning helpers for parallel work)
 - When to use them (large tasks, research + implementation)
 - Agent teams for complex multi-step projects
 
-**Try it now:** [Pre-designed multi-step task using the repo — TBD]
+**Try it now:** "Here's where parallel work shines. This repo has three different sample files: meeting notes (`samples/writing/meeting-notes.txt`), a sales dataset (`samples/data/sales.csv`), and a website brief (`samples/creative/website-brief.txt`). Ask Claude:
+
+'Read all three sample files at once — the meeting notes, the sales CSV, and the website brief. For each one, write a one-paragraph executive summary. Then combine them into a single "Weekly Digest" document with all three summaries and save it as `weekly-digest.md`.'
+
+Watch what happens: Claude spawns sub-agents to read and analyze all three files simultaneously, then combines their work. What would take three separate conversations happens in one step."
 
 #### 3.4 Advanced Shortcuts and Power Moves
 - `/compact` — manually trigger context compression
@@ -480,7 +490,7 @@ Each application follows the same 3-step structure:
 - Knowhow: How to structure financial analysis prompts like an analyst — be specific about what to compare, what thresholds matter, and who the audience is. Claude reads PDFs directly. Always cross-check the numbers Claude cites against the source document.
 
 **A6: Academic Paper Reading**
-- Sample: [1 CS paper to be provided — TBD, placed in `samples/research/`]
+- Sample: `NIPS-2017-attention-is-all-you-need-Paper.pdf` ("Attention Is All You Need" — the Transformer paper)
 - Try: "Read this paper. Explain the key findings as if I'm a beginner with no CS background. What problem does it solve, why does it matter, and what are the limitations the authors admit?"
 - Knowhow: How to use Claude as a research translator — break down jargon, ask for analogies, request different levels of explanation. Follow-up with "now explain just the methodology" or "what would a critic say about this paper?"
 
@@ -645,7 +655,7 @@ After Tier 1, the user can:
 | A3 | HTML Slides | `samples/creative/presentation-outline.txt` | NEEDED |
 | A4 | Interactive Dashboard | `samples/data/dashboard-data.json` | NEEDED |
 | A5 | Financial Statement | `TSLA-Q4-2025-Update.pdf` | EXISTS |
-| A6 | Academic Paper | [1 CS paper — TBD by Yuming] | NEEDED |
+| A6 | Academic Paper | `NIPS-2017-attention-is-all-you-need-Paper.pdf` | EXISTS |
 | A7 | PRD Writing | `samples/pm/ceo-meeting-notes.txt`, `customer-feedback-call.txt`, `team-brainstorm.txt` | NEEDED |
 | A8 | Design Doc | `samples/tech/sample-prd.md` | NEEDED |
 | A9 | Develop Demo | `samples/creative/website-brief.txt` | EXISTS |

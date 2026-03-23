@@ -1,0 +1,64 @@
+Chen Wei — Director of PMO, Meridian Financial (enterprise, ~2400 employees)
+Feb 20 2026 — 45 min video call
+Jamie + Priya on the call
+
+Title: Director, Project Management Office
+Reports to VP of Technology. Oversees 30+ PMs across the org.
+Been at Meridian 11 years, seen "every tool transition imaginable"
+
+Current tools (brace yourself):
+- Jira (eng teams)
+- ServiceNow (IT ops)
+- Smartsheet (PMO reporting)
+- Confluence (docs)
+- Microsoft Teams (chat)
+- SharePoint (file storage)
+- PowerPoint (exec reporting... yes really)
+- Excel (everything else)
+- "We have a tool for everything and nothing for everything"
+
+Enterprise pain points (different world from startups):
+- Compliance and audit trails are mandatory. "If it doesn't have activity logs and permission controls, legal won't approve it"
+- Change management is brutal — took 18 months to migrate from Rally to Jira
+- 300+ concurrent projects, needs portfolio-level views
+- Cross-department visibility is basically zero... engineering doesn't know what marketing is building
+- Reporting... he spends 40% of his time building reports and dashboards for leadership
+- SSO/SAML, SOC2, data residency — non-negotiable requirements
+
+Status updates (THE universal complaint):
+"I have 30 PMs and each of them spends 2-3 hours per week compiling status updates. That's 60-90 hours of PM time per week just on reporting. It's insane."
+
+What he wants:
+- Portfolio management — see all projects, health, risks, dependencies at org level
+- Automated roll-up reporting — team level aggregates to dept level aggregates to exec level
+- Granular permissions — different teams see different things
+- Custom fields, custom workflows per department
+- Integration with existing tools (ServiceNow, Salesforce, etc.) — "we can't rip and replace"
+- On-prem or private cloud deployment option
+
+On AI:
+- Cautious. "Our compliance team will want to know where the data goes"
+- But interested in: automated risk detection ("flag projects that are trending behind schedule")
+- AI-generated exec summaries
+- Pattern detection across projects — "tell me which projects are at risk before the PM tells me"
+
+Pricing:
+- Enterprise contracts, annual billing
+- "Price isn't the issue, procurement process is. I need ROI documentation, security questionnaire responses, a sandbox environment..."
+- Current spend: won't disclose but "north of $200K/year across tools"
+
+Key quote: "I don't need another tool that's great for one team. I need something that works for the whole organization. That's what nobody's built yet."
+
+Big contradictions with startup users:
+- He wants MAXIMUM customization and configuration — Marcus wants zero setup
+- He needs heavyweight compliance features — David wants lightweight
+- BUT he also complains about Jira being too complex... so maybe it's about SMART complexity?
+
+His advice for us: "Don't try to boil the ocean. Pick a wedge — maybe cross-team visibility — and be the best at that one thing. Then expand."
+
+Note: Meridian would be a huge logo for us. Chen said he'd champion an eval if we can check the security boxes. Need to get our SOC2 story together.
+
+Follow-up items:
+- Send security questionnaire
+- Schedule demo for his team leads
+- Provide customer references (we need some first...)

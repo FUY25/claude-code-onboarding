@@ -1,0 +1,40 @@
+Q4 2025 Product Review — NovaBridge Platform
+
+Slide 1: Title + team photo?
+
+Slide 2: Key numbers
+- MAU hit 2.4M in December, up 18% from Q3
+- Revenue: $14.2M (beat forecast by $1.1M)
+- NPS went from 34 to 41
+- churn dropped to 3.8%
+
+Slide 3: NovaBridge Connect launch recap
+- shipped Oct 15, two weeks late but stable
+- 68K activations in first 30 days
+- enterprise adoption slower than expected — only 14 accounts vs. 25 target
+- Sarah's team did the onboarding flow redesign, mention that
+
+Slide 4: Mobile
+- iOS 4.7 rating now (was 4.2 in July)
+- Android crash rate still too high, 2.1% — need to address
+- push notification opt-in up to 62%
+
+Slide 5: Team updates
+- hired 3 senior engineers, lost 1 (Marcus went to Stripe)
+- design team restructured under Priya
+- new DevOps lead starts Jan 6
+
+Slide 6: Lowlights / what didn't work
+- API partner program — only 8 integrations shipped out of 20 planned
+- self-serve onboarding conversion stuck at 11%
+- delayed the analytics revamp AGAIN
+
+Slide 7: Q1 2026 priorities
+- NovaBridge Connect enterprise push — need case studies
+- launch AI assistant (beta by Feb, GA by March)
+- internationalization — DACH region first
+- reduce support tickets by 30%
+
+Slide 8: Budget ask
+- requesting $2.3M additional for AI infra
+- need headcount approval for 4 ML engineers

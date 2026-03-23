@@ -1,0 +1,11 @@
+date,product,region,units,revenue
+2024-07-01,Widget A,North,120,3600
+2024-07-01,Widget B,South,85,2550
+2024-07-15,Widget A,East,200,6000
+2024-07-15,Widget C,North,45,2250
+2024-08-01,Widget B,West,150,4500
+2024-08-01,Widget A,South,90,2700
+2024-08-15,Widget C,East,60,3000
+2024-09-01,Widget A,North,175,5250
+2024-09-01,Widget B,South,110,3300
+2024-09-15,Widget C,West,70,3500

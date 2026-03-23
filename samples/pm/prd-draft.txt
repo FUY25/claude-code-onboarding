@@ -1,0 +1,100 @@
+PRD: In-App Notifications System (v0.3 DRAFT)
+Author: Lisa Huang, PM — last touched March 10
+Reviewers: David K. (eng), Samantha R. (design), TBD (data)
+
+=== PROBLEM ===
+Users are missing critical updates. We rely entirely on email notifications right now
+and our email open rate is 22% (industry avg is 34% for SaaS). Result: users churn
+because they don't see teammate comments, status changes, or deadline warnings.
+
+From the churn analysis Q4:
+- 31% of churned users cited "I didn't know things changed" in exit survey
+- power users get 40+ emails/day from us — they've started filtering us to spam (!!!)
+- mobile users are especially impacted — 68% of mobile sessions have ZERO interaction
+  with notification-driven features
+
+We need a real in-app notification system. This has been requested in 47 Intercom
+conversations and it's the #2 feature request on our public roadmap.
+
+TODO: get exact NPS impact data from analytics team
+
+=== USER STORIES ===
+
+As a project member, I want to see a notification bell with unread count so that
+I know when something needs my attention without checking email.
+
+As a project owner, I want to be notified in-app when a task is overdue so I can
+take action immediately.
+
+As a user, I want to customize which notifications I receive and through which
+channel (in-app, email, push) so I'm not overwhelmed.
+    ^^ is push mobile in scope? need to check with David on mobile PWA status
+
+As an admin, I want to see notification delivery metrics so I can understand if
+my team is staying informed.
+    Q: is this V1 or V2? feels like a V2 thing — Samantha disagrees
+
+=== REQUIREMENTS ===
+
+Must have (V1):
+- notification bell icon in top nav with unread badge count
+- notification dropdown/panel showing last 30 days of notifications
+- mark as read (individual + mark all)
+- notification types: comment mentions, task assignments, status changes, due date reminders
+- basic preferences: on/off per notification type per channel
+- real-time delivery (WebSocket, not polling — David was adamant about this)
+- works on web and mobile web
+
+Should have (V1 stretch):
+- notification grouping (e.g., "3 comments on Project Alpha")
+- snooze a notification for 1hr/4hr/tomorrow
+- deep link from notification to the relevant item
+
+Nice to have (V2):
+- push notifications via service worker
+- digest mode (daily/weekly summary instead of individual notifications)
+- admin dashboard for notification analytics
+- @ mention autocomplete in comments (prerequisite for mention notifications honestly)
+  wait this might need to be V1 if we're doing mention notifications???
+
+=== TECHNICAL NOTES (from David) ===
+- he wants to use a notification microservice, not bolt onto the monolith
+- estimates 4-6 weeks for eng (2 backend, 1 frontend, 1 QA)
+- dependency on the WebSocket infrastructure we started in Q3 but never finished
+  STATUS: ~60% done, needs 1 more sprint to be production-ready
+  THIS IS A BLOCKER — need to prioritize this or the timeline slips
+
+Database: probably a notifications table + user_notification_preferences table
+  but David wants to evaluate using Redis streams for the real-time part
+  and possibly Postgres for persistence. Feels overengineered? but he knows better.
+
+=== METRICS ===
+Primary:
+- notification interaction rate (clicked/total delivered) — target: >35%
+- reduction in "missed update" churn reason — target: from 31% to <15%
+- email notification volume reduction — target: 40% fewer emails sent
+
+Secondary:
+- DAU/MAU ratio improvement (hypothesis: notifications drive engagement)
+- time-to-action on assigned tasks (should decrease with in-app notifs)
+- user preference adoption rate (what % of users customize their settings)
+
+=== OPEN QUESTIONS ===
+1. Do we migrate existing email notification preferences or start fresh?
+   risk of confusing users if we reset everything
+2. How do we handle notification volume for large teams (50+ people)?
+   could be spammy without smart defaults
+3. What's the quiet hours policy? do we respect timezones automatically?
+4. Should notifications persist forever or auto-archive after 30/60/90 days?
+5. Accessibility — screen reader support for the bell icon and dropdown
+   TODO: loop in Samantha on a11y requirements
+
+=== TIMELINE (ROUGH) ===
+Design: 2 weeks (starts March 17)  <-- already late if we're targeting May release
+Eng: 5 weeks (April 1 – May 5)
+QA: 1 week (May 5-9)
+Beta: 2 weeks with 10% of users
+GA: May 26?? this feels really tight
+
+risks: WebSocket blocker, design capacity (Samantha is also on the dashboard redesign),
+  QA only has one person right now since Raj left
