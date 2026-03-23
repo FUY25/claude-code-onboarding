@@ -1,127 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Claude Code Onboarding — From Zero to Building Real Things</title>
-  <meta name="description" content="Interactive onboarding for Claude Code. No coding experience required. Go from zero to building real things in 20 minutes.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Code Onboarding — Wireframe Sketch</title>
+<style>
+  /* Intentionally rough — system fonts, thin borders, sketch aesthetic */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, sans-serif; color: #333; background: #fafafa; }
+  .page { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+
+  /* Hero */
+  .hero { text-align: center; padding: 60px 20px; border: 1px dashed #ccc; border-radius: 8px; margin-bottom: 40px; background: #fff; }
+  .hero h1 { font-size: 32px; font-weight: 700; margin-bottom: 12px; }
+  .hero .subtitle { font-size: 18px; color: #666; margin-bottom: 8px; }
+  .hero .subtitle-cn { font-size: 16px; color: #999; margin-bottom: 24px; }
+  .hero .cta { display: inline-block; padding: 14px 32px; border: 2px solid #333; border-radius: 6px; font-size: 16px; font-weight: 600; text-decoration: none; color: #333; margin: 8px; }
+  .hero .cta.primary { background: #333; color: #fff; }
+
+  /* Why section */
+  .section { margin-bottom: 40px; }
+  .section h2 { font-size: 22px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+
+  /* Comparison table */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  .compare-card { border: 1px solid #ddd; border-radius: 6px; padding: 20px; background: #fff; }
+  .compare-card h3 { font-size: 16px; margin-bottom: 8px; }
+  .compare-card .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 12px; }
+  .compare-card ul { font-size: 14px; line-height: 1.8; color: #555; padding-left: 18px; }
+  .compare-card.highlight { border-color: #333; }
+  .compare-card.highlight .tag { background: #333; color: #fff; border-color: #333; }
+
+  /* Recipes */
+  .recipes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .recipe { border: 1px solid #ddd; border-radius: 6px; padding: 16px; background: #fff; }
+  .recipe .icon { font-size: 28px; margin-bottom: 8px; }
+  .recipe h4 { font-size: 14px; margin-bottom: 6px; }
+  .recipe p { font-size: 12px; color: #777; line-height: 1.5; }
+  .recipe .difficulty { font-size: 11px; color: #999; margin-top: 8px; }
+
+  /* Flow diagram */
+  .flow { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 30px; border: 1px dashed #ccc; border-radius: 8px; background: #fff; margin-bottom: 24px; }
+  .flow-step { text-align: center; padding: 16px; border: 1px solid #ddd; border-radius: 6px; min-width: 160px; }
+  .flow-step .num { font-size: 24px; font-weight: 700; color: #999; }
+  .flow-step .label { font-size: 13px; margin-top: 4px; }
+  .flow-step .detail { font-size: 11px; color: #888; margin-top: 4px; }
+  .flow-arrow { font-size: 20px; color: #ccc; }
+
+  /* Language toggle */
+  .lang-toggle { text-align: right; margin-bottom: 20px; font-size: 13px; color: #999; }
+  .lang-toggle a { color: #333; text-decoration: underline; cursor: pointer; }
+
+  /* Footer */
+  .footer { text-align: center; padding: 40px 20px; color: #999; font-size: 13px; border-top: 1px solid #eee; margin-top: 40px; }
+
+  /* Annotation style */
+  .annotation { font-size: 11px; color: #b44; font-style: italic; margin-top: 8px; }
+</style>
 </head>
 <body>
+<div class="page">
 
-<nav>
-  <a class="nav-logo" href="#">Claude Code Onboarding</a>
-  <button class="nav-lang" onclick="toggleLang()">中文</button>
-</nav>
+  <!-- Language toggle -->
+  <div class="lang-toggle">EN | <a>CN</a></div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-shell">
-    <div class="hero-copy">
-      <p class="hero-kicker" id="hero-kicker">One command. Real output. No coding background required.</p>
-      <h1 id="hero-h1">Claude Code turns plain-English ideas into working projects.</h1>
-      <p class="subtitle" id="hero-sub">Ask for a report, a website, or a workflow. Claude Code handles the files, commands, and edits. This page gets you to a first useful result in 20 minutes.</p>
-      <p class="subtitle-cn" id="hero-cn">想法用自然语言说出来就行。Claude Code 会处理文件、命令和修改。这个页面会带你在 20 分钟内做出第一个有用成果。</p>
-
-      <div class="hero-meta">
-        <div class="hero-stat">
-          <span class="hero-stat-value">20 min</span>
-          <span class="hero-stat-label">to first useful result</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-value">1 command</span>
-          <span class="hero-stat-label">to start the lesson</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-value">0 coding</span>
-          <span class="hero-stat-label">required up front</span>
-        </div>
-      </div>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#install" id="hero-cta">Start Learning (5 min)</a>
-        <a class="btn btn-secondary" href="#how" id="hero-cta2">See How It Works</a>
-      </div>
-    </div>
-
-    <aside class="hero-proof" aria-label="Example Claude Code session">
-      <div class="proof-window">
-        <div class="proof-chrome" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </div>
-        <p class="proof-label">A typical first win</p>
-        <p class="proof-request">“Turn my meeting notes into a clean client update.”</p>
-        <div class="proof-flow">
-          <div class="proof-step">
-            <span class="proof-step-name">Input</span>
-            <span class="proof-step-value">messy notes.md</span>
-          </div>
-          <div class="proof-step">
-            <span class="proof-step-name">Claude Code</span>
-            <span class="proof-step-value">rewrites, formats, saves</span>
-          </div>
-          <div class="proof-step">
-            <span class="proof-step-name">Output</span>
-            <span class="proof-step-value">client-update.md</span>
-          </div>
-        </div>
-        <ul class="proof-list">
-          <li>Writes the file directly</li>
-          <li>Keeps your tone consistent</li>
-          <li>Leaves you with something usable, not a chat transcript</li>
-        </ul>
-      </div>
-    </aside>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Claude Code for Everyone</h1>
+    <div class="subtitle">You don't need to be a developer. You just need an idea.</div>
+    <div class="subtitle-cn">你不需要是程序员，你只需要一个想法。</div>
+    <a class="cta primary" href="#">Start Learning (5 min)</a>
+    <a class="cta" href="#">Watch Demo</a>
+    <p class="annotation"><!-- design note: hero copy speaks to fear directly --></p>
   </div>
-</section>
 
-<!-- HOW IT WORKS -->
-<section class="section section-alt" id="how">
-  <div class="section-inner">
-    <div class="section-head">
-      <h2 id="steps-title">How it works</h2>
-      <p class="section-lead" id="steps-lead">Read once, paste once, then let the lesson guide you into your first useful project.</p>
-    </div>
+  <!-- USER FLOW -->
+  <div class="section">
+    <h2>How it works</h2>
     <div class="flow">
       <div class="flow-step">
-        <div class="flow-num">1</div>
-        <div class="flow-label" id="step1-title">Read this page</div>
-        <div class="flow-detail" id="step1-desc">2 min, right here</div>
+        <div class="num">1</div>
+        <div class="label">Read this page</div>
+        <div class="detail">2 min, in your browser</div>
       </div>
+      <div class="flow-arrow">&rarr;</div>
       <div class="flow-step">
-        <div class="flow-num">2</div>
-        <div class="flow-label" id="step2-title">Install Claude Code</div>
-        <div class="flow-detail" id="step2-desc">Copy-paste 1 command</div>
+        <div class="num">2</div>
+        <div class="label">Install Claude Code</div>
+        <div class="detail">Copy-paste 1 command</div>
       </div>
+      <div class="flow-arrow">&rarr;</div>
       <div class="flow-step">
-        <div class="flow-num">3</div>
-        <div class="flow-label" id="step3-title">Run /learn</div>
-        <div class="flow-detail" id="step3-desc">Interactive skill teaches you</div>
+        <div class="num">3</div>
+        <div class="label">Run /learn</div>
+        <div class="detail">Interactive skill teaches you</div>
       </div>
+      <div class="flow-arrow">&rarr;</div>
       <div class="flow-step">
-        <div class="flow-num">4</div>
-        <div class="flow-label" id="step4-title">Build something real</div>
-        <div class="flow-detail" id="step4-desc">Your first project in 20 min</div>
+        <div class="num">4</div>
+        <div class="label">Build something real</div>
+        <div class="detail">Your first project in 30 min</div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- WHY SECTION -->
-<section class="section">
-  <div class="section-inner">
-    <div class="section-head">
-      <h2 id="why-title">Why Claude Code instead of ChatGPT?</h2>
-      <p class="section-lead" id="why-lead">The upgrade is not just better answers. It is getting useful work saved on your machine instead of trapped in a browser tab.</p>
-    </div>
-
+  <!-- WHY CLAUDE CODE -->
+  <div class="section">
+    <h2>Why Claude Code instead of ChatGPT / OpenClaw?</h2>
     <div class="compare">
       <div class="compare-card">
-        <h3>Browser-based AI</h3>
-        <span class="tag" id="tag-old">what you're used to</span>
+        <h3>Browser-based AI (ChatGPT, OpenClaw)</h3>
+        <span class="tag">what you're used to</span>
         <ul>
           <li>Copy-paste code back and forth</li>
           <li>Can't touch your real files</li>
@@ -129,10 +118,9 @@
           <li>You are the middleman</li>
         </ul>
       </div>
-
       <div class="compare-card highlight">
         <h3>Claude Code</h3>
-        <span class="tag tag-good" id="tag-new">what you'll learn here</span>
+        <span class="tag">what you'll learn here</span>
         <ul>
           <li>Reads and writes your files directly</li>
           <li>Runs commands for you</li>
@@ -142,173 +130,65 @@
       </div>
     </div>
   </div>
-</section>
 
-<!-- RECIPES -->
-<section class="section section-alt">
-  <div class="section-inner">
-    <div class="section-head">
-      <h2 id="recipes-title">What can non-technical people build?</h2>
-      <p class="section-lead" id="recipes-lead">Start with work that already matters to you: operations cleanup, writing, analysis, or a simple public-facing page.</p>
-    </div>
+  <!-- RECIPES / SAMPLE PROJECTS -->
+  <div class="section">
+    <h2>What can non-technical people build?</h2>
     <div class="recipes">
-      <div class="recipe recipe-wide">
-        <div class="recipe-icon">&#128196;</div>
-        <h4>Report from Notes</h4>
-        <p>Turn messy meeting notes into a clean, formatted report.</p>
-        <div class="difficulty">Beginner &bull; 10 min</div>
-      </div>
       <div class="recipe">
-        <div class="recipe-icon">&#9993;</div>
-        <h4>Email from Bullets</h4>
-        <p>Give Claude bullet points. Get a professional email in your tone.</p>
-        <div class="difficulty">Beginner &bull; 5 min</div>
-      </div>
-      <div class="recipe">
-        <div class="recipe-icon">&#128202;</div>
-        <h4>Analyze a Spreadsheet</h4>
-        <p>Ask plain-English questions about your data. No formulas needed.</p>
-        <div class="difficulty">Beginner &bull; 10 min</div>
-      </div>
-      <div class="recipe">
-        <div class="recipe-icon">&#127760;</div>
+        <div class="icon">&#127760;</div>
         <h4>Personal Website</h4>
-        <p>Describe what you want. Get a working website you can publish.</p>
+        <p>Tell Claude what you want. Get a live website in 15 minutes.</p>
+        <div class="difficulty">Beginner &bull; 15 min</div>
+      </div>
+      <div class="recipe">
+        <div class="icon">&#128202;</div>
+        <h4>Data Dashboard</h4>
+        <p>Turn a spreadsheet into an interactive chart page.</p>
         <div class="difficulty">Beginner &bull; 20 min</div>
       </div>
       <div class="recipe">
-        <div class="recipe-icon">&#9889;</div>
+        <div class="icon">&#9889;</div>
         <h4>Automate Repetitive Work</h4>
-        <p>Rename 500 files, clean up CSVs, batch-process anything tedious.</p>
+        <p>Rename 500 files, clean up CSVs, generate reports.</p>
         <div class="difficulty">Beginner &bull; 10 min</div>
       </div>
-      <div class="recipe recipe-wide">
-        <div class="recipe-icon">&#128161;</div>
+      <div class="recipe">
+        <div class="icon">&#128172;</div>
+        <h4>Custom Chatbot</h4>
+        <p>Build a chatbot trained on your own documents.</p>
+        <div class="difficulty">Intermediate &bull; 30 min</div>
+      </div>
+      <div class="recipe">
+        <div class="icon">&#128736;</div>
+        <h4>Internal Tool</h4>
+        <p>An inventory tracker, a booking form, a CRM — describe it, get it.</p>
+        <div class="difficulty">Intermediate &bull; 45 min</div>
+      </div>
+      <div class="recipe">
+        <div class="icon">&#128640;</div>
         <h4>Your Idea Here</h4>
         <p>The skill teaches you how to turn any idea into a working project.</p>
         <div class="difficulty">Any level &bull; ???</div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- INSTALL CTA -->
-<section class="hero hero-bottom" id="install">
-  <h2 id="cta-bottom-title">Ready to try?</h2>
-  <p class="subtitle" id="cta-bottom-sub">Open your Terminal and paste this:</p>
-  <div class="cta-block">
-    <div class="cta-label" id="cta-label">Terminal</div>
-    <div class="cta-cmd">
-      <code id="install-cmd">curl -fsSL https://fuy25.github.io/claude-code-onboarding/start.sh | sh</code>
-      <button class="cta-copy" onclick="copyCmd()">Copy</button>
+  <!-- CTA bottom -->
+  <div class="hero" style="border-style: solid;">
+    <h1 style="font-size: 24px;">Ready to try?</h1>
+    <div class="subtitle">Open your Terminal and paste this:</div>
+    <div style="background: #f0f0f0; padding: 12px 20px; border-radius: 6px; font-family: monospace; font-size: 14px; display: inline-block; margin: 12px 0;">
+      npx claude-code-onboarding
     </div>
-    <p class="cta-hint" id="cta-hint"><strong>curl</strong> downloads the script &nbsp;&middot;&nbsp; <strong>sh</strong> runs it &nbsp;&middot;&nbsp; it installs nothing without asking you first</p>
+    <div class="subtitle-cn" style="margin-top: 12px;">或者先看看 <a href="#" style="color: #333;">中文教程 &rarr;</a></div>
   </div>
-  <p class="subtitle-cn" id="cta-bottom-cn">或者先看看 <a href="#">中文教程 →</a></p>
-</section>
 
-<footer>
-  Made for people who think Terminal is scary. It's not. We promise.<br>
-  &copy; 2026 Claude Code Onboarding &nbsp;&middot;&nbsp; <a href="https://github.com/FUY25/claude-code-onboarding">GitHub</a>
-</footer>
+  <div class="footer">
+    Made for people who think Terminal is scary. It's not. We promise.<br>
+    &copy; 2026 Claude Code Onboarding
+  </div>
 
-<script>
-  let lang = 'en';
-
-  const EN = {
-    heroKicker: 'One command. Real output. No coding background required.',
-    heroH1: 'Claude Code turns plain-English ideas into working projects.',
-    heroSub: 'Ask for a report, a website, or a workflow. Claude Code handles the files, commands, and edits. This page gets you to a first useful result in 20 minutes.',
-    heroCn: '想法用自然语言说出来就行。Claude Code 会处理文件、命令和修改。这个页面会带你在 20 分钟内做出第一个有用成果。',
-    heroCta: 'Start Learning (5 min)',
-    heroCta2: 'See How It Works',
-    ctaLabel: 'Terminal',
-    ctaHint: '<strong>curl</strong> downloads the script &nbsp;&middot;&nbsp; <strong>sh</strong> runs it &nbsp;&middot;&nbsp; it installs nothing without asking you first',
-    whyTitle: 'Why Claude Code instead of ChatGPT?',
-    tagOld: 'what you\'re used to',
-    tagNew: 'what you\'ll learn here',
-    stepsTitle: 'How it works',
-    stepsLead: 'Read once, paste once, then let the lesson guide you into your first useful project.',
-    step1: ['Read this page', '2 min, right here'],
-    step2: ['Install Claude Code', 'Copy-paste 1 command'],
-    step3: ['Run /learn', 'Interactive skill teaches you'],
-    step4: ['Build something real', 'Your first project in 20 min'],
-    whyLead: 'The upgrade is not just better answers. It is getting useful work saved on your machine instead of trapped in a browser tab.',
-    recipesTitle: 'What can non-technical people build?',
-    recipesLead: 'Start with work that already matters to you: operations cleanup, writing, analysis, or a simple public-facing page.',
-    ctaBottomTitle: 'Ready to try?',
-    ctaBottomSub: 'Open your Terminal and paste this:',
-    ctaBottomCn: '或者先看看 <a href="#">中文教程 →</a>',
-  };
-
-  const CN = {
-    heroKicker: '一条命令，拿到真实成果，不需要编程背景。',
-    heroH1: 'Claude Code 能把自然语言想法变成真正可用的项目。',
-    heroSub: '无论是报告、网站还是自动化流程，你只要说需求。Claude Code 会处理文件、命令和修改，带你在 20 分钟内拿到第一个成果。',
-    heroCn: 'You can describe the work in plain language. Claude Code handles the files, commands, and edits for you.',
-    heroCta: '开始学习（5 分钟）',
-    heroCta2: '看看怎么用',
-    ctaLabel: '终端',
-    ctaHint: '<strong>curl</strong> 下载脚本 &nbsp;&middot;&nbsp; <strong>sh</strong> 执行脚本 &nbsp;&middot;&nbsp; 不经询问不会安装任何东西',
-    whyTitle: '为什么选 Claude Code 而不是 ChatGPT？',
-    tagOld: '你习惯的方式',
-    tagNew: '你将在这里学到的',
-    stepsTitle: '怎么用',
-    stepsLead: '先读一遍，再复制一条命令，之后教程会一步步带你做出第一个有用项目。',
-    step1: ['阅读这个页面', '2 分钟，就在这里'],
-    step2: ['安装 Claude Code', '复制粘贴一条命令'],
-    step3: ['输入 /learn', '交互式技能教你'],
-    step4: ['做出真实的东西', '20 分钟完成第一个项目'],
-    whyLead: '真正的升级不只是回答更好，而是把可用成果直接保存到你的电脑上，而不是留在浏览器聊天框里。',
-    recipesTitle: '非技术人员能做出什么？',
-    recipesLead: '从你已经在做的真实工作开始：流程清理、写作、分析，或者一个简单的公开页面。',
-    ctaBottomTitle: '准备好了吗？',
-    ctaBottomSub: '打开终端，粘贴这条命令：',
-    ctaBottomCn: 'Or read the <a href="#">English version →</a>',
-  };
-
-  function toggleLang() {
-    lang = lang === 'en' ? 'cn' : 'en';
-    const t = lang === 'en' ? EN : CN;
-    document.querySelector('.nav-lang').textContent = lang === 'en' ? '中文' : 'English';
-    document.getElementById('hero-kicker').textContent = t.heroKicker;
-    document.getElementById('hero-h1').textContent = t.heroH1;
-    document.getElementById('hero-sub').textContent = t.heroSub;
-    document.getElementById('hero-cn').textContent = t.heroCn;
-    document.getElementById('hero-cta').textContent = t.heroCta;
-    document.getElementById('hero-cta2').textContent = t.heroCta2;
-    document.getElementById('cta-label').textContent = t.ctaLabel;
-    document.getElementById('cta-hint').innerHTML = t.ctaHint;
-    document.getElementById('why-title').textContent = t.whyTitle;
-    document.getElementById('tag-old').textContent = t.tagOld;
-    document.getElementById('tag-new').textContent = t.tagNew;
-    document.getElementById('steps-title').textContent = t.stepsTitle;
-    document.getElementById('steps-lead').textContent = t.stepsLead;
-    document.getElementById('step1-title').textContent = t.step1[0];
-    document.getElementById('step1-desc').textContent = t.step1[1];
-    document.getElementById('step2-title').textContent = t.step2[0];
-    document.getElementById('step2-desc').textContent = t.step2[1];
-    document.getElementById('step3-title').textContent = t.step3[0];
-    document.getElementById('step3-desc').textContent = t.step3[1];
-    document.getElementById('step4-title').textContent = t.step4[0];
-    document.getElementById('step4-desc').textContent = t.step4[1];
-    document.getElementById('why-lead').textContent = t.whyLead;
-    document.getElementById('recipes-title').textContent = t.recipesTitle;
-    document.getElementById('recipes-lead').textContent = t.recipesLead;
-    document.getElementById('cta-bottom-title').textContent = t.ctaBottomTitle;
-    document.getElementById('cta-bottom-sub').textContent = t.ctaBottomSub;
-    document.getElementById('cta-bottom-cn').innerHTML = t.ctaBottomCn;
-  }
-
-  function copyCmd() {
-    const cmd = document.getElementById('install-cmd').textContent;
-    navigator.clipboard.writeText(cmd).then(() => {
-      const btn = document.querySelector('.cta-copy');
-      btn.textContent = 'Copied!';
-      setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
-    });
-  }
-</script>
-
+</div>
 </body>
 </html>
