@@ -24,7 +24,15 @@ Wait for the user to look at the data, then proceed to Try.
 
 ## Try
 
-> "Read `samples/data/dashboard-data.json`. Build me an interactive HTML dashboard from this data. I want filters, clickable charts, and a summary panel. Make it look professional. Save it as `dashboard.html`."
+> "Read `samples/data/dashboard-data.json`. Build an interactive HTML dashboard. Requirements:
+> - Dark theme: #0f1117 background, white text, accent color #4488ff
+> - Top row: 4 KPI cards (key metrics as big numbers with trend indicators — up arrow green, down arrow red)
+> - Main area: a bar chart AND a line chart side by side, both interactive (hover tooltips showing exact values)
+> - Below charts: a filterable data table — clicking a category in the chart highlights the corresponding rows in the table
+> - Left sidebar: filter checkboxes by category; selecting/deselecting instantly updates both charts and the table
+> - Smooth transitions when filters change (200ms ease)
+> - No external dependencies — pure HTML/CSS/JS, works offline
+> - Save as `dashboard.html`"
 
 After Claude finishes, open the result in the browser:
 
@@ -34,9 +42,9 @@ open dashboard.html
 
 After the user sees the dashboard in their browser (or types "skip"/"next"), show the debrief:
 
-> Remember that JSON file you just saw — raw numbers and categories, completely unreadable? Claude turned it into a fully interactive dashboard with filters, clickable charts, and a summary panel. Click around — hover over charts, use the filters. That entire app is a single HTML file on your computer. No server, no subscription, no deployment. Double-click it anytime and it just works!
+> Click the filters on the left — watch the charts and table update instantly. Hover over the bars — tooltips. That raw JSON file became a fully interactive data app. No Tableau, no Power BI, no backend. Just a single HTML file that runs anywhere.
 
-Now try iterating: "Add a date range filter" or "Change the chart colors to match our brand (dark blue and orange)" or "Add a table below the charts showing the raw data." Each change takes seconds.
+Now try iterating: "Add a date range slider that filters the time series" or "Make the KPI cards clickable to drill into that category" or "Add an export button that downloads the filtered data as CSV."
 
 ## Knowhow
 

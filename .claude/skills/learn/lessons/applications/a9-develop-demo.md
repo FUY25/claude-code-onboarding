@@ -24,19 +24,28 @@ Wait for the user to look at the file, then proceed to Try.
 
 ## Try
 
-> "Read `samples/creative/website-brief.txt`. Build a working prototype of this as an HTML page. Save it as `prototype.html`."
+> "Read `samples/creative/website-brief.txt`. Build a complete personal portfolio webapp from this brief. Requirements:
+> - Multi-section single-page app with smooth scroll navigation
+> - Sticky top nav bar with links that highlight the active section as you scroll
+> - Hero section: name, tagline, a subtle animated gradient background (slow color shift, nothing jarring)
+> - About section: 2-col layout — short bio left, a placeholder avatar card right with years of experience, current status badge ('Available Sept 2026' in green)
+> - Work section: 3 project cards in a grid — each card has title, one-line description, and a 'View case study →' button that opens a modal with a fuller description
+> - Contact section: a working mailto form (Name, Email, Message fields) with client-side validation — empty fields show an inline error, successful 'send' shows a confirmation message
+> - Color scheme: white background, dark text, muted blue accent (#4A7FA5) — matching the brief exactly
+> - Fully responsive: mobile nav collapses to a hamburger menu
+> - Save as `portfolio.html`"
 
 After Claude finishes, open the result in the browser:
 
 ```bash
-open prototype.html
+open portfolio.html
 ```
 
-After the user sees the prototype in their browser (or types "skip"/"next"), show the debrief:
+After the user sees the portfolio in their browser (or types "skip"/"next"), show the debrief:
 
-> Remember that plain-text brief you just saw — just a description of what the website should be? Claude read it, made design decisions, and built a complete HTML page with styling and layout. That's a clickable prototype from a written brief, in under a minute. No designer, no developer, no Figma — just describe and build!
+> Scroll through it. Click a project card — the modal opens. Try the contact form with an empty field — validation kicks in. Resize the window — the nav collapses. That's a real portfolio site with navigation, modals, form validation, and responsive layout. From a plain-text brief, in one prompt. A freelance developer would charge thousands for this.
 
-Now try iterating: "Add a contact form" or "Make it responsive for mobile" or "Change the color scheme to dark mode" or "Add an animation to the hero section." Each change takes seconds. You describe, Claude builds, you steer.
+Now try iterating: "Add a dark mode toggle in the nav" or "Make the project cards filter by type (UX / Product / Mobile)" or "Add a 'copy email' button to the contact section." Each is one sentence away.
 
 ## Knowhow
 

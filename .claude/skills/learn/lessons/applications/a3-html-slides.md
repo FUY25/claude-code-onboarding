@@ -24,7 +24,15 @@ Wait for the user to look at the file, then proceed to Try.
 
 ## Try
 
-> "Read `samples/creative/presentation-outline.txt`. Turn this outline into a polished HTML presentation with 3 slides: a title slide, the key points, and a summary with next steps. Use a clean dark theme. The audience is senior leadership — keep it concise and data-driven. Save it as `presentation.html`."
+> "Read `samples/creative/presentation-outline.txt`. Turn this into a polished HTML presentation. Requirements:
+> - Dark theme: near-black background (#0f1117), white text, electric blue accent (#4488ff)
+> - Keyboard navigation: left/right arrow keys to move between slides, smooth fade transition between slides
+> - Slide counter bottom-right on every slide (e.g. '2 / 8')
+> - Title slide: big bold headline centered, with a subtle radial gradient behind it
+> - Data slides: render key numbers (MAU, revenue, NPS, churn) as styled stat cards — large number, small label, left accent border in the blue
+> - One slide must include a styled comparison table (quarterly metrics vs. target) with color-coded cells (green = beat, red = missed)
+> - Thin footer bar on every slide: company name left, slide counter right
+> - Save as `presentation.html`"
 
 After Claude finishes, open the result in the browser:
 
@@ -34,9 +42,9 @@ open presentation.html
 
 After the user sees the presentation in their browser (or types "skip"/"next"), show the debrief:
 
-> Remember that rough outline you just saw — bullet points, half-formed ideas, no formatting? Claude turned it into a complete, styled HTML presentation with a title slide, content slide, and summary — all formatted for an executive audience. Open that file anytime in any browser, no PowerPoint needed. That's a presentation-ready deck from raw notes, in seconds!
+> Look at that — bullet notes turned into a keyboard-navigable deck with stat cards, color-coded tables, and slide transitions. Press the arrow keys to move between slides. This is a real presentation you could run from right now, from a plain text file, in one prompt.
 
-Now try iterating: "Change to a light theme with blue accents" or "Add a fourth slide with a comparison table" or "Make it friendlier — this is for a team all-hands, not the board." Each change takes seconds.
+Now try iterating: "Add a subtle progress bar across the top" or "Make the stat cards animate in on slide load" or "Change to a light theme with the same blue accent." Each takes seconds.
 
 ## Knowhow
 
