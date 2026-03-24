@@ -32,7 +32,14 @@ _LANG=$(cat ~/.claude-onboarding/language 2>/dev/null || echo "NONE")
 echo "LANGUAGE: $_LANG"
 
 # Repo check — verify course materials are present
-_REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" || _REPO_ROOT=""
+# Check the canonical install location first, then fall back to cwd
+if [ -d "$HOME/claude-code-onboarding/samples" ]; then
+  _REPO_ROOT="$HOME/claude-code-onboarding"
+elif [ -d "./samples" ]; then
+  _REPO_ROOT="$(pwd)"
+else
+  _REPO_ROOT=""
+fi
 _HAS_SAMPLES=$([ -d "${_REPO_ROOT}/samples" ] && echo "yes" || echo "no")
 _HAS_REFERENCE=$([ -d "${_REPO_ROOT}/reference" ] && echo "yes" || echo "no")
 echo "REPO_ROOT: ${_REPO_ROOT:-MISSING}"
