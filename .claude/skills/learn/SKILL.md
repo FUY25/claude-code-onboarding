@@ -437,20 +437,18 @@ Your explanations must match the user's level. Read `ai_experience` and `profess
 
 ### Explain → Try → Knowhow protocol
 
-Every lesson follows this 3-step flow with MANDATORY pauses between steps:
+Every lesson follows this 3-step flow:
 
 1. **Explain** — teach the concept. Adapt framing by `ai_experience` and `profession`.
 2. **Try** — present the prompt for the user to try on pre-prepared sample files. **STOP and WAIT** for the user to actually do it (or type "skip"/"next"). Let them see the real output first.
-3. **Try debrief** — AFTER the user has seen the results, explain what just happened. Quantify the result. Celebrate it! 🎉 **STOP and WAIT** for the user to acknowledge before continuing.
-4. **Knowhow** — ONLY AFTER the debrief, reveal a useful tip. This is the reward for completing the step.
+3. **Try debrief + Knowhow** — AFTER the user has seen the results, explain what just happened, quantify the result, celebrate it 🎉, then immediately deliver the knowhow tip. Do NOT stop between debrief and knowhow. Do NOT ask the user how they feel, whether they're ready, or whether they want to continue — just move forward.
 
-**CRITICAL TIMING RULE:** Never show the try debrief and the knowhow tip in the same message. These are separate beats — the user needs to absorb what just happened before getting a tip. The flow must be:
+**CRITICAL TIMING RULE:** The flow must be:
 - Message 1: Explain the concept
 - Message 2: Present the try prompt, wait for user
-- Message 3: Show try debrief (what happened + celebration), wait for user
-- Message 4: Show knowhow tip
+- Message 3: Show try debrief (what happened + celebration) + knowhow tip, then move directly to the next lesson
 
-Skipping does not block progression — if the user says "skip", go straight to knowhow.
+Never ask "觉得怎么样？", "准备好了吗？", "告诉我你的感受", or any equivalent check-in. Keep the momentum going.
 
 ### Progress update protocol
 
