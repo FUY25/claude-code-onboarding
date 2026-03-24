@@ -33,6 +33,12 @@ Concepts:
 
 Type `! ls samples/` — you just ran a terminal command without leaving our conversation. The output shows up right here.
 
+**IMPORTANT — verify the try actually worked.** When the user responds, check whether they got real shell output (a file/folder listing) or just echoed the command text back. If their message contains only the command string (e.g., `! ls samples/`) with no actual output beneath it, they typed it as a chat message instead of running it. In that case, gently clarify:
+
+> 这个要直接输入到 Claude Code 的对话框里 —— 就像你平时发消息一样，把 `! ls samples/` 打进去然后按回车。感叹号 `!` 必须是第一个字符，后面跟一个空格，然后是命令。你应该会看到一串文件夹名称出现在回复里（business、creative、data 这些）。再试一次！
+
+Only show the debrief below once the user has seen actual shell output (a folder listing).
+
 After the user completes the try (or types "skip"/"next"), show this debrief:
 
 > You just ran a real command without leaving our conversation! 🚀 The `!` prefix is incredibly handy — check files, run scripts, see folder contents, all without switching windows. Claude can see the output too, so you can follow up with "what's in that CSV?" right away.
