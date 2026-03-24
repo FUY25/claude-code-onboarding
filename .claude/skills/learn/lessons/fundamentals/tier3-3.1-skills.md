@@ -27,7 +27,7 @@ Concepts:
 
 ## Try
 
-This repo has a custom skill called `/sample-skill` — a Writing Reviewer. Try it:
+This project has a custom skill called `/sample-skill` — a Writing Reviewer. It lives in `.claude/skills/sample-skill/` inside this project folder (Claude Code automatically finds skills in your project's `.claude/skills/` folder). Try it:
 
 1. Open the file `samples/writing/meeting-notes.txt`
 2. Type `/sample-skill` and ask Claude to review those meeting notes for clarity, tone, and structure

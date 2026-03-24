@@ -4,7 +4,7 @@
 
 ## Explain
 
-The terminal (also called "command line") is a text-based way to talk directly to your computer. It's been around for decades — every Mac has it built in.
+The terminal (the black text window on your computer) is a text-based way to talk directly to your computer. It's been around for decades — every Mac has it built in.
 
 Claude Code lives here for one reason: this is where it gets its superpowers. In a browser, an AI can only chat with you. In the terminal, Claude Code can actually reach into your folders, read your files, edit them, create new ones, and run programs. That's the difference between advice and action.
 

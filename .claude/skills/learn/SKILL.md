@@ -17,6 +17,10 @@ description: |
 ```bash
 mkdir -p ~/.claude-onboarding
 
+# Skill directory (where lesson files live)
+_SKILL_DIR="$HOME/.claude/skills/learn"
+echo "SKILL_DIR: $_SKILL_DIR"
+
 # Language
 _LANG=$(cat ~/.claude-onboarding/language 2>/dev/null || echo "NONE")
 echo "LANGUAGE: $_LANG"
@@ -207,13 +211,13 @@ Tier 1 lessons in order: 1.1, 1.2, 1.3, 1.4, 1.5, 1.6.
 
 Find the first lesson ID not in `tier1.completed` and not in `tier1.skipped`. That is the next lesson.
 
-Load the lesson file:
-- 1.1 → Read `lessons/fundamentals/tier1-1.1-terminal.md`. If the file cannot be read, STOP.
-- 1.2 → Read `lessons/fundamentals/tier1-1.2-prompt-craft.md`
-- 1.3 → Read `lessons/fundamentals/tier1-1.3-permissions.md`
-- 1.4 → Read `lessons/fundamentals/tier1-1.4-controls.md`
-- 1.5 → Read `lessons/fundamentals/tier1-1.5-error-recovery.md`
-- 1.6 → Read `lessons/fundamentals/tier1-1.6-when-not-to-use.md`
+Load the lesson file (use the `SKILL_DIR` path from the preamble output):
+- 1.1 → Read `<SKILL_DIR>/lessons/fundamentals/tier1-1.1-terminal.md`. If the file cannot be read, STOP.
+- 1.2 → Read `<SKILL_DIR>/lessons/fundamentals/tier1-1.2-prompt-craft.md`
+- 1.3 → Read `<SKILL_DIR>/lessons/fundamentals/tier1-1.3-permissions.md`
+- 1.4 → Read `<SKILL_DIR>/lessons/fundamentals/tier1-1.4-controls.md`
+- 1.5 → Read `<SKILL_DIR>/lessons/fundamentals/tier1-1.5-error-recovery.md`
+- 1.6 → Read `<SKILL_DIR>/lessons/fundamentals/tier1-1.6-when-not-to-use.md`
 
 Deliver the lesson content following the Explain → Try → Knowhow protocol (see Common Rules).
 
@@ -237,10 +241,10 @@ If B: set `current_stage` to "applications", route to Stage 4.
 Tier 2 lessons in order: 2.1, 2.2, 2.3, 2.4.
 
 Find the first lesson ID not completed/skipped, or use `tier2.in_progress` if set. Load:
-- 2.1 → Read `lessons/fundamentals/tier2-2.1-context-window.md`
-- 2.2 → Read `lessons/fundamentals/tier2-2.2-claude-md.md`
-- 2.3 → Read `lessons/fundamentals/tier2-2.3-markdown-diffs.md`
-- 2.4 → Read `lessons/fundamentals/tier2-2.4-shortcuts.md`
+- 2.1 → Read `<SKILL_DIR>/lessons/fundamentals/tier2-2.1-context-window.md`
+- 2.2 → Read `<SKILL_DIR>/lessons/fundamentals/tier2-2.2-claude-md.md`
+- 2.3 → Read `<SKILL_DIR>/lessons/fundamentals/tier2-2.3-markdown-diffs.md`
+- 2.4 → Read `<SKILL_DIR>/lessons/fundamentals/tier2-2.4-shortcuts.md`
 
 ### Tier 2 complete — present Tier 3 menu
 
@@ -260,10 +264,10 @@ If E: set `current_stage` to "applications", route to Stage 4.
 ### Tier 3 routing
 
 Load the selected module:
-- 3.1 → Read `lessons/fundamentals/tier3-3.1-skills.md`
-- 3.2 → Read `lessons/fundamentals/tier3-3.2-mcp.md`
-- 3.3 → Read `lessons/fundamentals/tier3-3.3-sub-agents.md`
-- 3.4 → Read `lessons/fundamentals/tier3-3.4-power-moves.md`
+- 3.1 → Read `<SKILL_DIR>/lessons/fundamentals/tier3-3.1-skills.md`
+- 3.2 → Read `<SKILL_DIR>/lessons/fundamentals/tier3-3.2-mcp.md`
+- 3.3 → Read `<SKILL_DIR>/lessons/fundamentals/tier3-3.3-sub-agents.md`
+- 3.4 → Read `<SKILL_DIR>/lessons/fundamentals/tier3-3.4-power-moves.md`
 
 After completing a Tier 3 module, offer: another Tier 3 module, or move to applications.
 
@@ -289,16 +293,16 @@ Show completed applications with a checkmark, in-progress with an arrow. If `app
 Otherwise, present the menu and wait for the user to pick one. Set `applications.in_progress` to the chosen ID.
 
 Load the application lesson:
-- A1 → Read `lessons/applications/a1-interview-synthesis.md`
-- A2 → Read `lessons/applications/a2-csv-analysis.md`
-- A3 → Read `lessons/applications/a3-html-slides.md`
-- A4 → Read `lessons/applications/a4-dashboard.md`
-- A5 → Read `lessons/applications/a5-financial-statement.md`
-- A6 → Read `lessons/applications/a6-academic-paper.md`
-- A7 → Read `lessons/applications/a7-prd-writing.md`
-- A8 → Read `lessons/applications/a8-design-doc.md`
-- A9 → Read `lessons/applications/a9-develop-demo.md`
-- A10 → Read `lessons/applications/a10-folder-cleanup.md`
+- A1 → Read `<SKILL_DIR>/lessons/applications/a1-interview-synthesis.md`
+- A2 → Read `<SKILL_DIR>/lessons/applications/a2-csv-analysis.md`
+- A3 → Read `<SKILL_DIR>/lessons/applications/a3-html-slides.md`
+- A4 → Read `<SKILL_DIR>/lessons/applications/a4-dashboard.md`
+- A5 → Read `<SKILL_DIR>/lessons/applications/a5-financial-statement.md`
+- A6 → Read `<SKILL_DIR>/lessons/applications/a6-academic-paper.md`
+- A7 → Read `<SKILL_DIR>/lessons/applications/a7-prd-writing.md`
+- A8 → Read `<SKILL_DIR>/lessons/applications/a8-design-doc.md`
+- A9 → Read `<SKILL_DIR>/lessons/applications/a9-develop-demo.md`
+- A10 → Read `<SKILL_DIR>/lessons/applications/a10-folder-cleanup.md`
 
 After completing an application: add ID to `applications.completed`, set `in_progress` to null, offer: try another application, go back to fundamentals, or done.
 
