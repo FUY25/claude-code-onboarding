@@ -332,7 +332,9 @@ If `applications.shown` is empty, populate it from the table above and save to p
 
 Show completed applications with a checkmark, in-progress with an arrow. If `applications.in_progress` is set, route directly to that application.
 
-Otherwise, present the menu and wait for the user to pick one. Set `applications.in_progress` to the chosen ID.
+Otherwise, present the menu using AskUserQuestion with **multiSelect: true** so the user can pick one or more applications. The question should be something like "Which of these would you like to do? Pick as many as you like — we'll do them in order."
+
+Once the user selects, add all chosen IDs to a queue (in selection order). Set `applications.in_progress` to the first one and begin. After each application completes, automatically advance to the next queued one without asking again.
 
 Load the application lesson:
 - A1 → Read `<SKILL_DIR>/lessons/applications/a1-interview-synthesis.md`
