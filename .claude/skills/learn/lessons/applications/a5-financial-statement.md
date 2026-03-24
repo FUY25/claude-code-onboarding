@@ -10,15 +10,33 @@ Sample: `samples/papers/TSLA-Q4-2025-Update.pdf`
 
 Tesla's Q4 and FY2025 earnings report — a real public document with revenue breakdowns, margin data, segment performance, and cash flow statements.
 
+## Explore
+
+First, let's see the source material. Open the papers folder:
+
+```bash
+open samples/papers/
+```
+
+Say: "Take a look at the Tesla earnings PDF in the folder that just opened — it's a dense financial document with tables, charts, and footnotes. That's what Claude is about to read and analyze in seconds."
+
+Wait for the user to look at the file, then proceed to Try.
+
 ## Try
 
-> "Read this earnings report. Give me: (1) overall revenue and margin performance vs. last year, (2) which business segment grew fastest and which shrank, (3) any anomalies or red flags worth digging into — unusual expense jumps, margin compression, cash flow vs. net income gaps. Summarize as if you're briefing a portfolio manager."
+> "Read `samples/papers/TSLA-Q4-2025-Update.pdf`. Give me: (1) overall revenue and margin performance vs. last year, (2) which business segment grew fastest and which shrank, (3) any anomalies or red flags worth digging into — unusual expense jumps, margin compression, cash flow vs. net income gaps. Summarize as if you're briefing a portfolio manager. Save the analysis as `earnings-analysis.md`."
 
-Look at what Claude produced. It read the entire PDF, extracted the key financial metrics, compared them year-over-year, identified which segments grew and which declined, and flagged potential red flags — all structured as a portfolio manager briefing. That's the kind of analysis that would take an analyst 30-60 minutes of reading and note-taking.
+After Claude finishes, open the result:
+
+```bash
+open earnings-analysis.md
+```
+
+After the user sees the analysis (or types "skip"/"next"), show the debrief:
+
+> Remember that dense PDF you just saw — pages of tables, footnotes, and financial jargon? Claude read the entire thing, extracted the key metrics, compared them year-over-year, identified which segments grew and which declined, and flagged potential red flags — all structured as a portfolio manager briefing and saved as a clean report. That's 30-60 minutes of analyst work done in seconds!
 
 Now try iterating: "Dig deeper into the energy segment margins" or "Compare the cash flow statement to net income — are there any red flags?" or "Rewrite this for a retail investor, not a portfolio manager."
-
-Type "skip" or "next" to move on.
 
 ## Knowhow
 

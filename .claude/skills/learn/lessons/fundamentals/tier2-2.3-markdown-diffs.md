@@ -41,7 +41,9 @@ Concepts:
 
 Watch the diff — the red/minus lines are removed, the green/plus lines are added. You'll see exactly what Claude changed.
 
-After completion, explain what happened. Type "skip" or "next" to move on.
+After the user completes the try (or types "skip"/"next"), show this debrief:
+
+> You just saw a diff in action! 🎯 The red/minus lines show what was removed, green/plus lines show what was added. This is how Claude shows you every single change before you approve it — no surprises. And you can always say "undo that" or "keep the header but revert the rest."
 
 ## Knowhow
 

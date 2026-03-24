@@ -37,7 +37,7 @@ Start with Default. Move to the others once you're comfortable.
 
 **Adaptive framing (choose based on profile.ai_experience):**
 
-- **never used AI:** Think of it like a contractor who shows you a blueprint before starting work. They check with you at every step. You can say "go ahead," "stop," or "explain that first." Nothing happens without your approval.
+- **never used AI:** Think of it like a contractor who shows you a blueprint before starting work. They check with you at every step. You can say "go ahead," "stop," or "explain that first." Nothing happens without your approval. (In Chinese: 就像装修师傅动工前先给你看方案——每一步都跟你确认。你可以说"开始吧"、"等一下"、或者"先解释一下你要干嘛"。不经过你同意，什么都不会改动。)
 - **browser chat (ChatGPT/Claude/Gemini):** In browser AI, everything is read-only — the AI just types back at you. Claude Code can actually change files, so it adds this safety layer. You see what it wants to do and approve each action.
 - **Cursor IDE:** Like Cursor's diff approval, but applies to all file operations and shell commands, not just code edits. Same approve/reject workflow you're used to.
 - **local agent / multiple:** Permissions are customizable per project. Default is conservative (ask before all writes). You can pre-approve specific tools or directories in settings. Shift+Tab cycles modes inline.
@@ -50,7 +50,9 @@ Concepts:
 
 ## Try
 
-Now let's trigger a permission prompt so you can see it in action.
+This lesson has TWO try steps — one to see the permission prompt, one to try switching modes.
+
+**Try Step 1: Trigger a permission prompt**
 
 Present the profession-matched prompt. Check `profile.profession` and deliver:
 
@@ -62,11 +64,27 @@ Present the profession-matched prompt. Check `profile.profession` and deliver:
 
 (This builds on the output from the previous lesson's Try step. Claude will ask permission before creating the file.)
 
-After the user completes the try (or types "skip" or "next"), explain what happened:
+After the user completes try step 1 (or skips), show the debrief:
 
-Claude asked for your permission before creating that file. You saw exactly what it wanted to do and chose to allow it. That prompt appears every time Claude wants to write, edit, or delete a file, or run a command. You're always in control — nothing happens behind your back.
+> Claude asked for your permission before creating that file. You saw exactly what it wanted to do and chose to allow it. That prompt appears every time Claude wants to write, edit, or run something. Nothing happens behind your back! 🔒
 
-Type "skip" or "next" to move on.
+**STOP and WAIT for the user to acknowledge before continuing to Try Step 2.**
+
+**Try Step 2: Switch permission modes with Shift+Tab**
+
+Now try this:
+
+> Press **Shift+Tab** on your keyboard right now. You'll see the mode change at the top of the screen. Press it again to cycle through all three modes:
+>
+> 1. **Default** — asks before every write (you're probably on this now)
+> 2. **Auto-accept edits** — Claude edits files without asking
+> 3. **Plan mode** — Claude shows you a plan first, acts only after you approve
+>
+> Try pressing Shift+Tab a few times to see each mode, then set it back to **Default** for now.
+
+After the user tries it (or skips), show the debrief:
+
+> You just discovered one of the most powerful controls in Claude Code! 🎮 As you get more comfortable, you can switch to "auto-accept edits" to speed things up, or use "plan mode" when you want Claude to think before acting. For now, Default is perfect — it keeps you in the driver's seat.
 
 ## Knowhow
 

@@ -10,17 +10,33 @@ Sample: `samples/tech/sample-prd.md`
 
 A product requirements document (could be the kind of output you'd get from Application 7). It defines the problem, the users, and what needs to be built -- but not how.
 
+## Explore
+
+First, let's see the input. Open the tech samples folder:
+
+```bash
+open samples/tech/
+```
+
+Say: "Take a look at the PRD in the folder that just opened — it describes what to build, but not how. Claude is about to turn that 'what' into a detailed 'how' — a full design doc with architecture, data models, and implementation phases."
+
+Wait for the user to look at the file, then proceed to Try.
+
 ## Try
 
-> "Read this PRD. Write a design doc with: system architecture, data model, API design, key technical decisions with tradeoffs, implementation phases with milestones, and risks. Assume a 2-person engineering team and a 6-week timeline."
+> "Read `samples/tech/sample-prd.md`. Write a design doc with: system architecture, data model, API design, key technical decisions with tradeoffs, implementation phases with milestones, and risks. Assume a 2-person engineering team and a 6-week timeline. Save it as `design-doc.md`."
 
-After you run this, Claude produces a full design doc: system architecture broken into components, a data model with entity relationships, API endpoints with request/response formats, technical decisions with explicit "we chose X over Y because..." reasoning, phased implementation milestones scoped for two engineers over six weeks, and a risk register with mitigations.
+After Claude finishes, open the result:
 
-That's a document that would normally take a senior engineer a full day or more to draft from scratch.
+```bash
+open design-doc.md
+```
 
-Encourage iteration: "Try asking me to 'change the timeline to 4 weeks and flag what gets cut,' 'add a section on monitoring and observability,' or 'rewrite the architecture for serverless instead of containers.'"
+After the user sees the design doc (or types "skip"/"next"), show the debrief:
 
-Type "skip" or "next" to move on.
+> Remember that PRD you just saw — it described what to build but said nothing about how? Claude took that and produced a full design doc: system architecture, data models, API endpoints, technical decisions with explicit tradeoff reasoning, phased milestones scoped for two engineers over six weeks, and a risk register. That's a document that would normally take a senior engineer a full day to draft!
+
+Now try iterating: "Change the timeline to 4 weeks and flag what gets cut" or "Add a section on monitoring and observability" or "Rewrite the architecture for serverless instead of containers."
 
 ## Knowhow
 

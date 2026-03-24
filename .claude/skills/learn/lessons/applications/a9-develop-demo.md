@@ -10,17 +10,33 @@ Sample: `samples/creative/website-brief.txt`
 
 A product or website description -- the kind of brief you'd write for a designer or developer. Goals, audience, key sections, tone.
 
+## Explore
+
+First, let's see the brief. Open the creative samples folder:
+
+```bash
+open samples/creative/
+```
+
+Say: "Take a look at website-brief.txt in the folder that just opened — it's a plain-English description of a website: goals, audience, sections, tone. Just words on a page. Claude is about to turn it into a working, clickable prototype."
+
+Wait for the user to look at the file, then proceed to Try.
+
 ## Try
 
-> "Build a working prototype of this as an HTML page"
+> "Read `samples/creative/website-brief.txt`. Build a working prototype of this as an HTML page. Save it as `prototype.html`."
 
-After you run this, Claude reads the brief, makes design decisions based on your description, and writes a complete HTML file with styling. Open it in your browser -- it's a real, working page. No server needed, no setup, no accounts. The file IS the prototype.
+After Claude finishes, open the result in the browser:
 
-That's the wow moment: a written brief became a clickable prototype in under a minute.
+```bash
+open prototype.html
+```
 
-Encourage iteration: "Now try steering it: 'add a contact form,' 'make it responsive for mobile,' 'change the color scheme to dark mode,' 'add an animation to the hero section.' Each change takes seconds. You describe, Claude builds, you steer."
+After the user sees the prototype in their browser (or types "skip"/"next"), show the debrief:
 
-Type "skip" or "next" to move on.
+> Remember that plain-text brief you just saw — just a description of what the website should be? Claude read it, made design decisions, and built a complete HTML page with styling and layout. That's a clickable prototype from a written brief, in under a minute. No designer, no developer, no Figma — just describe and build!
+
+Now try iterating: "Add a contact form" or "Make it responsive for mobile" or "Change the color scheme to dark mode" or "Add an animation to the hero section." Each change takes seconds. You describe, Claude builds, you steer.
 
 ## Knowhow
 

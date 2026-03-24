@@ -50,7 +50,7 @@ When Claude deletes a file with `rm`, it's gone permanently — it doesn't go to
 
 **Adaptive framing (choose based on profile.ai_experience):**
 
-- **never used AI:** Errors look scary but they're usually harmless. The computer is just telling you "I can't do that" — not "something broke." And with Esc+Esc, you can always undo anything Claude changed.
+- **never used AI:** Errors look scary but they're usually harmless. The computer is just telling you "I can't do that" — not "something broke." And with Esc+Esc, you can always undo anything Claude changed. (In Chinese: 报错看着吓人，但其实基本无害。电脑只是在说"这个我做不了"——不是"出大事了"。而且按两下 Esc 就能撤销 Claude 做的任何改动，随时都能恢复原样。)
 - **browser chat (ChatGPT/Claude/Gemini):** In browser AI, a wrong answer just means bad text. In Claude Code, a wrong action could mean a changed file. That's why Esc+Esc exists — it's like Ctrl+Z but for everything Claude did, including file edits and commands.
 - **Cursor IDE:** Like Cursor's undo for AI edits, but Esc+Esc works across all file changes in a single action. It snapshots before every edit automatically — no need to stage or commit first.
 - **local agent / multiple:** Automatic checkpointing before every file mutation. Esc+Esc or `/rewind` to restore. Note: `rm` bypasses Trash — there's no recoverability for deleted files outside the checkpoint system.

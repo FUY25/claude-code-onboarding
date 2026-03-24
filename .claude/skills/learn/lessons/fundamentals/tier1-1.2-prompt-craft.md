@@ -36,7 +36,7 @@ The good prompt has three parts: it points to a specific file (context), says ex
 
 **Adaptive framing (choose based on profile.ai_experience):**
 
-- **never used AI:** Think of it like giving instructions to a new teammate. "Read this file, pull out X, Y, Z, and format it as a table" works better than "help me with this." The more specific you are, the less back-and-forth you need.
+- **never used AI:** Think of it like giving instructions to a new teammate. "Read this file, pull out X, Y, Z, and format it as a table" works better than "help me with this." The more specific you are, the less back-and-forth you need. (In Chinese: 就像你给新同事布置任务——"把这个文件里的决定事项、待办事项和负责人整理成表格"比"帮我看看这个"有用得多。你说得越具体，来回沟通越少。)
 - **browser chat (ChatGPT/Claude/Gemini):** Same prompting skills you already have, plus one superpower: you can point Claude directly at files with `@filename` instead of copy-pasting content into a chat box. No more "here's my document: [wall of text]."
 - **Cursor IDE:** Like Cursor's inline prompts, but you can reference any file type — not just code. And `@` works with fuzzy matching across your whole project.
 - **local agent / multiple:** Standard prompt engineering applies. The key differentiator is `@` file references with fuzzy matching and the ability to iterate in conversation without losing context.

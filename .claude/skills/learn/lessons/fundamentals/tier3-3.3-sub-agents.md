@@ -33,7 +33,9 @@ Here's where parallel work shines. This repo has three different sample files. A
 
 Watch what happens: Claude spawns sub-agents to read and analyze all three files simultaneously, then combines their work.
 
-After completion, explain what happened. Type "skip" or "next" to move on.
+After the user completes the try (or types "skip"/"next"), show this debrief:
+
+> Did you notice how fast that was? ⚡ Claude didn't read the files one by one — it sent out helpers to process all three at the same time, then combined their results into one document. What would've taken three separate conversations happened in one step. The bigger and more parallel the task, the more sub-agents shine.
 
 ## Knowhow
 

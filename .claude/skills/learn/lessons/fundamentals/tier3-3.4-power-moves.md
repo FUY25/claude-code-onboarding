@@ -30,7 +30,9 @@ Concepts:
 
 Make a small change to any file in the repo — for example, ask Claude to add a line to `samples/writing/meeting-notes.txt`. Then run `/simplify` to see Claude review the change for quality.
 
-After completion, explain what happened. Type "skip" or "next" to move on.
+After the user completes the try (or types "skip"/"next"), show this debrief:
+
+> You just used a built-in skill! 🔍 `/simplify` reviewed Claude's own work and flagged anything that could be cleaner. It's like having a quality reviewer on standby — one command and it checks for reuse opportunities, efficiency, and code quality. This is a great habit to build into your workflow.
 
 ## Knowhow
 

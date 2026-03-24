@@ -23,13 +23,13 @@ I'm [Yuming Fu](https://github.com/FUY25). I've watched dozens of smart, non-tec
 
 ## Install — 30 seconds
 
-**Requirements:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code/setup), [Git](https://git-scm.com/), macOS (Phase 1)
+**Requirements:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code/setup), macOS (Phase 1)
 
 Open Claude Code and paste this. Claude does the rest.
 
-> Install the Claude Code onboarding course: run **`git clone https://github.com/FUY25/claude-code-onboarding.git ~/claude-code-onboarding && cp -r ~/claude-code-onboarding/.claude/skills/learn ~/.claude/skills/learn`** then cd into ~/claude-code-onboarding and start the course with /learn
+> Install the Claude Code onboarding course: download https://github.com/FUY25/claude-code-onboarding/archive/refs/heads/main.zip, unzip it to ~/claude-code-onboarding (remove the old folder first if it exists). Then copy the skill: cp -r ~/claude-code-onboarding/.claude/skills/learn ~/.claude/skills/learn. Then cd into ~/claude-code-onboarding and start the course with /learn
 
-One prompt. Claude clones the repo, installs the `/learn` skill, and starts teaching you. Zero config.
+One prompt. Claude downloads the course, installs the `/learn` skill, and starts teaching you. Zero config.
 
 **Don't have Claude Code yet?** [Install it first](https://docs.anthropic.com/en/docs/claude-code/setup) (5 min), then come back.
 

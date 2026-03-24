@@ -10,15 +10,33 @@ Sample: `samples/data/dashboard-data.json`
 
 A JSON dataset with structured business data — categories, time series, metrics. The kind of data you'd normally need a BI tool to visualize.
 
+## Explore
+
+First, let's see the raw data. Open the data folder:
+
+```bash
+open samples/data/
+```
+
+Say: "Take a look at dashboard-data.json in the folder that just opened — it's raw structured data with categories, time series, and metrics. Right now it's just numbers in a file. Claude is about to turn it into a fully interactive dashboard."
+
+Wait for the user to look at the data, then proceed to Try.
+
 ## Try
 
-> "Build me an interactive HTML dashboard from this data. I want filters, clickable charts, and a summary panel. Make it look professional."
+> "Read `samples/data/dashboard-data.json`. Build me an interactive HTML dashboard from this data. I want filters, clickable charts, and a summary panel. Make it look professional. Save it as `dashboard.html`."
 
-Open the HTML file Claude created in your browser. Click around — use the filters, hover over charts, look at the summary panel. That's a fully interactive dashboard built from your data in one prompt. No server running, no deployment step, no login. The file on your computer IS the working app.
+After Claude finishes, open the result in the browser:
+
+```bash
+open dashboard.html
+```
+
+After the user sees the dashboard in their browser (or types "skip"/"next"), show the debrief:
+
+> Remember that JSON file you just saw — raw numbers and categories, completely unreadable? Claude turned it into a fully interactive dashboard with filters, clickable charts, and a summary panel. Click around — hover over charts, use the filters. That entire app is a single HTML file on your computer. No server, no subscription, no deployment. Double-click it anytime and it just works!
 
 Now try iterating: "Add a date range filter" or "Change the chart colors to match our brand (dark blue and orange)" or "Add a table below the charts showing the raw data." Each change takes seconds.
-
-Type "skip" or "next" to move on.
 
 ## Knowhow
 

@@ -8,6 +8,33 @@ By default, Claude works with files on your computer. But sometimes you need Cla
 
 MCP is a standard way for Claude to connect to external tools and services. Each connection is called an "MCP server" — a small program that bridges Claude to a specific capability. You add an MCP server with one command, and Claude gains a new ability.
 
+```
+┌──────────────────────────────────────────────┐
+│              HOW MCP WORKS                   │
+│                                              │
+│   YOU ──→ Claude Code ──→ MCP Server ──→ 🌐  │
+│                                              │
+│   Without MCP:                               │
+│   Claude can only see: 📁 your local files   │
+│                                              │
+│   With Fetch MCP:                            │
+│   Claude can also see: 🌐 any webpage        │
+│                                              │
+│   With Database MCP:                         │
+│   Claude can also see: 🗄️ your database      │
+│                                              │
+│   Each MCP server = one new superpower       │
+│                                              │
+│   ┌──────────┐    ┌──────────┐               │
+│   │  Fetch   │    │ Database │    ...more     │
+│   │  Server  │    │  Server  │               │
+│   └────┬─────┘    └────┬─────┘               │
+│        │               │                     │
+│        ▼               ▼                     │
+│     Webpages       Your data                 │
+└──────────────────────────────────────────────┘
+```
+
 The simplest example: a **Fetch server** that lets Claude grab content from any URL. Once you add it, you can ask Claude to read a webpage, summarize an article, or check a live API — all from within your conversation.
 
 You don't need to understand how MCP works under the hood. You just need to know: one command to add it, and Claude can use it immediately.
@@ -34,7 +61,9 @@ claude mcp add fetch -s user -- npx -y @anthropic/mcp-fetch
 
 That's it — Claude can now read web pages. Try asking Claude: "Fetch https://news.ycombinator.com and tell me the top 3 stories right now."
 
-After completion, explain what happened. Type "skip" or "next" to move on.
+After the user completes the try (or types "skip"/"next"), show this debrief:
+
+> You just gave Claude a new superpower with one command! 🌐 Before adding the Fetch MCP, Claude could only see files on your computer. Now it can reach out to the internet and bring back live information. That's the power of MCP — each server you add unlocks a new capability.
 
 ## Knowhow
 

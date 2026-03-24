@@ -10,17 +10,33 @@ Sample: `samples/pm/`
 
 Three files: `ceo-meeting-notes.txt` (strategic direction and priorities), `customer-feedback-call.txt` (real pain points and feature requests), `team-brainstorm.txt` (technical ideas and constraints). Raw meeting notes -- the kind you'd actually have after a busy week.
 
+## Explore
+
+First, let's see the raw inputs. Open the PM samples folder:
+
+```bash
+open samples/pm/
+```
+
+Say: "Take a look at the three files in the folder that just opened — CEO meeting notes, customer feedback, and a team brainstorm. Three separate sets of messy notes. Claude is about to pull them all together into a structured PRD."
+
+Wait for the user to look at the files, then proceed to Try.
+
 ## Try
 
-> "Read all the meeting notes in `samples/pm/`. Write a PRD with: problem statement, user personas, detailed requirements (must-have vs. nice-to-have), success metrics, risks, and a proposed timeline. Reference specific customer quotes where relevant."
+> "Read all the meeting notes in `samples/pm/`. Write a PRD with: problem statement, user personas, detailed requirements (must-have vs. nice-to-have), success metrics, risks, and a proposed timeline. Reference specific customer quotes where relevant. Save it as `product-requirements.md`."
 
-After you run this, Claude reads all three files, identifies the common threads, and produces a structured PRD. Notice how it pulls customer quotes from the feedback call to justify requirements, uses the CEO's priorities to rank must-haves vs. nice-to-haves, and incorporates the team's technical constraints into the timeline and risks.
+After Claude finishes, open the result:
 
-You just turned three sets of scattered notes into a document you could share with stakeholders.
+```bash
+open product-requirements.md
+```
 
-Encourage iteration: "Try asking me to 'add a competitive analysis section,' 'make the requirements more specific,' or 'rewrite this for an engineering audience instead of leadership.'"
+After the user sees the PRD (or types "skip"/"next"), show the debrief:
 
-Type "skip" or "next" to move on.
+> Remember those three scattered note files you just saw — CEO priorities in one, customer complaints in another, team ideas in a third? Claude read all of them, found the common threads, pulled customer quotes as evidence, ranked requirements by priority, and produced a structured PRD you could share with stakeholders. Three messy inputs became one polished document!
+
+Now try iterating: "Add a competitive analysis section" or "Make the requirements more specific" or "Rewrite this for an engineering audience instead of leadership."
 
 ## Knowhow
 

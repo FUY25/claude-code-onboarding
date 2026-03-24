@@ -28,7 +28,9 @@ Concepts:
 
 Ask me to show you this project's CLAUDE.md. See how it already shaped my behavior before you said a word.
 
-After completion, explain what happened. Type "skip" or "next" to move on.
+After the user completes the try (or types "skip"/"next"), show this debrief:
+
+> See those instructions? I've been following them this entire time — since the moment you started the course! 🤯 CLAUDE.md is loaded automatically before every conversation. That's why it's so powerful: you write the rules once, and Claude follows them forever. No repeating yourself.
 
 ## Knowhow
 

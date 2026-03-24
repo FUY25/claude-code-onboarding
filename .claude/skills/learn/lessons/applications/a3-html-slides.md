@@ -10,15 +10,33 @@ Sample: `samples/creative/presentation-outline.txt`
 
 A rough presentation outline with key talking points, data references, and section headers. The kind of notes you'd jot down before building a deck.
 
+## Explore
+
+First, let's see what we're working with. Open the creative samples folder:
+
+```bash
+open samples/creative/
+```
+
+Say: "Take a look at the presentation-outline.txt file in the folder that just opened — it's a rough set of notes with talking points and section headers. That's what Claude is about to turn into a polished, styled presentation."
+
+Wait for the user to look at the file, then proceed to Try.
+
 ## Try
 
-> "Turn this outline into a polished HTML presentation with 3 slides: a title slide, the key points, and a summary with next steps. Use a clean dark theme. The audience is senior leadership — keep it concise and data-driven."
+> "Read `samples/creative/presentation-outline.txt`. Turn this outline into a polished HTML presentation with 3 slides: a title slide, the key points, and a summary with next steps. Use a clean dark theme. The audience is senior leadership — keep it concise and data-driven. Save it as `presentation.html`."
 
-Look at what Claude produced. It took your rough outline and created a complete, styled presentation with a title slide, content slide, and summary — all formatted for an executive audience. Open the HTML file in your browser to see it. That's a presentation-ready deck from a text outline, in seconds.
+After Claude finishes, open the result in the browser:
+
+```bash
+open presentation.html
+```
+
+After the user sees the presentation in their browser (or types "skip"/"next"), show the debrief:
+
+> Remember that rough outline you just saw — bullet points, half-formed ideas, no formatting? Claude turned it into a complete, styled HTML presentation with a title slide, content slide, and summary — all formatted for an executive audience. Open that file anytime in any browser, no PowerPoint needed. That's a presentation-ready deck from raw notes, in seconds!
 
 Now try iterating: "Change to a light theme with blue accents" or "Add a fourth slide with a comparison table" or "Make it friendlier — this is for a team all-hands, not the board." Each change takes seconds.
-
-Type "skip" or "next" to move on.
 
 ## Knowhow
 

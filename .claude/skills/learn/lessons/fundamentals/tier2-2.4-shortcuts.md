@@ -33,7 +33,9 @@ Concepts:
 
 Type `! ls samples/` — you just ran a terminal command without leaving our conversation. The output shows up right here.
 
-After completion, explain what happened. Type "skip" or "next" to move on.
+After the user completes the try (or types "skip"/"next"), show this debrief:
+
+> You just ran a real command without leaving our conversation! 🚀 The `!` prefix is incredibly handy — check files, run scripts, see folder contents, all without switching windows. Claude can see the output too, so you can follow up with "what's in that CSV?" right away.
 
 ## Knowhow
 

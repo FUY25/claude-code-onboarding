@@ -10,17 +10,37 @@ Sample: `samples/messy-folder/`
 
 A folder with 10+ small files of different types: `.txt`, `.csv`, `.md`, `.json`, `.html`, `.log`, plus duplicates and misnamed files. Realistic chaos.
 
+## Explore
+
+First, let's see the mess. Open the messy folder:
+
+```bash
+open samples/messy-folder/
+```
+
+Say: "Take a look at the folder that just opened — files with random names, duplicates, mixed types, no organization. That's the 'before.' Claude is about to scan everything, figure out what each file actually is, and organize it."
+
+Wait for the user to look at the mess, then proceed to Try.
+
 ## Try
 
-> "Look at `samples/messy-folder/`. Tell me what's in there, suggest how to reorganize it, then do it."
+> "Look at `samples/messy-folder/`. Tell me what's in there, suggest how to reorganize it, then do it. After you're done, save a summary of what you changed as `cleanup-report.md`."
 
-After you run this, Claude lists every file, identifies what each one contains (not just the extension -- it reads them), spots duplicates, flags misnamed files, and proposes an organization plan. Then it asks for your approval before making any changes. You'll see the permission prompt for each move or rename.
+After Claude finishes, open the folder and report to see the results:
 
-You just went from a chaotic folder to an organized structure, and you approved every step.
+```bash
+open samples/messy-folder/
+```
 
-Encourage iteration: "Try asking me to 'also create a README.md listing what's in each subfolder,' 'rename files to follow a consistent naming convention,' or 'find and remove any duplicates.'"
+```bash
+open cleanup-report.md
+```
 
-Type "skip" or "next" to move on.
+After the user sees the organized folder and report (or types "skip"/"next"), show the debrief:
+
+> Remember the chaos you saw in that folder before — random file names, duplicates, no structure? Now look at it: organized into subfolders, duplicates removed, files renamed to make sense. And you approved every step — Claude asked permission before each move and delete. The cleanup report shows exactly what changed and why!
+
+Now try iterating: "Also create a README.md listing what's in each subfolder" or "Rename files to follow a consistent naming convention" or "Find and remove any duplicates."
 
 ## Knowhow
 

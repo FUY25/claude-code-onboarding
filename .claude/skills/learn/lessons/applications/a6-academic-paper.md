@@ -10,17 +10,33 @@ Sample: `samples/papers/NIPS-2017-attention-is-all-you-need-Paper.pdf`
 
 "Attention Is All You Need" -- the 2017 paper that introduced the Transformer architecture. This is the foundation of modern AI. Don't worry if that sentence means nothing to you yet.
 
+## Explore
+
+First, let's see the source material. Open the papers folder:
+
+```bash
+open samples/papers/
+```
+
+Say: "Take a look at the PDF in the folder that just opened — it's a real academic paper, full of equations, diagrams, and technical jargon. Claude is about to read the whole thing and explain it in plain language."
+
+Wait for the user to look at the file, then proceed to Try.
+
 ## Try
 
-> "Read this paper. Explain the key findings as if I'm a beginner with no CS background. What problem does it solve, why does it matter, and what are the limitations the authors admit?"
+> "Read `samples/papers/NIPS-2017-attention-is-all-you-need-Paper.pdf`. Explain the key findings as if I'm a beginner with no CS background. What problem does it solve, why does it matter, and what are the limitations the authors admit? Save the explanation as `paper-explained.md`."
 
-After you run this, Claude will read the full PDF and produce a plain-language breakdown: the core problem (translating between languages was slow and sequential), the solution (a new architecture that processes everything in parallel using "attention"), why it mattered (dramatically faster and better results), and what the authors flagged as limitations.
+After Claude finishes, open the result:
 
-You just turned a 15-page academic paper into something you can discuss at dinner.
+```bash
+open paper-explained.md
+```
 
-Encourage iteration: "Try asking me to 'now explain just the methodology' or 'what would a critic say about this paper?' or 'explain the attention mechanism using a real-world analogy.'"
+After the user sees the explanation (or types "skip"/"next"), show the debrief:
 
-Type "skip" or "next" to move on.
+> Remember that dense academic PDF you just saw — equations, jargon, figures meant for specialists? Claude read all 15 pages and turned it into a plain-language breakdown you could discuss at dinner: the core problem, the solution, why it matters, and the limitations. All saved as a clean document you can reference anytime!
+
+Now try iterating: "Now explain just the methodology" or "What would a critic say about this paper?" or "Explain the attention mechanism using a real-world analogy."
 
 ## Knowhow
 

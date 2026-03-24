@@ -6,33 +6,45 @@ You have a spreadsheet of sales data. You need to know which month performed bes
 
 Claude reads the CSV directly, analyzes the numbers, answers your questions in plain English, and can even build you an interactive HTML page with charts — all from one prompt. No formulas, no spreadsheet skills required.
 
-Sample: `samples/data/sales.csv`
+## Explore
 
-A sales dataset with monthly revenue figures, product categories, and other business metrics. Real enough to show meaningful trends and anomalies.
+Let's look at the raw data first. Open the data folder:
+
+```bash
+open samples/data/
+```
+
+Say: "Check out the sales.csv file in the folder that just opened — that's raw sales data with monthly revenue figures and product categories. Claude is about to analyze this and turn it into visual charts you can actually understand."
+
+Wait for the user to look, then proceed to Try.
 
 ## Try
 
-> "Read this CSV. Tell me: which month had the highest revenue, what's the quarter-over-quarter trend, and anything I should flag. Then create an HTML page with charts visualizing the key trends."
+> "Read `samples/data/sales.csv`. Tell me: which month had the highest revenue, what's the quarter-over-quarter trend, and anything I should flag. Then create an HTML page with charts visualizing the key trends. Save it as `sales-analysis.html`."
 
-Look at what just happened. Claude read the raw data, computed the answers to your specific questions, flagged things you might not have noticed, and then generated a complete HTML page with visual charts. Open that HTML file in your browser to see the charts — it's a standalone page, no special software needed.
+After Claude finishes, open the result:
+
+```bash
+open sales-analysis.html
+```
+
+After the user sees the charts in their browser (or types "skip"/"next"), show the debrief:
+
+> Look at that! 📊 Remember the raw CSV you saw in the folder — just rows of numbers? Claude read those numbers, computed the trends, flagged anomalies, and built you a complete interactive dashboard with charts. Open that HTML file anytime — it works standalone, no special software needed. That's the power of going from raw data to visual insight in one prompt!
 
 Try iterating: "Add a chart showing month-over-month growth rate" or "Break it down by product category" or "Highlight the months where revenue dropped more than 10%."
-
-Type "skip" or "next" to move on.
 
 ## Knowhow
 
 **How Claude does math: it writes code, not mental arithmetic.**
 
-Here's something important to understand: Claude doesn't calculate numbers in its head. When you ask it to analyze data, it writes Python code behind the scenes, runs it, and gives you the results. This is actually a good thing — code is precise and repeatable, unlike mental math.
+Claude doesn't calculate numbers in its head. When you ask it to analyze data, it writes Python code behind the scenes, runs it, and gives you the results. This is a good thing — code is precise and repeatable.
 
 What this means for you:
-- You can ask Claude to show you the code it wrote: "Show me the code you used to calculate that." This lets you verify its logic.
-- Claude's code can do things like aggregation, filtering, statistical analysis, and chart generation — the same operations you'd do in Excel, but automated.
-- **Always verify numbers that matter.** If a number is going into a board deck or a financial decision, spot-check it against the source data. Claude is very accurate, but critical numbers deserve a second look.
-
-This connects to the Fundamentals concept of permissions: Claude asks before creating files (like that HTML chart page). You always see what it's about to do and can say yes or no.
+- You can ask Claude to show the code: "Show me the code you used to calculate that."
+- Claude can do aggregation, filtering, statistical analysis, and chart generation — the same operations you'd do in Excel, but automated.
+- **Always verify numbers that matter.** If a number is going into a board deck or a financial decision, spot-check it against the source data.
 
 ## Reference
 
-For more on how Claude processes data files and generates visualizations, see `reference/` docs on tool use and code execution. When working with important data, cross-check Claude's computed values against the original CSV.
+For more on how Claude processes data files and generates visualizations, see `reference/` docs on tool use. When working with important data, cross-check Claude's computed values against the original CSV.
