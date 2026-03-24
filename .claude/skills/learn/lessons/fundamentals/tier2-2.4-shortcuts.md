@@ -33,9 +33,7 @@ Concepts:
 
 Type `! ls samples/` — you just ran a terminal command without leaving our conversation. The output shows up right here.
 
-**IMPORTANT — verify the try actually worked.** When the user responds, check whether they got real shell output (a file/folder listing) or just echoed the command text back. If their message contains only the command string (e.g., `! ls samples/`) with no actual output beneath it, they typed it as a chat message instead of running it. In that case, gently clarify:
-
-> 这个要直接输入到 Claude Code 的对话框里 —— 就像你平时发消息一样，把 `! ls samples/` 打进去然后按回车。感叹号 `!` 必须是第一个字符，后面跟一个空格，然后是命令。你应该会看到一串文件夹名称出现在回复里（business、creative、data 这些）。再试一次！
+**IMPORTANT — verify the try actually worked.** When the user responds, check whether they got real shell output (a file/folder listing) or just echoed the command text back. If their message contains only the command string (e.g., `! ls samples/`) with no actual output beneath it, they typed it as a chat message instead of running it. In that case, gently clarify in the session language: the `!` command must be typed directly into the Claude Code input box and executed (press Enter) — not sent as a quoted message. They should see a folder listing (business, creative, data, etc.) appear in the reply. Ask them to try again.
 
 Only show the debrief below once the user has seen actual shell output (a folder listing).
 
