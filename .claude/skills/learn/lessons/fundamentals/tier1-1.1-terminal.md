@@ -4,7 +4,7 @@
 
 ## Explain
 
-Deliver the Explain section in **3 separate chunks** below. After each chunk, pause briefly and check understanding before continuing. Do NOT dump all three chunks at once.
+Deliver the Explain section in **4 separate chunks** below. After each chunk, pause briefly and check understanding before continuing. Do NOT dump all chunks at once. Do NOT skip Chunk 4 — the screen-reading guide is essential for new users.
 
 ### Chunk 1: What is the Terminal?
 
