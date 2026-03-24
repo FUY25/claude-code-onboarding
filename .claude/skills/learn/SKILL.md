@@ -12,6 +12,12 @@ description: |
 
 # /learn — Claude Code Onboarding
 
+## First-time reassurance
+
+Before running the preamble, say:
+
+> "Starting the course — I'll run a few quick setup commands first. You'll see some permission prompts pop up. These are normal — I'm just checking your progress and setting up your profile folder. It's safe to approve them."
+
 ## Preamble (run first)
 
 ```bash
@@ -87,14 +93,14 @@ If `HAS_PROGRESS` is "yes" and progress is valid: go to **Stage 3: Fundamentals*
 
 ## Stage 0: Language Selection
 
-Say exactly:
+Use the AskUserQuestion tool:
+- question: "Choose your language / 选择语言"
+- header: "Language"
+- options:
+  - label: "English", description: "Course in English"
+  - label: "中文", description: "课程以中文呈现"
 
-> Choose your language / 选择语言:
->
-> A) English
-> B) 中文
-
-Wait for the user's answer. Write their choice to `~/.claude-onboarding/language`:
+Write their choice to `~/.claude-onboarding/language`:
 
 ```bash
 echo "en" > ~/.claude-onboarding/language   # or "zh" for Chinese
@@ -130,35 +136,41 @@ Proceed immediately to Stage 2.
 
 Say: "I'm going to ask you 3 quick questions so I can personalize the lessons. There are no wrong answers."
 
-Ask these questions one at a time. Wait for each answer before asking the next.
+Ask these questions one at a time using the AskUserQuestion tool. Wait for each answer before asking the next.
 
-**Q1: "What best describes your work?"**
-- A) Tech-related (engineering, IT, devops)
-- B) Business (finance, operations, consulting, management)
-- C) Creative (design, content, marketing, media)
-- D) Product / PM
-- E) Research / Academic
-- F) Type your own: ___
+**Q1:** Use AskUserQuestion:
+- question: "What best describes your work?"
+- header: "Profession"
+- options:
+  - label: "Tech", description: "Engineering, IT, devops"
+  - label: "Business", description: "Finance, operations, consulting, management"
+  - label: "Creative", description: "Design, content, marketing, media"
+  - label: "Product / PM", description: "Product management"
+- (The user can also select "Other" to type a custom answer — this is automatic)
 
-Map: A→tech, B→business, C→creative, D→pm, E→research, F→custom (store their text)
+Map: Tech→tech, Business→business, Creative→creative, Product / PM→pm. If the user types a custom answer, check if it matches "research" or "academic" → research, otherwise → custom (store their text).
 
-**Q2: "Have you used AI tools before?"**
-- A) ChatGPT, Claude, or Gemini (browser chat)
-- B) Cursor IDE or similar AI code editor
-- C) OpenClaw or other local AI agent
-- D) Multiple of the above
-- E) Never used any
+**Q2:** Use AskUserQuestion:
+- question: "Have you used AI tools before?"
+- header: "AI experience"
+- options:
+  - label: "Browser chat", description: "ChatGPT, Claude, or Gemini in a browser"
+  - label: "AI code editor", description: "Cursor IDE or similar"
+  - label: "Local AI agent", description: "OpenClaw or similar tools that run on your computer"
+  - label: "Multiple tools", description: "Used several of the above"
 
-Map: A→browser_chat, B→cursor_ide, C→local_agent, D→multiple, E→none
+Map: Browser chat→browser_chat, AI code editor→cursor_ide, Local AI agent→local_agent, Multiple tools→multiple. If the user selects "Other" and says they've never used AI → none. Otherwise → multiple.
 
-**Q3: "What brought you here?"**
-- A) Automate repetitive work (reports, emails, file cleanup)
-- B) Analyze data without spreadsheet formulas
-- C) Build things (websites, presentations, docs)
-- D) Learn what AI coding tools can do
-- E) Type your own: ___
+**Q3:** Use AskUserQuestion:
+- question: "What brought you here?"
+- header: "Goal"
+- options:
+  - label: "Automate work", description: "Reports, emails, file cleanup"
+  - label: "Analyze data", description: "Without spreadsheet formulas"
+  - label: "Build things", description: "Websites, presentations, docs"
+  - label: "Explore", description: "Learn what AI coding tools can do"
 
-Map: A→automate, B→analyze, C→build, D→explore, E→custom (store their text)
+Map: Automate work→automate, Analyze data→analyze, Build things→build, Explore→explore. If the user types a custom answer → custom (store their text).
 
 After all 3 answers, write profile atomically:
 
@@ -225,16 +237,17 @@ Deliver the lesson content following the Explain → Try → Knowhow protocol (s
 
 When all of 1.1-1.6 are in `tier1.completed` or `tier1.skipped`:
 
-Say: "You've finished the survival basics. What would you like to do next?"
+Use AskUserQuestion:
+- question: "You've finished the survival basics. What would you like to do next?"
+- header: "Next step"
+- options:
+  - label: "Go deeper", description: "Learn how Claude thinks, CLAUDE.md, shortcuts"
+  - label: "Jump to applications", description: "Use Claude Code on real tasks right now"
 
-Present two choices:
-- A) Continue to deeper concepts (how Claude thinks, CLAUDE.md, shortcuts)
-- B) Jump to hands-on applications — use Claude Code on real tasks right now
+Recommendation: If `ai_experience` is "none" or "browser_chat", put "Go deeper" first with "(Recommended)" in the label. Otherwise put "Jump to applications" first with "(Recommended)".
 
-Recommendation: If `ai_experience` is "none" or "browser_chat", recommend A. Otherwise recommend B.
-
-If A: set `current_stage` to "fundamentals", route to Tier 2.
-If B: set `current_stage` to "applications", route to Stage 4.
+If Go deeper: set `current_stage` to "fundamentals", route to Tier 2.
+If Jump to applications: set `current_stage` to "applications", route to Stage 4.
 
 ### Tier 2 routing
 
@@ -250,15 +263,18 @@ Find the first lesson ID not completed/skipped, or use `tier2.in_progress` if se
 
 When all of 2.1-2.4 are completed/skipped:
 
-Say: "What would you like to learn next? Pick any that interest you, or skip to applications."
+Use AskUserQuestion with multiSelect: true:
+- question: "What would you like to learn next? Pick any that interest you, or skip to applications."
+- header: "Tier 3"
+- multiSelect: true
+- options:
+  - label: "Skills", description: "Teach Claude new abilities for specialized tasks"
+  - label: "MCP", description: "Connect Claude to external tools and services"
+  - label: "Sub-agents", description: "Make Claude work on multiple things at once"
+  - label: "Power moves", description: "Advanced shortcuts and tricks"
 
-- A) Teach Claude new abilities (skills — so it can do specialized tasks)
-- B) Connect Claude to external tools and services (MCP)
-- C) Make Claude work on multiple things at once (sub-agents)
-- D) Learn advanced shortcuts and power moves
-- E) Skip — take me to applications
-
-If user picks one or more: add selected module IDs to `tier3.unlocked`, load the first one.
+If the user selects "Other" and types "skip" or "applications": set `current_stage` to "applications", route to Stage 4.
+Otherwise: map Skills→3.1, MCP→3.2, Sub-agents→3.3, Power moves→3.4. Add selected module IDs to `tier3.unlocked`, load the first one.
 If E: set `current_stage` to "applications", route to Stage 4.
 
 ### Tier 3 routing
@@ -304,7 +320,13 @@ Load the application lesson:
 - A9 → Read `<SKILL_DIR>/lessons/applications/a9-develop-demo.md`
 - A10 → Read `<SKILL_DIR>/lessons/applications/a10-folder-cleanup.md`
 
-After completing an application: add ID to `applications.completed`, set `in_progress` to null, offer: try another application, go back to fundamentals, or done.
+After completing an application: add ID to `applications.completed`, set `in_progress` to null. Use AskUserQuestion:
+- question: "What would you like to do next?"
+- header: "Next"
+- options:
+  - label: "Try another application", description: "Pick from your remaining applications"
+  - label: "Go back to fundamentals", description: "Learn more concepts"
+  - label: "I'm done for now", description: "Progress is saved — pick up anytime with /learn"
 
 If all 5 shown applications are completed: show congratulations and offer to try remaining applications or revisit fundamentals.
 
@@ -313,6 +335,14 @@ If all 5 shown applications are completed: show congratulations and offer to try
 ## Common Rules
 
 These rules apply across ALL stages and lesson files.
+
+### Always use AskUserQuestion for choices
+
+Whenever the user needs to pick between options (language, profile questions, what to learn next, which application to try, whether to continue or skip), ALWAYS use the AskUserQuestion tool to present clickable choices. Never just print options as text and wait for the user to type a letter. This is critical for non-technical users — clickable buttons are much less intimidating than typing commands.
+
+For yes/no or simple choices: use AskUserQuestion with 2 options.
+For menus (applications, Tier 3 modules): use AskUserQuestion with up to 4 options. If there are more than 4 choices, group them or present the most relevant 4 with an "Other" escape hatch.
+For multi-select (Tier 3 module picker): use AskUserQuestion with multiSelect: true.
 
 ### Language
 
