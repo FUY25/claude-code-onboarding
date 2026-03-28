@@ -22,28 +22,29 @@ Claude is helpful but not perfect. If the output isn't right:
 - **Undo:** If Claude edited a file and you don't like the change, you can undo it (see below).
 
 **Esc+Esc rewind — the real safety net.**
-This is the most important thing in this lesson. Claude automatically takes a snapshot of your files before every edit. Press Esc twice to open a rewind menu where you can:
-- Restore the files to before the edit
-- Restore the conversation to before the edit
-- Or restore both
+This is the most important thing in this lesson. Claude automatically takes a snapshot of your files before every edit. Press Esc twice to open a rewind menu.
+
+How to trigger it: press the Esc key once, then press it again immediately. (It's the key in the top-left corner of your keyboard, labeled "esc".) When you do this, Claude pauses and shows you a list of recent checkpoints — each one is a moment just before Claude made a change. It looks like this:
+
+```
+┌─────────────────────────────────────────────┐
+│  Rewind to a checkpoint?                    │
+│                                             │
+│  > Before editing prd-summary.md  (2 min)  │
+│    Before creating findings.md    (5 min)  │
+│    Before running analysis        (8 min)  │
+│                                             │
+│  Choose one to restore:                     │
+│  [F] Files only  [C] Conversation  [B] Both │
+└─────────────────────────────────────────────┘
+```
+
+Select a checkpoint and choose what to restore:
+- **Files only** — undo the file changes, keep the conversation
+- **Conversation** — rewind the chat, keep the files
+- **Both** — restore everything to that moment
 
 This is your undo button. You can always go back. Also available by typing `/rewind`.
-
-```
-┌─────────────────────────────────────┐
-│        ESC + ESC = UNDO             │
-│                                     │
-│  Claude snapshots files before      │
-│  every edit. Press Esc twice to     │
-│  open the rewind menu:              │
-│                                     │
-│  → Restore files                    │
-│  → Restore conversation             │
-│  → Restore both                     │
-│                                     │
-│  You can always go back.            │
-└─────────────────────────────────────┘
-```
 
 **`rm` does NOT go to your Trash.**
 When Claude deletes a file with `rm`, it's gone permanently — it doesn't go to your Mac's Trash. Always confirm delete operations. If you're unsure, say "explain first" at the permission prompt.

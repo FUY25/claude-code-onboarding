@@ -32,6 +32,17 @@ After the user completes the try (or types "skip"/"next"), show this debrief:
 
 > See those instructions? I've been following them this entire time — since the moment you started the course! 🤯 CLAUDE.md is loaded automatically before every conversation. That's why it's so powerful: you write the rules once, and Claude follows them forever. No repeating yourself.
 
+**How do you actually use CLAUDE.md in practice?** Here are the three most common ways:
+
+1. **Let Claude generate one for you:** Type `/init` and Claude scans your project and writes a starter CLAUDE.md automatically. Good first step for any new project.
+
+2. **Tell Claude to update it from a conversation:** After you've given Claude feedback or preferences during a session, just say: "Write what we just discussed into CLAUDE.md." Claude will add those instructions so they apply to every future session.
+   - Example: You gave Claude feedback on how you like slides formatted. Say: "Add those slide preferences to CLAUDE.md." Done — Claude will follow them automatically from now on.
+
+3. **Edit it directly:** CLAUDE.md is just a plain text file. Open it in any text editor and add rules yourself. Short, specific rules work best: "Always use bullet points for summaries." "Never delete files without asking." "This project is in British English."
+
+Think of it as the standing instructions you'd give a new assistant on their first day — you write it once, and they follow it every time they show up.
+
 ## Knowhow
 
 The best CLAUDE.md files are short and specific. Don't write an essay — write rules. "Always use bullet points for summaries." "Never delete files without asking first." "This project uses British English." These small instructions compound across every session.

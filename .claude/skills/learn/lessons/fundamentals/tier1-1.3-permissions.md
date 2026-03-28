@@ -82,6 +82,8 @@ Now try this:
 >
 > Try pressing Shift+Tab a few times to see each mode, then set it back to **Default** for now.
 
+**How to tell which mode you're in:** Look just below the prompt input line. If you see nothing there, you're in **Default** mode — that's normal, Default doesn't show a label. The other two modes display their name in that space so you always know when you've switched away from Default.
+
 After the user tries it (or skips), show the debrief:
 
 > You just discovered one of the most powerful controls in Claude Code! 🎮 As you get more comfortable, you can switch to "auto-accept edits" to speed things up, or use "plan mode" when you want Claude to think before acting. For now, Default is perfect — it keeps you in the driver's seat.
